@@ -29,26 +29,26 @@ export class SettingsModalComponent {
     const { settings } = store;
 
     const html = `
-      <div id="modal-backdrop" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg rounded-2xl p-6 border border-quran-gold/40 shadow-glow-gold flex flex-col gap-5 text-slate-200">
+      <div id="modal-backdrop" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto max-h-[100dvh]">
+        <div class="glass-panel w-full max-w-lg rounded-2xl p-4 sm:p-6 border border-quran-gold/40 shadow-glow-gold flex flex-col gap-4 sm:gap-5 text-slate-200 max-h-[92dvh] overflow-y-auto my-auto">
           
           <!-- Header -->
           <div class="flex items-center justify-between pb-3 border-b border-quran-border/60">
             <h2 class="text-base md:text-lg font-bold text-slate-100 flex items-center gap-2">
               <span>⚙️</span> ${t('settingsTitle')}
             </h2>
-            <button id="btn-close-modal" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-quran-border transition-colors">
+            <button id="btn-close-modal" class="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-slate-400 hover:text-white hover:bg-quran-border transition-colors active:scale-95" title="Close">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
           </div>
 
           <!-- Options -->
-          <div class="flex flex-col gap-4 text-xs md:text-sm">
+          <div class="flex flex-col gap-3.5 text-xs md:text-sm">
             
             <!-- Language Selector -->
-            <div class="flex items-center justify-between py-1 border-b border-quran-border/40 pb-3">
+            <div class="flex items-center justify-between py-1.5 border-b border-quran-border/40 pb-3 min-h-[44px]">
               <span class="font-medium text-slate-100">${t('languageLabel')}</span>
-              <select id="sel-app-language" class="bg-quran-card border border-quran-gold/50 rounded-lg px-2.5 py-1 text-xs text-slate-100 font-semibold focus:outline-none">
+              <select id="sel-app-language" class="bg-quran-card border border-quran-gold/50 rounded-lg px-3 py-2 text-xs text-slate-100 font-semibold focus:outline-none min-h-[40px]">
                 <option value="en" ${settings.language === 'en' ? 'selected' : ''}>🇬🇧 English</option>
                 <option value="id" ${settings.language === 'id' ? 'selected' : ''}>🇮🇩 Bahasa Indonesia</option>
                 <option value="de" disabled>🇩🇪 Deutsch (Soon)</option>
@@ -56,33 +56,33 @@ export class SettingsModalComponent {
             </div>
 
             <!-- Show Translation -->
-            <label class="flex items-center justify-between cursor-pointer py-1">
+            <label class="flex items-center justify-between cursor-pointer py-1.5 min-h-[44px] -mx-1 px-1 rounded-lg hover:bg-white/5 transition-colors">
               <span>${t('showTranslation')}</span>
-              <input type="checkbox" id="chk-show-translation" ${settings.showTranslation ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
+              <input type="checkbox" id="chk-show-translation" ${settings.showTranslation ? 'checked' : ''} class="w-5 h-5 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Show Transliteration -->
-            <label class="flex items-center justify-between cursor-pointer py-1">
+            <label class="flex items-center justify-between cursor-pointer py-1.5 min-h-[44px] -mx-1 px-1 rounded-lg hover:bg-white/5 transition-colors">
               <span>${t('showTransliteration')}</span>
-              <input type="checkbox" id="chk-show-translit" ${settings.showTransliteration ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
+              <input type="checkbox" id="chk-show-translit" ${settings.showTransliteration ? 'checked' : ''} class="w-5 h-5 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Autoplay Audio -->
-            <label class="flex items-center justify-between cursor-pointer py-1">
+            <label class="flex items-center justify-between cursor-pointer py-1.5 min-h-[44px] -mx-1 px-1 rounded-lg hover:bg-white/5 transition-colors">
               <span>${t('autoplayAudio')}</span>
-              <input type="checkbox" id="chk-auto-audio" ${settings.autoPlayAudio ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
+              <input type="checkbox" id="chk-auto-audio" ${settings.autoPlayAudio ? 'checked' : ''} class="w-5 h-5 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Sound Effects -->
-            <label class="flex items-center justify-between cursor-pointer py-1">
+            <label class="flex items-center justify-between cursor-pointer py-1.5 min-h-[44px] -mx-1 px-1 rounded-lg hover:bg-white/5 transition-colors">
               <span>${t('soundEffects')}</span>
-              <input type="checkbox" id="chk-sound-effects" ${settings.soundEffects ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
+              <input type="checkbox" id="chk-sound-effects" ${settings.soundEffects ? 'checked' : ''} class="w-5 h-5 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Font Size -->
-            <div class="flex items-center justify-between py-1">
+            <div class="flex items-center justify-between py-1.5 min-h-[44px]">
               <span>${t('fontSize')}</span>
-              <select id="sel-font-size" class="bg-quran-card border border-quran-border rounded-lg px-2.5 py-1 text-xs text-slate-200">
+              <select id="sel-font-size" class="bg-quran-card border border-quran-border rounded-lg px-3 py-2 text-xs text-slate-200 min-h-[40px]">
                 <option value="normal" ${settings.arabicFontSize === 'normal' ? 'selected' : ''}>${t('fontMedium')}</option>
                 <option value="large" ${settings.arabicFontSize === 'large' ? 'selected' : ''}>${t('fontLarge')}</option>
                 <option value="xlarge" ${settings.arabicFontSize === 'xlarge' ? 'selected' : ''}>${t('fontExtraLarge')}</option>
@@ -90,15 +90,15 @@ export class SettingsModalComponent {
             </div>
 
             <!-- Offline Audio Pre-caching -->
-            <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs flex flex-col gap-2">
-              <div class="flex items-center justify-between">
+            <div class="p-3 sm:p-3.5 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs flex flex-col gap-2">
+              <div class="flex items-center justify-between gap-2">
                 <div>
                   <div class="font-semibold text-quran-gold">${t('offlineAudioTitle')}</div>
                   <div class="text-[11px] text-slate-400">${t('offlineAudioDesc')}</div>
                 </div>
                 <button
                   id="btn-download-offline"
-                  class="px-3 py-1.5 rounded-lg bg-quran-card hover:bg-quran-border text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all active:scale-95"
+                  class="px-3.5 py-2 rounded-lg bg-quran-card hover:bg-quran-border text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all active:scale-95 min-h-[40px] flex items-center justify-center"
                 >
                   ${t('downloadAudio')}
                 </button>
@@ -107,13 +107,13 @@ export class SettingsModalComponent {
             </div>
 
             <!-- Reciter Information -->
-            <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
+            <div class="p-3 sm:p-3.5 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
               <div class="font-semibold text-quran-gold mb-1">${t('reciterTitle')}</div>
               <p class="text-slate-400">${t('reciterDescription')}</p>
             </div>
 
-            <!-- Keyboard Shortcuts -->
-            <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
+            <!-- Keyboard Shortcuts (Hidden on Mobile/Touch Devices) -->
+            <div class="hidden md:block p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
               <div class="font-semibold text-slate-300 mb-2">${t('shortcutsTitle')}</div>
               <div class="grid grid-cols-2 gap-2 text-slate-400">
                 <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">◀</kbd> ${t('prevAyahShortcut')}</div>
@@ -126,8 +126,8 @@ export class SettingsModalComponent {
             </div>
 
             <!-- Reset Progress -->
-            <div class="pt-2 border-t border-quran-border/40 flex justify-between items-center">
-              <button id="btn-reset-progress" class="text-xs text-red-400 hover:text-red-300 hover:underline">
+            <div class="pt-2 border-t border-quran-border/40 flex justify-between items-center min-h-[44px]">
+              <button id="btn-reset-progress" class="py-2 text-xs text-red-400 hover:text-red-300 hover:underline min-h-[40px] flex items-center">
                 ${t('resetProgressButton')}
               </button>
             </div>

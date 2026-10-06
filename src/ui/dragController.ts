@@ -1,4 +1,5 @@
 import { store } from '../core/store';
+import { soundService } from '../services/sound';
 
 interface DragState {
   pieceId: string;
@@ -104,6 +105,7 @@ export class DragController {
 
       if (!isDragging) {
         // Was a TAP!
+        soundService.vibrateTap();
         if (sourceType === 'tray') {
           store.selectPieceFromTray(pieceId);
         } else if (sourceType === 'slot' && fromSlotIndex !== undefined) {

@@ -1,6 +1,8 @@
 import confetti from 'canvas-confetti';
+import { soundService } from '../services/sound';
 
 export function triggerConfetti() {
+  soundService.vibrateCompleted();
   try {
     // Elegant celebratory burst
     confetti({

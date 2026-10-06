@@ -14,32 +14,32 @@ export class HeaderComponent {
     const { currentSurah, surahList, settings } = store;
 
     const html = `
-      <header class="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 py-4 px-2 border-b border-quran-border/60">
+      <header class="w-full max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 pt-[max(env(safe-area-inset-top),0.75rem)] pb-2.5 sm:pb-4 px-2 sm:px-3 border-b border-quran-border/60">
         
         <!-- Brand & Surah Title -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-quran-gold to-amber-700 flex items-center justify-center shadow-glow-gold text-black font-bold text-lg">
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-quran-gold to-amber-700 flex items-center justify-center shadow-glow-gold text-base sm:text-lg select-none">
             <span>📖</span>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h1 class="text-base md:text-lg font-bold text-slate-100 tracking-tight">${t('appTitle')}</h1>
-              <span class="font-quran text-lg md:text-xl text-quran-gold" dir="rtl">${t('surahArabicTitle')}</span>
+              <h1 class="text-sm sm:text-base md:text-lg font-bold text-slate-100 tracking-tight">${t('appTitle')}</h1>
+              <span class="font-quran text-base sm:text-lg md:text-xl text-quran-gold" dir="rtl">${t('surahArabicTitle')}</span>
             </div>
-            <p class="text-[11px] text-quran-textMuted flex items-center gap-1.5">
+            <p class="text-[10px] sm:text-[11px] text-quran-textMuted flex items-center gap-1.5">
               <span>${t('reciterInfo')}</span>
             </p>
           </div>
         </div>
 
         <!-- Controls: Level Selector, Language, Mode & Settings -->
-        <div class="flex flex-wrap items-center justify-center gap-2">
+        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           
           <!-- Level 1 vs Level 2 Switcher -->
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
             <button
               id="btn-level-1"
-              class="px-2.5 md:px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1 ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all flex items-center gap-1 text-xs min-h-[38px] ${
                 settings.gameLevel === 1
                   ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -51,7 +51,7 @@ export class HeaderComponent {
             </button>
             <button
               id="btn-level-2"
-              class="px-2.5 md:px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1 ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all flex items-center gap-1 text-xs min-h-[38px] ${
                 settings.gameLevel === 2
                   ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -67,7 +67,7 @@ export class HeaderComponent {
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
             <button
               id="btn-lang-en"
-              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all text-xs min-h-[38px] ${
                 settings.language === 'en'
                   ? 'bg-quran-gold text-black font-bold shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -78,7 +78,7 @@ export class HeaderComponent {
             </button>
             <button
               id="btn-lang-id"
-              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all text-xs min-h-[38px] ${
                 settings.language === 'id'
                   ? 'bg-quran-gold text-black font-bold shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
@@ -90,10 +90,10 @@ export class HeaderComponent {
           </div>
 
           <!-- Difficulty Pill: Words vs Phrases -->
-          <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs">
+          <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
             <button
               id="btn-diff-word"
-              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all text-xs min-h-[38px] ${
                 settings.difficulty === 'word'
                   ? 'bg-quran-gold text-black shadow-sm font-semibold'
                   : 'text-slate-400 hover:text-slate-200'
@@ -104,7 +104,7 @@ export class HeaderComponent {
             </button>
             <button
               id="btn-diff-phrase"
-              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
+              class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-all text-xs min-h-[38px] ${
                 settings.difficulty === 'phrase'
                   ? 'bg-quran-gold text-black shadow-sm font-semibold'
                   : 'text-slate-400 hover:text-slate-200'
@@ -120,7 +120,7 @@ export class HeaderComponent {
               ? `
             <select
               id="select-surah"
-              class="bg-quran-card text-xs text-slate-200 border border-quran-border rounded-xl px-2 py-1.5 focus:outline-none focus:border-quran-gold cursor-pointer"
+              class="bg-quran-card text-xs text-slate-200 border border-quran-border rounded-xl px-2.5 py-2 min-h-[38px] focus:outline-none focus:border-quran-gold cursor-pointer"
             >
               ${surahList
                 .map(
@@ -139,7 +139,7 @@ export class HeaderComponent {
           <!-- Settings Button -->
           <button
             id="btn-open-settings"
-            class="p-2 rounded-xl bg-quran-card hover:bg-quran-border text-slate-300 hover:text-quran-gold border border-quran-border transition-colors active:scale-95"
+            class="w-10 h-10 min-w-[38px] min-h-[38px] rounded-xl bg-quran-card hover:bg-quran-border text-slate-300 hover:text-quran-gold border border-quran-border transition-colors active:scale-95 flex items-center justify-center"
             title="${t('settingsTitle')}"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>

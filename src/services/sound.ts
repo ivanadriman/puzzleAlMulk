@@ -21,9 +21,39 @@ class SoundService {
   }
 
   /**
+   * Tactile haptic feedback for mobile devices (non-blocking, fails gracefully)
+   */
+  public vibrate(pattern: number | number[]) {
+    try {
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator && typeof navigator.vibrate === 'function') {
+        navigator.vibrate(pattern);
+      }
+    } catch {
+      // Haptics not allowed or unsupported
+    }
+  }
+
+  public vibrateTap() {
+    this.vibrate(12);
+  }
+
+  public vibrateCorrect() {
+    this.vibrate(30);
+  }
+
+  public vibrateMistake() {
+    this.vibrate([60, 40, 60]);
+  }
+
+  public vibrateCompleted() {
+    this.vibrate([40, 50, 40, 50, 90]);
+  }
+
+  /**
    * Pleasant, gentle success chime (pentatonic notes)
    */
   public playCorrect() {
+    this.vibrateCorrect();
     if (!this.enabled) return;
     const ctx = this.getContext();
     if (!ctx) return;
@@ -63,6 +93,7 @@ class SoundService {
    * Gentle, non-jarring low tone for mistake feedback
    */
   public playMistake() {
+    this.vibrateMistake();
     if (!this.enabled) return;
     const ctx = this.getContext();
     if (!ctx) return;

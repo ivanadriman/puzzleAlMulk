@@ -27,15 +27,15 @@ export class NavigationComponent {
     const percentSolved = Math.round((solvedCount / totalAyahs) * 100);
 
     const html = `
-      <div class="w-full max-w-4xl mx-auto flex flex-col gap-3">
+      <div class="w-full max-w-4xl mx-auto flex flex-col gap-2 sm:gap-3">
         <!-- Navigation Bar -->
-        <div class="glass-card rounded-2xl p-2.5 md:p-3.5 flex items-center justify-between gap-2 border border-quran-border/60 shadow-md">
+        <div class="glass-card rounded-2xl p-2 sm:p-2.5 md:p-3.5 flex items-center justify-between gap-2 border border-quran-border/60 shadow-md">
           
           <!-- Prev Button -->
           <button
             id="btn-prev-ayah"
             ${isFirst ? 'disabled' : ''}
-            class="flex items-center gap-1.5 px-3 md:px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all ${
+            class="flex items-center justify-center gap-1.5 min-w-[42px] min-h-[42px] px-3 md:px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all ${
               isFirst
                 ? 'opacity-30 cursor-not-allowed text-slate-500'
                 : 'bg-quran-card hover:bg-quran-border text-slate-200 hover:text-quran-gold active:scale-95'
@@ -50,7 +50,7 @@ export class NavigationComponent {
           <div class="flex-1 max-w-md mx-auto relative flex items-center justify-center">
             <select
               id="select-ayah-dropdown"
-              class="w-full bg-quran-bg/90 hover:bg-quran-bg text-slate-100 border border-quran-gold/40 hover:border-quran-gold focus:border-quran-gold focus:ring-1 focus:ring-quran-gold text-xs md:text-sm rounded-xl px-3 py-2 cursor-pointer font-medium appearance-none text-center transition-colors shadow-inner"
+              class="w-full bg-quran-bg/90 hover:bg-quran-bg text-slate-100 border border-quran-gold/40 hover:border-quran-gold focus:border-quran-gold focus:ring-1 focus:ring-quran-gold text-xs md:text-sm rounded-xl px-3 py-2 min-h-[42px] cursor-pointer font-medium appearance-none text-center transition-colors shadow-inner"
             >
               ${currentSurah.ayahs
                 .map((a, idx) => {
@@ -79,7 +79,7 @@ export class NavigationComponent {
           <button
             id="btn-next-ayah"
             ${isLast ? 'disabled' : ''}
-            class="flex items-center gap-1.5 px-3 md:px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all ${
+            class="flex items-center justify-center gap-1.5 min-w-[42px] min-h-[42px] px-3 md:px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all ${
               isLast
                 ? 'opacity-30 cursor-not-allowed text-slate-500'
                 : 'bg-quran-card hover:bg-quran-border text-slate-200 hover:text-quran-gold active:scale-95'
