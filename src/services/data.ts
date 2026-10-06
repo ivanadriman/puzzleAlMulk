@@ -11,7 +11,8 @@ class DataService {
     if (this.surahsCache) return this.surahsCache;
 
     try {
-      const res = await fetch('./data/surahs.json');
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      const res = await fetch(`${baseUrl}data/surahs.json`);
       if (!res.ok) throw new Error('Failed to load surahs list');
       this.surahsCache = await res.json();
       return this.surahsCache || [];
@@ -40,7 +41,8 @@ class DataService {
     }
 
     const pad3 = String(surahId).padStart(3, '0');
-    const res = await fetch(`./data/surah-${pad3}.json`);
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const res = await fetch(`${baseUrl}data/surah-${pad3}.json`);
     if (!res.ok) {
       throw new Error(`Failed to load data for Surah ${surahId}`);
     }

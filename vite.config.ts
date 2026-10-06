@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // Relative base allows deploying to GitHub Pages under /<repo-name>/ or custom domain without breaking asset links
-  base: './',
+  // Use /puzzleAlMulk/ for GitHub Pages production build, / for local dev
+  base: process.env.NODE_ENV === 'production' ? '/puzzleAlMulk/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

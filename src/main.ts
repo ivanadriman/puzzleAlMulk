@@ -83,12 +83,13 @@ async function bootstrap() {
   await store.initialize(67);
 
   // Register Service Worker for offline PWA functionality
+  const swUrl = `${import.meta.env.BASE_URL || '/'}sw.js`;
   if ('serviceWorker' in navigator && !window.location.hostname.includes('localhost')) {
-    navigator.serviceWorker.register('./sw.js').catch((err) => {
+    navigator.serviceWorker.register(swUrl).catch((err) => {
       console.info('Service Worker registration skipped or failed:', err);
     });
   } else if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(console.warn);
+    navigator.serviceWorker.register(swUrl).catch(console.warn);
   }
 }
 
