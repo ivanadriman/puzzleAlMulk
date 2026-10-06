@@ -70,6 +70,9 @@ async function bootstrap() {
       e.preventDefault();
       const ayah = store.getCurrentAyah();
       if (ayah) audioService.toggle(ayah.audioUrl);
+    } else if (e.key.toLowerCase() === 'c') {
+      e.preventDefault();
+      store.checkCombination();
     } else if (e.key.toLowerCase() === 'h') {
       e.preventDefault();
       store.useHint();

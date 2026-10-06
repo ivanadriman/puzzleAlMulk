@@ -1,7 +1,7 @@
-import { AppSettings, Ayah, AyahProgress, DifficultyMode, PuzzlePiece, SurahData, SurahMeta } from '../types';
+import { AppSettings, Ayah, AyahProgress, CheckStatus, DifficultyMode, PuzzlePiece, SurahData, SurahMeta } from '../types';
 import { audioService } from '../services/audio';
 import { dataService } from '../services/data';
-import { generatePieces, getNextPiece, isAyahSolved, shufflePieces } from './puzzle';
+import { evaluateSlots, generatePieces, shufflePieces } from './puzzle';
 
 const SETTINGS_KEY = 'puzzle_al_mulk_settings_v1';
 const PROGRESS_KEY = 'puzzle_al_mulk_progress_v1';
@@ -20,9 +20,11 @@ export class AppStore {
   public currentSurah: SurahData | null = null;
   public currentAyahIndex: number = 0;
 
-  public placedPieces: PuzzlePiece[] = [];
+  // Discrete slots for RTL Quranic sentence layout
+  public slots: (PuzzlePiece | null)[] = [];
   public availablePieces: PuzzlePiece[] = [];
   public status: 'solving' | 'solved' | 'revealed' = 'solving';
+  public checkStatus: CheckStatus | null = null;
   public shakeError: boolean = false;
 
   public progress: Record<string, AyahProgress> = {};
@@ -32,6 +34,11 @@ export class AppStore {
 
   constructor() {
     this.loadPersistedState();
+  }
+
+  // Backwards compatibility helper
+  public get placedPieces(): PuzzlePiece[] {
+    return this.slots.filter((s): s is PuzzlePiece => s !== null);
   }
 
   private loadPersistedState() {
@@ -70,7 +77,7 @@ export class AppStore {
     return () => this.listeners.delete(cb);
   }
 
-  private notify() {
+  public notify() {
     this.listeners.forEach((cb) => cb());
   }
 
@@ -125,16 +132,18 @@ export class AppStore {
     const ayah = this.getCurrentAyah();
     if (!ayah) return;
 
-    // Preload current and next ayah audio
+    // Preload audio for active and next ayah
     audioService.preload(ayah.audioUrl);
     if (this.currentSurah && this.currentAyahIndex + 1 < this.currentSurah.ayahs.length) {
       audioService.preload(this.currentSurah.ayahs[this.currentAyahIndex + 1].audioUrl);
     }
 
     const allPieces = generatePieces(ayah, this.settings.difficulty);
-    this.placedPieces = [];
+    // Initialize discrete empty slots (size = total pieces)
+    this.slots = new Array(allPieces.length).fill(null);
     this.availablePieces = shufflePieces(allPieces);
     this.status = 'solving';
+    this.checkStatus = null;
     this.shakeError = false;
 
     // Track attempt in progress
@@ -148,83 +157,126 @@ export class AppStore {
   }
 
   /**
-   * Tap piece to place it from available into placed
+   * Place a piece into the first available empty slot (e.g. on tap from tray)
    */
-  public placePiece(pieceId: string) {
+  public placePieceInFirstSlot(pieceId: string) {
     if (this.status !== 'solving') return;
+
+    const firstEmptyIdx = this.slots.findIndex((s) => s === null);
+    if (firstEmptyIdx === -1) return; // All slots full
 
     const pieceIdx = this.availablePieces.findIndex((p) => p.id === pieceId);
     if (pieceIdx === -1) return;
 
-    const piece = this.availablePieces[pieceIdx];
-    this.availablePieces.splice(pieceIdx, 1);
-    this.placedPieces.push(piece);
+    const [piece] = this.availablePieces.splice(pieceIdx, 1);
+    this.slots[firstEmptyIdx] = piece;
+    this.checkStatus = null;
 
-    this.checkCompletion();
-    this.notify();
+    // Fire check automatically when all parts are assembled
+    if (this.isAllSlotsFilled()) {
+      this.checkCombination();
+    } else {
+      this.notify();
+    }
   }
 
   /**
-   * Tap piece in placed bar to return it to available tray
+   * Place or swap a piece into a specific slot (via drag or direct slot tap)
    */
-  public removePiece(pieceId: string) {
+  public placePieceInSlot(pieceId: string, targetSlotIndex: number, fromSlotIndex?: number) {
     if (this.status !== 'solving') return;
+    if (targetSlotIndex < 0 || targetSlotIndex >= this.slots.length) return;
 
-    const pieceIdx = this.placedPieces.findIndex((p) => p.id === pieceId);
-    if (pieceIdx === -1) return;
+    if (fromSlotIndex !== undefined) {
+      // Dragged from another slot: swap or move
+      if (fromSlotIndex === targetSlotIndex) return;
 
-    const piece = this.placedPieces[pieceIdx];
-    this.placedPieces.splice(pieceIdx, 1);
+      const sourcePiece = this.slots[fromSlotIndex];
+      const targetPiece = this.slots[targetSlotIndex];
+
+      this.slots[targetSlotIndex] = sourcePiece;
+      this.slots[fromSlotIndex] = targetPiece;
+    } else {
+      // Dragged from tray
+      const trayIdx = this.availablePieces.findIndex((p) => p.id === pieceId);
+      if (trayIdx === -1) return;
+
+      const [newPiece] = this.availablePieces.splice(trayIdx, 1);
+      const existingInSlot = this.slots[targetSlotIndex];
+
+      if (existingInSlot) {
+        // Return existing piece to tray
+        this.availablePieces.push(existingInSlot);
+      }
+
+      this.slots[targetSlotIndex] = newPiece;
+    }
+
+    this.checkStatus = null;
+
+    // Fire check automatically when all parts are assembled
+    if (this.isAllSlotsFilled()) {
+      this.checkCombination();
+    } else {
+      this.notify();
+    }
+  }
+
+  /**
+   * Remove a piece from a slot and return it to the tray
+   */
+  public removePieceFromSlot(slotIndex: number) {
+    if (this.status !== 'solving') return;
+    if (slotIndex < 0 || slotIndex >= this.slots.length) return;
+
+    const piece = this.slots[slotIndex];
+    if (!piece) return;
+
+    this.slots[slotIndex] = null;
     this.availablePieces.push(piece);
-
+    this.checkStatus = null;
     this.notify();
+  }
+
+  public isAllSlotsFilled(): boolean {
+    return this.slots.length > 0 && this.slots.every((s) => s !== null);
   }
 
   /**
-   * Drag & drop reorder placed pieces
+   * Evaluates the current combination.
+   * Tells whether the combination is RIGHT or WRONG, and identifies wrong positions.
    */
-  public updatePlacedPieces(newPlaced: PuzzlePiece[]) {
-    this.placedPieces = newPlaced;
-    this.checkCompletion();
-    this.notify();
-  }
-
-  /**
-   * Drag & drop reorder available pieces
-   */
-  public updateAvailablePieces(newAvailable: PuzzlePiece[]) {
-    this.availablePieces = newAvailable;
-    this.notify();
-  }
-
-  private checkCompletion() {
+  public checkCombination() {
     const ayah = this.getCurrentAyah();
     if (!ayah) return;
 
-    const totalCount = this.placedPieces.length + this.availablePieces.length;
-    if (this.placedPieces.length === totalCount) {
-      if (isAyahSolved(this.placedPieces, totalCount)) {
-        this.status = 'solved';
-        const key = `${ayah.surah}:${ayah.number}`;
-        this.progress[key] = {
-          ...this.getAyahProgress(ayah.number),
-          solved: true,
-          solvedAt: Date.now()
-        };
-        this.saveProgress();
+    const evaluation = evaluateSlots(this.slots);
+    this.checkStatus = evaluation;
 
-        if (this.settings.autoPlayAudio) {
-          audioService.play(ayah.audioUrl);
-        }
-      } else {
-        // Placed all pieces but order is incorrect - trigger subtle shake feedback
-        this.shakeError = true;
-        setTimeout(() => {
-          this.shakeError = false;
-          this.notify();
-        }, 800);
+    if (evaluation.isAllCorrect) {
+      // 100% Correct
+      this.status = 'solved';
+      const key = `${ayah.surah}:${ayah.number}`;
+      this.progress[key] = {
+        ...this.getAyahProgress(ayah.number),
+        solved: true,
+        solvedAt: Date.now()
+      };
+      this.saveProgress();
+
+      if (this.settings.autoPlayAudio) {
+        audioService.play(ayah.audioUrl);
       }
+    } else {
+      // Incorrect combination - highlight wrong positions with shake
+      this.shakeError = true;
+      setTimeout(() => {
+        this.shakeError = false;
+        this.notify();
+      }, 700);
     }
+
+    this.notify();
   }
 
   public revealAyah() {
@@ -232,12 +284,17 @@ export class AppStore {
     if (!ayah) return;
 
     const allPieces = generatePieces(ayah, this.settings.difficulty);
-    // Sort in correct target order
     allPieces.sort((a, b) => a.targetIndex - b.targetIndex);
 
-    this.placedPieces = allPieces;
+    this.slots = allPieces;
     this.availablePieces = [];
     this.status = 'revealed';
+    this.checkStatus = {
+      hasChecked: true,
+      isAllCorrect: true,
+      wrongCount: 0,
+      wrongIndices: []
+    };
 
     const key = `${ayah.surah}:${ayah.number}`;
     this.progress[key] = {
@@ -255,16 +312,46 @@ export class AppStore {
     const ayah = this.getCurrentAyah();
     if (!ayah) return;
 
-    const nextPiece = getNextPiece(this.placedPieces, this.availablePieces);
-    if (nextPiece) {
-      // Move next correct piece to placed
-      this.placePiece(nextPiece.id);
+    // Find first slot that is empty or incorrect
+    const targetIdx = this.slots.findIndex((piece, idx) => !piece || piece.targetIndex !== idx);
+    if (targetIdx === -1) return;
+
+    // If current slot has a misplaced piece, return it to tray
+    const currentMisplaced = this.slots[targetIdx];
+    if (currentMisplaced) {
+      this.availablePieces.push(currentMisplaced);
+      this.slots[targetIdx] = null;
+    }
+
+    // Find the piece that belongs in targetIdx
+    let correctPiece: PuzzlePiece | null = null;
+    const trayIdx = this.availablePieces.findIndex((p) => p.targetIndex === targetIdx);
+    if (trayIdx !== -1) {
+      [correctPiece] = this.availablePieces.splice(trayIdx, 1);
+    } else {
+      // Piece might be in another slot
+      const otherSlotIdx = this.slots.findIndex((p) => p?.targetIndex === targetIdx);
+      if (otherSlotIdx !== -1) {
+        correctPiece = this.slots[otherSlotIdx];
+        this.slots[otherSlotIdx] = null;
+      }
+    }
+
+    if (correctPiece) {
+      this.slots[targetIdx] = correctPiece;
+      this.checkStatus = null;
 
       const key = `${ayah.surah}:${ayah.number}`;
       const prog = this.getAyahProgress(ayah.number);
       prog.hintsUsed = (prog.hintsUsed || 0) + 1;
       this.progress[key] = prog;
       this.saveProgress();
+
+      if (this.isAllSlotsFilled()) {
+        this.checkCombination();
+      } else {
+        this.notify();
+      }
     }
   }
 

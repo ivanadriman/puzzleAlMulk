@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { generatePieces, shufflePieces, isAyahSolved, getNextPiece } from '../src/core/puzzle';
+import { generatePieces, shufflePieces, isAyahSolved, getNextPiece, evaluateSlots } from '../src/core/puzzle';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -88,5 +88,34 @@ describe('Puzzle Engine Logic', () => {
     expect(hint).toBeDefined();
     expect(hint?.targetIndex).toBe(2);
     expect(hint?.text).toBe(pieces[2].text);
+  });
+
+  it('evaluateSlots correctly diagnoses wrong positions', () => {
+    const ayah1 = surah67.ayahs[0];
+    const pieces = generatePieces(ayah1, 'word');
+
+    // All correct
+    const correctSlots = [...pieces];
+    const resCorrect = evaluateSlots(correctSlots);
+    expect(resCorrect.isAllCorrect).toBe(true);
+    expect(resCorrect.wrongCount).toBe(0);
+    expect(resCorrect.wrongIndices).toEqual([]);
+
+    // Swapped position 1 and 2
+    const swappedSlots = [...pieces];
+    swappedSlots[1] = pieces[2];
+    swappedSlots[2] = pieces[1];
+    const resSwapped = evaluateSlots(swappedSlots);
+    expect(resSwapped.isAllCorrect).toBe(false);
+    expect(resSwapped.wrongCount).toBe(2);
+    expect(resSwapped.wrongIndices).toContain(1);
+    expect(resSwapped.wrongIndices).toContain(2);
+
+    // Incomplete slot
+    const incompleteSlots = [...pieces];
+    incompleteSlots[0] = null;
+    const resIncomplete = evaluateSlots(incompleteSlots);
+    expect(resIncomplete.isAllCorrect).toBe(false);
+    expect(resIncomplete.wrongIndices).toContain(0);
   });
 });

@@ -1,4 +1,4 @@
-import { Ayah, DifficultyMode, PuzzlePiece, Word } from '../types';
+import { Ayah, CheckStatus, DifficultyMode, PuzzlePiece, Word } from '../types';
 
 /**
  * Split an ayah into puzzle pieces based on difficulty mode
@@ -80,6 +80,29 @@ export function shufflePieces(pieces: PuzzlePiece[]): PuzzlePiece[] {
 export function isAyahSolved(placedPieces: PuzzlePiece[], totalCount: number): boolean {
   if (placedPieces.length !== totalCount) return false;
   return placedPieces.every((piece, idx) => piece.targetIndex === idx);
+}
+
+/**
+ * Evaluate all slots and return detailed diagnostic status
+ */
+export function evaluateSlots(slots: (PuzzlePiece | null)[]): CheckStatus {
+  const wrongIndices: number[] = [];
+  const isAllFilled = slots.length > 0 && slots.every((s) => s !== null);
+
+  slots.forEach((piece, idx) => {
+    if (!piece || piece.targetIndex !== idx) {
+      wrongIndices.push(idx);
+    }
+  });
+
+  const isAllCorrect = isAllFilled && wrongIndices.length === 0;
+
+  return {
+    hasChecked: true,
+    isAllCorrect,
+    wrongCount: wrongIndices.length,
+    wrongIndices
+  };
 }
 
 /**

@@ -47,6 +47,13 @@ export interface PuzzlePiece {
 
 export type DifficultyMode = 'word' | 'phrase';
 
+export interface CheckStatus {
+  hasChecked: boolean;
+  isAllCorrect: boolean;
+  wrongCount: number;
+  wrongIndices: number[]; // 0-based indices of slots in wrong position
+}
+
 export interface AyahProgress {
   solved: boolean;
   revealed: boolean;
