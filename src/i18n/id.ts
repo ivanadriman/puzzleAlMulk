@@ -102,5 +102,60 @@ export const id: Record<TranslationKeys, string> = {
   germanComingSoon: 'Sedang ditinjau • Segera Hadir',
   germanNotice: 'Terjemahan bahasa Jerman sedang ditinjau akurasinya dan akan hadir pada pembaruan mendatang. Silakan pilih English atau Bahasa Indonesia.',
   startLearning: 'Mulai Menghafal ➔',
-  changeAnytimeNotice: 'Anda dapat mengganti bahasa kapan saja di menu Pengaturan (⚙️).'
+  changeAnytimeNotice: 'Anda dapat mengganti bahasa kapan saja di menu Pengaturan (⚙️).',
+
+  // Game Modes
+  modeSelectorTitle: 'Pilih Mode Permainan',
+  modeSelectorSubtitle: 'Pilih metode latihan terbaik untuk menghafal Surah Al-Mulk:',
+  changeMode: 'Ganti Mode',
+  modePuzzleTitle: 'Susun Puzzle',
+  modePuzzleDesc: 'Menyusun potongan ayat satu per satu dari kanan ke kiri (Level 1 & 2).',
+  modeVanishingTitle: 'Kata Hilang',
+  modeVanishingDesc: 'Menghilangkan kata secara bertahap (25% → 50% → 100%) untuk melatih ingatan mandiri.',
+  modeAudioSnatchTitle: 'Tebak Suara',
+  modeAudioSnatchDesc: 'Murottal berhenti mendadak. Sambung kata berikutnya sebelum waktu habis!',
+  modeBridgeTitle: 'Sambung Ayat',
+  modeBridgeDesc: 'Latih titik rawan: dari akhir Ayat N, tebak kata pembuka Ayat N+1.',
+  modeSprintTitle: 'Ketuk Kilat',
+  modeSprintDesc: 'Refleks arkade cepat! Ketuk kata berikutnya secepat mungkin tanpa drag-and-drop.',
+
+  // Vanishing Words Mode Strings
+  vanishingStage1: 'Tahap 1: Baca Utuh (100%)',
+  vanishingStage2: 'Tahap 2: Hilang Sedikit (25% Tersembunyi)',
+  vanishingStage3: 'Tahap 3: Hilang Sebagian (50% Tersembunyi)',
+  vanishingStage4: 'Tahap 4: Hafalan Penuh (100% Tersembunyi)',
+  vanishingInstruction1: 'Baca ayat secara utuh sambil mendengarkan audio. Tekan Mulai jika sudah siap!',
+  vanishingInstruction2: 'Pilih kata yang hilang untuk mengisi kotak yang bergaris putus-putus.',
+  vanishingInstruction4: 'Lafalkan seluruh ayat dari hafalan kepala Anda. Tekan Buka Ayat untuk mengecek!',
+  vanishingStartStage: 'Mulai Uji Hafalan ➔',
+  vanishingNextStage: 'Tahap Berikutnya ➔',
+  vanishingComplete: 'Masha Allah! Anda berhasil menguasai ayat ini melewati seluruh 4 tahap!',
+  listenRecitation: 'Dengarkan Bacaan',
+
+  // Audio Snatch Mode Strings
+  audioSnatchPrompt: 'Dengarkan lantunan murottal...',
+  audioSnatchPausedPrompt: 'Bacaan berhenti! Kata apa yang menyambungnya?',
+  audioSnatchSecs: '{s}d',
+  audioSnatchTimeUp: 'Waktu habis!',
+  audioSnatchStreak: 'Rangkaian: {n}',
+  audioSnatchCorrect: 'Tepat! Melanjutkan bacaan...',
+  audioSnatchWrong: 'Belum tepat! Sambungan yang benar adalah:',
+
+  // Ayah Bridge Mode Strings
+  bridgeHeading: 'Menyambung Ayat {from} ke Ayat {to}',
+  bridgePrompt: 'Apa kata pembuka Ayat {to}?',
+  bridgeEndOfAyah: 'Ujung Ayat {n}:',
+  bridgeStreak: 'Rantai Benar: {n}',
+  bridgeBestStreak: 'Rekor Rantai: {n}',
+  bridgeCorrect: '✓ Sambungan tepat!',
+  bridgeWrong: '✗ Belum tepat. Pembuka yang benar adalah:',
+  bridgeNext: 'Sambung Ayat Berikutnya ➔',
+
+  // Word Sprint Mode Strings
+  sprintHeading: 'Ketuk Kilat: Refleks Cepat',
+  sprintInstruction: 'Ketuk kata berikutnya secepat mungkin!',
+  sprintCombo: 'Kombo x{n} 🔥',
+  sprintTime: 'Waktu: {s}d',
+  sprintRecord: 'Selesai dalam {s} detik! Akurasi: {acc}%',
+  sprintRestart: 'Ketuk Kilat Lagi ⚡'
 };

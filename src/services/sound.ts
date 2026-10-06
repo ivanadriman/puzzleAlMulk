@@ -90,6 +90,36 @@ class SoundService {
   }
 
   /**
+   * Celebratory ascending arpeggio when completing an Ayah or stage
+   */
+  public playSuccess() {
+    this.vibrateCompleted();
+    if (!this.enabled) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const now = ctx.currentTime;
+      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+      notes.forEach((freq, idx) => {
+        const t = now + idx * 0.08;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, t);
+        gain.gain.setValueAtTime(0.09, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.3);
+      });
+    } catch {
+      // AudioContext policy
+    }
+  }
+
+  /**
    * Gentle, non-jarring low tone for mistake feedback
    */
   public playMistake() {

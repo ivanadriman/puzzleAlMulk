@@ -1,17 +1,27 @@
 import { store } from '../core/store';
 import { t } from '../i18n';
+import { GAME_MODES } from './modeGate';
 
 export class HeaderComponent {
   private container: HTMLElement;
   private onOpenSettings: () => void;
+  private onOpenModeGate: () => void;
 
-  constructor(container: HTMLElement, onOpenSettings: () => void) {
+  constructor(
+    container: HTMLElement,
+    onOpenSettings: () => void,
+    onOpenModeGate: () => void
+  ) {
     this.container = container;
     this.onOpenSettings = onOpenSettings;
+    this.onOpenModeGate = onOpenModeGate;
   }
 
   public render() {
     const { currentSurah, surahList, settings } = store;
+    const activeModeId = settings.activeGameMode || 'puzzle';
+    const activeModeMeta = GAME_MODES.find((m) => m.id === activeModeId) || GAME_MODES[0];
+    const activeModeTitle = t(activeModeMeta.titleKey as any);
 
     const html = `
       <header class="w-full max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 pt-[max(env(safe-area-inset-top),0.75rem)] pb-2.5 sm:pb-4 px-2 sm:px-3 border-b border-quran-border/60">
@@ -32,10 +42,24 @@ export class HeaderComponent {
           </div>
         </div>
 
-        <!-- Controls: Level Selector, Language, Mode & Settings -->
+        <!-- Controls: Mode Selector, Level, Language, Difficulty & Settings -->
         <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           
-          <!-- Level 1 vs Level 2 Switcher -->
+          <!-- Game Mode Selector Button -->
+          <button
+            id="btn-open-mode-gate"
+            class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-[#173830] to-[#11241f] hover:from-[#1f4a3f] hover:to-[#16312a] text-slate-200 hover:text-quran-gold border border-quran-border hover:border-quran-gold/60 transition-all active:scale-95 flex items-center gap-1.5 text-xs font-medium shadow-sm min-h-[38px]"
+            title="${t('changeMode')}"
+          >
+            <span class="text-sm sm:text-base">${activeModeMeta.icon}</span>
+            <span class="font-semibold text-slate-100 text-[11px] sm:text-xs">${activeModeTitle}</span>
+            <span class="text-[10px] text-quran-gold opacity-80">▾</span>
+          </button>
+
+          <!-- Level 1 vs Level 2 Switcher (visible in Puzzle mode) -->
+          ${
+            activeModeId === 'puzzle'
+              ? `
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
             <button
               id="btn-level-1"
@@ -62,6 +86,9 @@ export class HeaderComponent {
               <span>${t('level2Title')}</span>
             </button>
           </div>
+          `
+              : ''
+          }
 
           <!-- Quick Language Switcher Pill -->
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
@@ -153,6 +180,11 @@ export class HeaderComponent {
   }
 
   private attachEvents() {
+    const btnModeGate = this.container.querySelector('#btn-open-mode-gate');
+    if (btnModeGate) {
+      btnModeGate.addEventListener('click', () => this.onOpenModeGate());
+    }
+
     const btnLevel1 = this.container.querySelector('#btn-level-1');
     if (btnLevel1) {
       btnLevel1.addEventListener('click', () => store.setGameLevel(1));

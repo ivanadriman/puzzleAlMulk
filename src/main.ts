@@ -7,6 +7,7 @@ import { BoardComponent } from './ui/board';
 import { ActionsComponent } from './ui/actions';
 import { SettingsModalComponent } from './ui/modal';
 import { LanguageGateComponent } from './ui/languageGate';
+import { ModeGateComponent } from './ui/modeGate';
 import { setLanguage } from './i18n';
 
 async function bootstrap() {
@@ -35,8 +36,19 @@ async function bootstrap() {
     const actionsRoot = document.getElementById('actions-root')!;
     const modalRoot = document.getElementById('modal-root')!;
 
+    const openModeGateModal = () => {
+      const modalContainer = document.createElement('div');
+      modalContainer.id = 'mode-gate-modal-root';
+      document.body.appendChild(modalContainer);
+
+      const modeGate = new ModeGateComponent(modalContainer, () => {
+        modalContainer.remove();
+      }, true);
+      modeGate.render();
+    };
+
     const modal = new SettingsModalComponent(modalRoot);
-    const header = new HeaderComponent(headerRoot, () => modal.open());
+    const header = new HeaderComponent(headerRoot, () => modal.open(), openModeGateModal);
     const navigation = new NavigationComponent(navigationRoot);
     const board = new BoardComponent(boardRoot);
     const actions = new ActionsComponent(actionsRoot);
@@ -94,16 +106,32 @@ async function bootstrap() {
   store.settings.language = savedLang;
   await initAppView();
 
-  // If first visit, display Language Gate modal overlay
+  // Onboarding Flow:
+  // Step 1: Language selection gate (if not yet chosen)
+  // Step 2: Immediately follow with Game Mode selection gate
   if (!LanguageGateComponent.hasSelectedLanguage()) {
     const gateContainer = document.createElement('div');
     gateContainer.id = 'gate-root';
     document.body.appendChild(gateContainer);
 
-    const gate = new LanguageGateComponent(gateContainer, () => {
-      gateContainer.remove();
+    const langGate = new LanguageGateComponent(gateContainer, () => {
+      // Step 2: Immediately show Mode Selection Gate
+      const modeGate = new ModeGateComponent(gateContainer, () => {
+        gateContainer.remove();
+      }, false);
+      modeGate.render();
     });
-    gate.render();
+    langGate.render();
+  } else if (!ModeGateComponent.hasSelectedMode()) {
+    // If language was chosen in previous session but mode gate was not yet passed
+    const gateContainer = document.createElement('div');
+    gateContainer.id = 'gate-root';
+    document.body.appendChild(gateContainer);
+
+    const modeGate = new ModeGateComponent(gateContainer, () => {
+      gateContainer.remove();
+    }, false);
+    modeGate.render();
   }
 
   // Register Service Worker for offline PWA functionality

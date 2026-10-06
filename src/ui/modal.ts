@@ -1,6 +1,6 @@
 import { store } from '../core/store';
 import { t } from '../i18n';
-import { AppLanguage } from '../types';
+import { AppLanguage, GameModeId } from '../types';
 
 export class SettingsModalComponent {
   private container: HTMLElement;
@@ -45,6 +45,18 @@ export class SettingsModalComponent {
           <!-- Options -->
           <div class="flex flex-col gap-3.5 text-xs md:text-sm">
             
+            <!-- Game Mode Selector -->
+            <div class="flex items-center justify-between py-1.5 border-b border-quran-border/40 pb-3 min-h-[44px]">
+              <span class="font-medium text-slate-100">${t('modeSelectorTitle')}</span>
+              <select id="sel-app-gamemode" class="bg-quran-card border border-quran-gold/50 rounded-lg px-2.5 py-2 text-xs text-slate-100 font-semibold focus:outline-none min-h-[40px]">
+                <option value="puzzle" ${settings.activeGameMode === 'puzzle' ? 'selected' : ''}>🧩 ${t('modePuzzleTitle')}</option>
+                <option value="vanishing" ${settings.activeGameMode === 'vanishing' ? 'selected' : ''}>🌫️ ${t('modeVanishingTitle')}</option>
+                <option value="audio_snatch" ${settings.activeGameMode === 'audio_snatch' ? 'selected' : ''}>🎧 ${t('modeAudioSnatchTitle')}</option>
+                <option value="bridge" ${settings.activeGameMode === 'bridge' ? 'selected' : ''}>🌉 ${t('modeBridgeTitle')}</option>
+                <option value="sprint" ${settings.activeGameMode === 'sprint' ? 'selected' : ''}>⚡ ${t('modeSprintTitle')}</option>
+              </select>
+            </div>
+
             <!-- Language Selector -->
             <div class="flex items-center justify-between py-1.5 border-b border-quran-border/40 pb-3 min-h-[44px]">
               <span class="font-medium text-slate-100">${t('languageLabel')}</span>
@@ -152,6 +164,13 @@ export class SettingsModalComponent {
     const btnClose = this.container.querySelector('#btn-close-modal');
     if (btnClose) {
       btnClose.addEventListener('click', () => this.close());
+    }
+
+    const selGameMode = this.container.querySelector('#sel-app-gamemode') as HTMLSelectElement | null;
+    if (selGameMode) {
+      selGameMode.addEventListener('change', () => {
+        store.setGameMode(selGameMode.value as GameModeId);
+      });
     }
 
     const selLang = this.container.querySelector('#sel-app-language') as HTMLSelectElement | null;

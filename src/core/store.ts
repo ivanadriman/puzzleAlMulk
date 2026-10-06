@@ -1,15 +1,38 @@
-import { AppLanguage, AppSettings, Ayah, AyahProgress, CheckStatus, DifficultyMode, PuzzlePiece, SurahData, SurahMeta } from '../types';
+import type {
+  AppLanguage,
+  AppSettings,
+  AudioSnatchState,
+  Ayah,
+  AyahProgress,
+  BridgeState,
+  CheckStatus,
+  DifficultyMode,
+  GameModeId,
+  PuzzlePiece,
+  SprintState,
+  SurahData,
+  SurahMeta,
+  VanishingState,
+  Word
+} from '../types';
 import { audioService } from '../services/audio';
 import { dataService } from '../services/data';
 import { soundService } from '../services/sound';
 import { setLanguage, t } from '../i18n';
 import { evaluateSlots, generatePieces, shufflePieces } from './puzzle';
+import {
+  generateAudioSnatchOptions,
+  generateBridgeOptions,
+  generateSprintOptions,
+  selectHiddenIndices
+} from './modeGenerators';
 
 const SETTINGS_KEY = 'puzzle_al_mulk_settings_v1';
 const PROGRESS_KEY = 'puzzle_al_mulk_progress_v1';
 
 const defaultSettings: AppSettings = {
   language: 'en',
+  activeGameMode: 'puzzle',
   gameLevel: 1, // Default to Level 1 Guided Repetition
   difficulty: 'word',
   showTranslation: true,
@@ -40,6 +63,13 @@ export class AppStore {
   public progress: Record<string, AyahProgress> = {};
   public settings: AppSettings = { ...defaultSettings };
 
+  // 4 Additional Tahfiz Game Mode States
+  public vanishingState: VanishingState | null = null;
+  public audioSnatchState: AudioSnatchState | null = null;
+  public bridgeState: BridgeState | null = null;
+  public sprintState: SprintState | null = null;
+  private audioSnatchTimer: any = null;
+
   private listeners: Set<() => void> = new Set();
 
   constructor() {
@@ -59,6 +89,7 @@ export class AppStore {
 
   private loadPersistedState() {
     try {
+      if (typeof localStorage === 'undefined') return;
       const savedSettings = localStorage.getItem(SETTINGS_KEY);
       if (savedSettings) {
         this.settings = { ...defaultSettings, ...JSON.parse(savedSettings) };
@@ -74,6 +105,7 @@ export class AppStore {
 
   public saveProgress() {
     try {
+      if (typeof localStorage === 'undefined') return;
       localStorage.setItem(PROGRESS_KEY, JSON.stringify(this.progress));
     } catch (e) {
       console.warn('Failed saving progress:', e);
@@ -82,6 +114,7 @@ export class AppStore {
 
   public saveSettings() {
     try {
+      if (typeof localStorage === 'undefined') return;
       localStorage.setItem(SETTINGS_KEY, JSON.stringify(this.settings));
     } catch (e) {
       console.warn('Failed saving settings:', e);
@@ -105,7 +138,7 @@ export class AppStore {
   public async loadSurah(surahId: number, startAyahIdx = 0) {
     this.currentSurah = await dataService.getSurah(surahId);
     this.currentAyahIndex = Math.min(Math.max(0, startAyahIdx), this.currentSurah.ayahs.length - 1);
-    this.setupPuzzleForCurrentAyah();
+    this.setupModeForCurrentAyah();
     this.notify();
   }
 
@@ -137,7 +170,7 @@ export class AppStore {
 
     audioService.pause();
     this.currentAyahIndex = index;
-    this.setupPuzzleForCurrentAyah();
+    this.setupModeForCurrentAyah();
     this.notify();
   }
 
@@ -152,6 +185,340 @@ export class AppStore {
     if (this.currentAyahIndex > 0) {
       this.setAyahIndex(this.currentAyahIndex - 1);
     }
+  }
+
+  public getAllWordsInSurah(): Word[] {
+    if (!this.currentSurah) return [];
+    const words: Word[] = [];
+    for (const a of this.currentSurah.ayahs) {
+      words.push(...a.words);
+    }
+    return words;
+  }
+
+  public setGameMode(mode: GameModeId) {
+    this.clearModeTimers();
+    audioService.pause();
+    this.settings.activeGameMode = mode;
+    this.saveSettings();
+    this.setupModeForCurrentAyah();
+    this.notify();
+  }
+
+  private clearModeTimers() {
+    if (this.audioSnatchTimer) {
+      clearInterval(this.audioSnatchTimer);
+      this.audioSnatchTimer = null;
+    }
+  }
+
+  public setupModeForCurrentAyah() {
+    this.clearModeTimers();
+    const mode = this.settings.activeGameMode || 'puzzle';
+    switch (mode) {
+      case 'puzzle':
+        this.setupPuzzleForCurrentAyah();
+        break;
+      case 'vanishing':
+        this.setupVanishingForCurrentAyah();
+        break;
+      case 'audio_snatch':
+        this.setupAudioSnatchForCurrentAyah();
+        break;
+      case 'bridge':
+        this.setupBridgeForCurrentAyah();
+        break;
+      case 'sprint':
+        this.setupSprintForCurrentAyah();
+        break;
+      default:
+        this.setupPuzzleForCurrentAyah();
+        break;
+    }
+  }
+
+  public setupVanishingForCurrentAyah() {
+    const ayah = this.getCurrentAyah();
+    if (!ayah) return;
+
+    audioService.preload(ayah.audioUrl);
+    this.vanishingState = {
+      stage: 1,
+      hiddenIndices: [],
+      solvedIndices: [],
+      options: [],
+      currentMissingTargetIdx: null,
+      mistakeWordIdx: null,
+      isStageComplete: false
+    };
+  }
+
+  public advanceVanishingStage() {
+    const ayah = this.getCurrentAyah();
+    if (!ayah || !this.vanishingState) return;
+
+    const nextStage = (this.vanishingState.stage + 1) as 1 | 2 | 3 | 4;
+    if (nextStage > 4) {
+      const key = `${ayah.surah}:${ayah.number}`;
+      this.progress[key] = { solved: true, revealed: false, attempts: 1, hintsUsed: 0 };
+      this.saveProgress();
+      soundService.playSuccess();
+      this.nextAyah();
+      return;
+    }
+
+    let hiddenIndices: number[] = [];
+    if (nextStage === 2) {
+      hiddenIndices = selectHiddenIndices(ayah.words.length, 0.25);
+    } else if (nextStage === 3) {
+      hiddenIndices = selectHiddenIndices(ayah.words.length, 0.5);
+    } else if (nextStage === 4) {
+      hiddenIndices = selectHiddenIndices(ayah.words.length, 1.0);
+    }
+
+    const lang = this.settings.language;
+    const options =
+      nextStage === 4
+        ? []
+        : hiddenIndices
+            .map((idx) => ({
+              wordIdx: idx,
+              text: ayah.words[idx].text,
+              gloss: ayah.words[idx].translations?.[lang] || ayah.words[idx].translation || ''
+            }))
+            .sort(() => Math.random() - 0.5);
+
+    this.vanishingState = {
+      stage: nextStage,
+      hiddenIndices,
+      solvedIndices: [],
+      options,
+      currentMissingTargetIdx: hiddenIndices.length > 0 ? hiddenIndices[0] : null,
+      mistakeWordIdx: null,
+      isStageComplete: false
+    };
+    this.notify();
+  }
+
+  public selectVanishingOption(wordIdx: number) {
+    if (!this.vanishingState || this.vanishingState.isStageComplete) return;
+    const currentTarget = this.vanishingState.currentMissingTargetIdx;
+
+    if (wordIdx === currentTarget) {
+      soundService.playCorrect();
+      this.vanishingState.solvedIndices.push(wordIdx);
+      this.vanishingState.mistakeWordIdx = null;
+
+      const remaining = this.vanishingState.hiddenIndices.filter(
+        (i) => !this.vanishingState!.solvedIndices.includes(i)
+      );
+
+      if (remaining.length === 0) {
+        this.vanishingState.isStageComplete = true;
+        this.vanishingState.currentMissingTargetIdx = null;
+        soundService.playSuccess();
+      } else {
+        this.vanishingState.currentMissingTargetIdx = remaining[0];
+      }
+    } else {
+      soundService.playMistake();
+      this.vanishingState.mistakeWordIdx = wordIdx;
+      setTimeout(() => {
+        if (this.vanishingState && this.vanishingState.mistakeWordIdx === wordIdx) {
+          this.vanishingState.mistakeWordIdx = null;
+          this.notify();
+        }
+      }, 700);
+    }
+    this.notify();
+  }
+
+  public revealVanishingAyah() {
+    if (!this.vanishingState) return;
+    this.vanishingState.solvedIndices = [...this.vanishingState.hiddenIndices];
+    this.vanishingState.isStageComplete = true;
+    soundService.playSuccess();
+    this.notify();
+  }
+
+  public setupAudioSnatchForCurrentAyah() {
+    this.clearModeTimers();
+    const ayah = this.getCurrentAyah();
+    if (!ayah) return;
+
+    const len = ayah.words.length;
+    const splitIndex = len <= 2 ? 1 : Math.max(1, Math.min(len - 1, Math.floor(len / 2)));
+    const targetWord = ayah.words[splitIndex];
+    const allWords = this.getAllWordsInSurah();
+    const options = generateAudioSnatchOptions(targetWord, allWords, this.settings.language);
+
+    this.audioSnatchState = {
+      splitWordIndex: splitIndex,
+      options,
+      isWaitingAnswer: true,
+      timeLeft: 5,
+      streak: this.audioSnatchState?.streak || 0,
+      selectedOptionText: null,
+      isCorrect: null
+    };
+
+    audioService.preload(ayah.audioUrl);
+  }
+
+  public startAudioSnatchCountdown() {
+    this.clearModeTimers();
+    if (!this.audioSnatchState) return;
+    this.audioSnatchState.timeLeft = 5;
+    this.audioSnatchState.isWaitingAnswer = true;
+    this.notify();
+
+    this.audioSnatchTimer = setInterval(() => {
+      if (!this.audioSnatchState || !this.audioSnatchState.isWaitingAnswer) {
+        this.clearModeTimers();
+        return;
+      }
+      if (this.audioSnatchState.timeLeft <= 1) {
+        this.clearModeTimers();
+        this.audioSnatchState.timeLeft = 0;
+        this.audioSnatchState.isWaitingAnswer = false;
+        this.audioSnatchState.isCorrect = false;
+        this.audioSnatchState.streak = 0;
+        soundService.playMistake();
+        this.notify();
+      } else {
+        this.audioSnatchState.timeLeft -= 1;
+        this.notify();
+      }
+    }, 1000);
+  }
+
+  public selectAudioSnatchOption(text: string) {
+    if (!this.audioSnatchState || !this.audioSnatchState.isWaitingAnswer) return;
+    this.clearModeTimers();
+
+    const ayah = this.getCurrentAyah();
+    if (!ayah) return;
+
+    const correctWord = ayah.words[this.audioSnatchState.splitWordIndex];
+    const isCorrect = text === correctWord.text;
+
+    this.audioSnatchState.selectedOptionText = text;
+    this.audioSnatchState.isCorrect = isCorrect;
+    this.audioSnatchState.isWaitingAnswer = false;
+
+    if (isCorrect) {
+      soundService.playCorrect();
+      this.audioSnatchState.streak += 1;
+      audioService.play(ayah.audioUrl).catch(console.warn);
+    } else {
+      soundService.playMistake();
+      this.audioSnatchState.streak = 0;
+    }
+    this.notify();
+  }
+
+  public setupBridgeForCurrentAyah() {
+    const ayah = this.getCurrentAyah();
+    if (!ayah || !this.currentSurah) return;
+
+    const fromNum = ayah.number;
+    const totalAyahs = this.currentSurah.ayahs.length;
+    const toNum = fromNum < totalAyahs ? fromNum + 1 : 1;
+    const nextAyah =
+      this.currentSurah.ayahs.find((a) => a.number === toNum) || this.currentSurah.ayahs[0];
+
+    const options = generateBridgeOptions(nextAyah, this.currentSurah.ayahs, this.settings.language);
+
+    this.bridgeState = {
+      fromAyahNumber: fromNum,
+      toAyahNumber: toNum,
+      options,
+      selectedAyahNumber: null,
+      isCorrect: null,
+      streak: this.bridgeState?.streak || 0,
+      bestStreak: this.bridgeState?.bestStreak || 0
+    };
+  }
+
+  public selectBridgeOption(chosenAyahNumber: number) {
+    if (!this.bridgeState || this.bridgeState.isCorrect !== null) return;
+
+    const isCorrect = chosenAyahNumber === this.bridgeState.toAyahNumber;
+    this.bridgeState.selectedAyahNumber = chosenAyahNumber;
+    this.bridgeState.isCorrect = isCorrect;
+
+    if (isCorrect) {
+      soundService.playCorrect();
+      this.bridgeState.streak += 1;
+      this.bridgeState.bestStreak = Math.max(this.bridgeState.bestStreak, this.bridgeState.streak);
+    } else {
+      soundService.playMistake();
+      this.bridgeState.streak = 0;
+    }
+    this.notify();
+  }
+
+  public advanceBridgeToNext() {
+    if (!this.bridgeState || !this.currentSurah) return;
+    const targetIdx = this.bridgeState.toAyahNumber - 1;
+    if (targetIdx >= 0 && targetIdx < this.currentSurah.ayahs.length) {
+      this.setAyahIndex(targetIdx);
+    }
+  }
+
+  public setupSprintForCurrentAyah() {
+    const ayah = this.getCurrentAyah();
+    if (!ayah) return;
+
+    const firstWord = ayah.words[0];
+    const allWords = this.getAllWordsInSurah();
+    const options = generateSprintOptions(firstWord, allWords, this.settings.language);
+
+    this.sprintState = {
+      currentWordIndex: 0,
+      options,
+      startTime: null,
+      elapsedMs: 0,
+      combo: 0,
+      bestCombo: 0,
+      mistakes: 0,
+      isFinished: false
+    };
+  }
+
+  public selectSprintWord(text: string) {
+    const ayah = this.getCurrentAyah();
+    if (!ayah || !this.sprintState || this.sprintState.isFinished) return;
+
+    if (this.sprintState.startTime === null) {
+      this.sprintState.startTime = Date.now();
+    }
+
+    const expectedWord = ayah.words[this.sprintState.currentWordIndex];
+    if (text === expectedWord.text) {
+      soundService.playCorrect();
+      this.sprintState.combo += 1;
+      this.sprintState.bestCombo = Math.max(this.sprintState.bestCombo, this.sprintState.combo);
+      this.sprintState.currentWordIndex += 1;
+
+      if (this.sprintState.currentWordIndex >= ayah.words.length) {
+        this.sprintState.isFinished = true;
+        this.sprintState.elapsedMs = Date.now() - (this.sprintState.startTime || Date.now());
+        soundService.playSuccess();
+        const key = `${ayah.surah}:${ayah.number}`;
+        this.progress[key] = { solved: true, revealed: false, attempts: 1, hintsUsed: 0 };
+        this.saveProgress();
+      } else {
+        const nextWord = ayah.words[this.sprintState.currentWordIndex];
+        const allWords = this.getAllWordsInSurah();
+        this.sprintState.options = generateSprintOptions(nextWord, allWords, this.settings.language);
+      }
+    } else {
+      soundService.playMistake();
+      this.sprintState.combo = 0;
+      this.sprintState.mistakes += 1;
+    }
+    this.notify();
   }
 
   public setupPuzzleForCurrentAyah() {
@@ -427,7 +794,7 @@ export class AppStore {
 
   public resetCurrentAyah() {
     audioService.pause();
-    this.setupPuzzleForCurrentAyah();
+    this.setupModeForCurrentAyah();
     this.notify();
   }
 

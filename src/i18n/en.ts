@@ -100,7 +100,62 @@ export const en = {
   germanComingSoon: 'Under review • Coming Soon',
   germanNotice: 'German translation is currently under review for accuracy and will be available in the next update. Please select English or Bahasa Indonesia for now.',
   startLearning: 'Start Learning ➔',
-  changeAnytimeNotice: 'You can change the language anytime in Settings (⚙️).'
+  changeAnytimeNotice: 'You can change the language anytime in Settings (⚙️).',
+
+  // Game Modes
+  modeSelectorTitle: 'Select Game Mode',
+  modeSelectorSubtitle: 'Choose your training method to memorize Surah Al-Mulk:',
+  changeMode: 'Change Mode',
+  modePuzzleTitle: 'Sentence Puzzle',
+  modePuzzleDesc: 'Assemble the ayah word by word from right to left (Level 1 & 2).',
+  modeVanishingTitle: 'Vanishing Words',
+  modeVanishingDesc: 'Gradually hide words (25% → 50% → 100%) to master full recall.',
+  modeAudioSnatchTitle: 'Audio Snatch',
+  modeAudioSnatchDesc: 'Recitation stops suddenly. Continue the verse before timer runs out!',
+  modeBridgeTitle: 'Ayah Bridge',
+  modeBridgeDesc: 'Train the transition: given the end of Ayah N, pick the opening of Ayah N+1.',
+  modeSprintTitle: 'Word Sprint',
+  modeSprintDesc: 'Fast arcade reflex! Tap the next word as quickly as you can without drag-and-drop.',
+
+  // Vanishing Words Mode Strings
+  vanishingStage1: 'Stage 1: Full Read (100%)',
+  vanishingStage2: 'Stage 2: Light Fade (25% Hidden)',
+  vanishingStage3: 'Stage 3: Medium Fade (50% Hidden)',
+  vanishingStage4: 'Stage 4: Complete Recall (100% Hidden)',
+  vanishingInstruction1: 'Read the full verse and listen to recitation. Tap Start when ready!',
+  vanishingInstruction2: 'Fill in the missing words (highlighted in dashed boxes).',
+  vanishingInstruction4: 'Recite the full verse from memory. Tap Reveal to verify!',
+  vanishingStartStage: 'Start Challenge ➔',
+  vanishingNextStage: 'Next Stage ➔',
+  vanishingComplete: 'MashaAllah! You mastered this Ayah across all 4 recall stages!',
+  listenRecitation: 'Listen to Recitation',
+
+  // Audio Snatch Mode Strings
+  audioSnatchPrompt: 'Listen to the recitation...',
+  audioSnatchPausedPrompt: 'Recitation paused! What word comes next?',
+  audioSnatchSecs: '{s}s',
+  audioSnatchTimeUp: 'Time is up!',
+  audioSnatchStreak: 'Streak: {n}',
+  audioSnatchCorrect: 'Correct! Resuming recitation...',
+  audioSnatchWrong: 'Incorrect! The right continuation was:',
+
+  // Ayah Bridge Mode Strings
+  bridgeHeading: 'Connect Ayah {from} to Ayah {to}',
+  bridgePrompt: 'What is the opening phrase of Ayah {to}?',
+  bridgeEndOfAyah: 'End of Ayah {n}:',
+  bridgeStreak: 'Bridge Streak: {n}',
+  bridgeBestStreak: 'Best Streak: {n}',
+  bridgeCorrect: '✓ Correct connection!',
+  bridgeWrong: '✗ Not quite. The correct opening is:',
+  bridgeNext: 'Next Bridge ➔',
+
+  // Word Sprint Mode Strings
+  sprintHeading: 'Word Sprint: Rapid Tap',
+  sprintInstruction: 'Tap the next word as fast as possible!',
+  sprintCombo: 'Combo x{n} 🔥',
+  sprintTime: 'Time: {s}s',
+  sprintRecord: 'Finished in {s}s! Accuracy: {acc}%',
+  sprintRestart: 'Sprint Again ⚡'
 };
 
 export type TranslationKeys = keyof typeof en;
