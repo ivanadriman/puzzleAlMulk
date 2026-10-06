@@ -88,32 +88,45 @@ async function bootstrap() {
     await store.initialize(67);
   };
 
-  // Check if first-launch language gate should be displayed
+  // Pre-initialize app view under the hood
+  const savedLang = LanguageGateComponent.getSavedLanguage();
+  setLanguage(savedLang);
+  store.settings.language = savedLang;
+  await initAppView();
+
+  // If first visit, display Language Gate modal overlay
   if (!LanguageGateComponent.hasSelectedLanguage()) {
     const gateContainer = document.createElement('div');
     gateContainer.id = 'gate-root';
     document.body.appendChild(gateContainer);
 
-    const gate = new LanguageGateComponent(gateContainer, async () => {
+    const gate = new LanguageGateComponent(gateContainer, () => {
       gateContainer.remove();
-      await initAppView();
     });
     gate.render();
-  } else {
-    const savedLang = LanguageGateComponent.getSavedLanguage();
-    setLanguage(savedLang);
-    store.settings.language = savedLang;
-    await initAppView();
   }
 
   // Register Service Worker for offline PWA functionality
   const swUrl = `${import.meta.env.BASE_URL || '/'}sw.js`;
-  if ('serviceWorker' in navigator && !window.location.hostname.includes('localhost')) {
-    navigator.serviceWorker.register(swUrl).catch((err) => {
-      console.info('Service Worker registration skipped or failed:', err);
-    });
-  } else if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(swUrl).catch(console.warn);
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register(swUrl)
+      .then((reg) => {
+        reg.onupdatefound = () => {
+          const installingWorker = reg.installing;
+          if (installingWorker) {
+            installingWorker.onstatechange = () => {
+              if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                console.log('[SW] New version ready, activating...');
+                window.location.reload();
+              }
+            };
+          }
+        };
+      })
+      .catch((err) => {
+        console.info('Service Worker registration skipped or failed:', err);
+      });
   }
 }
 

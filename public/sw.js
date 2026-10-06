@@ -1,4 +1,4 @@
-const CACHE_NAME = 'puzzle-al-mulk-v1';
+const CACHE_NAME = 'puzzle-al-mulk-v2';
 const AUDIO_CACHE = 'puzzle-al-mulk-audio-v1';
 
 const STATIC_ASSETS = [
@@ -24,6 +24,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME && key !== AUDIO_CACHE) {
+            console.log('[SW] Deleting stale cache:', key);
             return caches.delete(key);
           }
         })
@@ -36,14 +37,12 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Audio files: Cache First with network fallback & auto-caching
+  // 1. Audio files: Cache First with network fallback & auto-caching
   if (url.pathname.endsWith('.mp3') || url.hostname.includes('everyayah.com') || url.hostname.includes('qurancdn.com')) {
     event.respondWith(
       caches.open(AUDIO_CACHE).then(async (cache) => {
         const cached = await cache.match(event.request);
-        if (cached) {
-          return cached;
-        }
+        if (cached) return cached;
 
         try {
           const networkResponse = await fetch(event.request);
@@ -52,7 +51,6 @@ self.addEventListener('fetch', (event) => {
           }
           return networkResponse;
         } catch (err) {
-          // If offline and not in cache, return error
           throw err;
         }
       })
@@ -60,15 +58,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // App static assets: Cache First, fallback to network
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-
-      return fetch(event.request)
+  // 2. Navigation / HTML Document: Network First with Cache Fallback
+  // NEVER serve stale index.html when online, which causes 404s on hashed chunks!
+  if (event.request.mode === 'navigate' || event.request.destination === 'document' || url.pathname.endsWith('/') || url.pathname.endsWith('index.html')) {
+    event.respondWith(
+      fetch(event.request)
         .then((response) => {
-          // Cache successful GET responses for assets, fonts, etc.
-          if (event.request.method === 'GET' && response.status === 200) {
+          if (response && response.status === 200) {
             const respClone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, respClone));
           }
@@ -76,6 +72,27 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           // Offline fallback
+          return caches.match(event.request).then((cached) => cached || caches.match('./index.html'));
+        })
+    );
+    return;
+  }
+
+  // 3. Static App Assets (JS, CSS, JSON, Fonts, Images): Cache First, fallback to network
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(event.request)
+        .then((response) => {
+          if (event.request.method === 'GET' && response.status === 200) {
+            const respClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, respClone));
+          }
+          return response;
+        })
+        .catch(() => {
+          // Offline fallback for navigation
           if (event.request.mode === 'navigate') {
             return caches.match('./index.html');
           }

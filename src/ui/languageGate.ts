@@ -14,14 +14,22 @@ export class LanguageGateComponent {
   }
 
   public static hasSelectedLanguage(): boolean {
-    if (typeof localStorage === 'undefined') return false;
-    return !!localStorage.getItem(LANGUAGE_KEY);
+    try {
+      if (typeof localStorage === 'undefined') return false;
+      return !!localStorage.getItem(LANGUAGE_KEY);
+    } catch {
+      return false;
+    }
   }
 
   public static getSavedLanguage(): AppLanguage {
-    if (typeof localStorage === 'undefined') return 'en';
-    const saved = localStorage.getItem(LANGUAGE_KEY);
-    return saved === 'id' ? 'id' : 'en';
+    try {
+      if (typeof localStorage === 'undefined') return 'en';
+      const saved = localStorage.getItem(LANGUAGE_KEY);
+      return saved === 'id' ? 'id' : 'en';
+    } catch {
+      return 'en';
+    }
   }
 
   public render() {
@@ -141,7 +149,9 @@ export class LanguageGateComponent {
     const noticeEl = this.container.querySelector('#language-gate-notice');
 
     const selectLanguage = (lang: AppLanguage) => {
-      localStorage.setItem(LANGUAGE_KEY, lang);
+      try {
+        localStorage.setItem(LANGUAGE_KEY, lang);
+      } catch {}
       setLanguage(lang);
       store.updateLanguage(lang);
       this.container.innerHTML = '';

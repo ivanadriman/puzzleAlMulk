@@ -19,7 +19,36 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2224%22>📖</text></svg>" />
   </head>
   <body class="bg-quran-bg text-quran-textPrimary overflow-x-hidden min-h-screen">
-    <div id="app"></div>
+    <div id="app">
+      <div id="initial-loading" class="min-h-screen flex flex-col items-center justify-center p-4 text-center">
+        <div class="text-4xl mb-3 animate-pulse">📖</div>
+        <div class="text-lg font-bold text-slate-100 tracking-tight">Puzzle Al-Mulk • سورة الملك</div>
+        <div class="text-xs text-amber-300/80 mt-1">Memuat data hafalan...</div>
+      </div>
+    </div>
+    <script>
+      // Self-healing fallback for stale service worker chunk 404s
+      window.addEventListener('error', function(e) {
+        if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+          console.warn('[PWA] Stale asset load detected, clearing stale caches and reloading...', e.target.src || e.target.href);
+          if ('serviceWorker' in navigator && !sessionStorage.getItem('pwa_chunk_recovered')) {
+            sessionStorage.setItem('pwa_chunk_recovered', 'true');
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+              for (var r of regs) r.unregister();
+              if ('caches' in window) {
+                caches.keys().then(function(keys) {
+                  Promise.all(keys.map(function(k) { return caches.delete(k); })).then(function() {
+                    window.location.reload();
+                  });
+                });
+              } else {
+                window.location.reload();
+              }
+            });
+          }
+        }
+      }, true);
+    </script>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
