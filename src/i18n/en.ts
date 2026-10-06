@@ -1,0 +1,106 @@
+export const en = {
+  // App Header
+  appTitle: 'Puzzle Al-Mulk',
+  surahArabicTitle: 'سُورَةُ المُلْكِ',
+  reciterInfo: 'Mishary Alafasy • 30 Ayahs',
+  
+  // Levels
+  level1Title: 'Level 1 (Guided)',
+  level1Tooltip: 'Level 1: Sequential Guided Repetition (Instant feedback on each pick)',
+  level2Title: 'Level 2 (Full)',
+  level2Tooltip: 'Level 2: Full Puzzle Assembly (Drag, swap and check all slots)',
+  level1Heading: 'Level 1: Step-by-Step Guided',
+  level2Heading: 'Level 2: Full Puzzle Assembly',
+  level1Instruction: 'Pick the next word in sequence for slot {n} (highlighted below). Instant feedback on every choice!',
+  level2Instruction: 'Drag parts into slots or swap them. Parts are checked instantly as you place them!',
+
+  // Difficulty Pills
+  words: 'Words',
+  wordsTooltip: 'Split into single words',
+  phrases: 'Phrases',
+  phrasesTooltip: 'Split into phrase chunks',
+
+  // Board Navigation & Status
+  prev: 'Prev',
+  next: 'Next',
+  ayah: 'Ayah',
+  ayahOf: 'Ayah {current} of {total}',
+  progress: 'Progress:',
+  ayahs: 'Ayahs',
+  assembled: 'assembled',
+  checkNow: 'Check Now',
+  ayahStart: 'Start ◀',
+  ayahStartRTL: 'Start ◀ Right to Left Quranic Order',
+  ayahSentence: 'Ayah Sentence:',
+  nextWordSlot: '👈 Next',
+  emptySlot: 'Empty',
+  allPartsAssembled: 'All parts are placed in the slots above!',
+  trayTitleLevel1: 'Select the Next Word (Tap or Drag):',
+  trayTitleLevel2: 'Available Parts Tray (Drag or Tap):',
+
+  // Actions
+  checkCombination: 'Check Combination',
+  recite: 'Recite',
+  playing: 'Playing...',
+  hint: 'Hint',
+  revealAyah: 'Reveal Ayah',
+  reset: 'Reset',
+  practiceAgain: 'Practice Again',
+  replayAudio: 'Replay Audio',
+  nextAyahButton: 'Next Ayah',
+
+  // Feedback Messages
+  mashaAllahCompleted: "Masha'Allah! Completed ✓",
+  ayahRevealed: 'Ayah Revealed',
+  wrongPosition: '✗ Wrong',
+  correctPosition: '✓ Correct',
+  tryAgain: '✗ Try Again',
+  incorrectCombination: 'Combination Incorrect',
+  partsInWrongPosition: '{n} part(s) in wrong position',
+  partsInWrongPositionDesc: 'The parts highlighted in RED are in the wrong positions. Drag or swap them into their correct spots!',
+  mistakeSequential: '❌ Not this word. Look for the part that comes next!',
+
+  // Settings Modal
+  settingsTitle: 'Settings & Shortcuts',
+  languageLabel: 'App Language',
+  showTranslation: 'Show translation on puzzle pieces',
+  showTransliteration: 'Show transliteration on puzzle pieces',
+  autoplayAudio: 'Auto-play recitation when ayah is solved',
+  soundEffects: 'Sound Effects (Chime for correct, tone for mistake)',
+  fontSize: 'Arabic Script Font Size',
+  fontMedium: 'Medium',
+  fontLarge: 'Large (Default)',
+  fontExtraLarge: 'Extra Large',
+  reciterTitle: 'Reciter Audio:',
+  reciterDescription: 'Mishary Rashid Alafasy (EveryAyah CDN). Per-ayah MP3 streaming with automatic offline browser caching.',
+  offlineAudioTitle: 'Offline Recitation Audio',
+  offlineAudioDesc: 'Download all 30 ayahs (~3.5 MB) for 100% offline practice.',
+  downloadAudio: 'Download Audio',
+  downloadingAudio: 'Downloading Ayah {current} of {total}...',
+  downloadedSuccess: '✓ All {total} Ayahs downloaded! Ready for 100% offline use.',
+  downloadFailed: 'Download failed: {err}',
+  retryDownload: 'Retry',
+  shortcutsTitle: 'Keyboard Shortcuts:',
+  prevAyahShortcut: 'Prev Ayah',
+  nextAyahShortcut: 'Next Ayah',
+  checkShortcut: 'Check Combination',
+  playPauseShortcut: 'Play / Pause Recite',
+  hintShortcut: 'Hint',
+  revealShortcut: 'Reveal Ayah',
+  resetProgressButton: 'Reset My Learning Progress',
+  resetProgressConfirm: 'Are you sure you want to reset all saved stars and progress for this surah?',
+
+  // Language Gate
+  welcomeTitle: 'Welcome to Puzzle Al-Mulk',
+  welcomeSubtitle: 'Please select your preferred language to begin memorizing:',
+  selectLanguagePrompt: 'Choose your language:',
+  englishTitle: 'English',
+  indonesianTitle: 'Bahasa Indonesia',
+  germanTitle: 'Deutsch',
+  germanComingSoon: 'Under review • Coming Soon',
+  germanNotice: 'German translation is currently under review for accuracy and will be available in the next update. Please select English or Bahasa Indonesia for now.',
+  startLearning: 'Start Learning ➔',
+  changeAnytimeNotice: 'You can change the language anytime in Settings (⚙️).'
+};
+
+export type TranslationKeys = keyof typeof en;

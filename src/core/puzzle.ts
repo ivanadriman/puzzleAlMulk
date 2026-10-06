@@ -15,6 +15,7 @@ export function generatePieces(ayah: Ayah, mode: DifficultyMode): PuzzlePiece[] 
       words: [w],
       text: w.text,
       translation: w.translation,
+      translations: w.translations || { en: w.translation, id: w.translation },
       transliteration: w.transliteration
     }));
   }
@@ -24,7 +25,6 @@ export function generatePieces(ayah: Ayah, mode: DifficultyMode): PuzzlePiece[] 
   let i = 0;
   while (i < words.length) {
     const remaining = words.length - i;
-    // Determine chunk size (prefer 2 or 3)
     let chunkSize = 2;
     if (remaining === 3 || remaining === 6 || remaining === 9) {
       chunkSize = 3;
@@ -46,6 +46,10 @@ export function generatePieces(ayah: Ayah, mode: DifficultyMode): PuzzlePiece[] 
     words: chunk,
     text: chunk.map((w) => w.text).join(' '),
     translation: chunk.map((w) => w.translation).filter(Boolean).join(' '),
+    translations: {
+      en: chunk.map((w) => w.translations?.en || w.translation).filter(Boolean).join(' '),
+      id: chunk.map((w) => w.translations?.id || w.translation).filter(Boolean).join(' ')
+    },
     transliteration: chunk.map((w) => w.transliteration).filter(Boolean).join(' ')
   }));
 }

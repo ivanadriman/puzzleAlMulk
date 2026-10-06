@@ -1,4 +1,6 @@
 import { store } from '../core/store';
+import { t } from '../i18n';
+import { AppLanguage } from '../types';
 
 export class SettingsModalComponent {
   private container: HTMLElement;
@@ -33,7 +35,7 @@ export class SettingsModalComponent {
           <!-- Header -->
           <div class="flex items-center justify-between pb-3 border-b border-quran-border/60">
             <h2 class="text-base md:text-lg font-bold text-slate-100 flex items-center gap-2">
-              <span>⚙️</span> Settings & Shortcuts
+              <span>⚙️</span> ${t('settingsTitle')}
             </h2>
             <button id="btn-close-modal" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-quran-border transition-colors">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -43,37 +45,47 @@ export class SettingsModalComponent {
           <!-- Options -->
           <div class="flex flex-col gap-4 text-xs md:text-sm">
             
+            <!-- Language Selector -->
+            <div class="flex items-center justify-between py-1 border-b border-quran-border/40 pb-3">
+              <span class="font-medium text-slate-100">${t('languageLabel')}</span>
+              <select id="sel-app-language" class="bg-quran-card border border-quran-gold/50 rounded-lg px-2.5 py-1 text-xs text-slate-100 font-semibold focus:outline-none">
+                <option value="en" ${settings.language === 'en' ? 'selected' : ''}>🇬🇧 English</option>
+                <option value="id" ${settings.language === 'id' ? 'selected' : ''}>🇮🇩 Bahasa Indonesia</option>
+                <option value="de" disabled>🇩🇪 Deutsch (Soon)</option>
+              </select>
+            </div>
+
             <!-- Show Translation -->
             <label class="flex items-center justify-between cursor-pointer py-1">
-              <span>Show English translation on puzzle pieces</span>
+              <span>${t('showTranslation')}</span>
               <input type="checkbox" id="chk-show-translation" ${settings.showTranslation ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Show Transliteration -->
             <label class="flex items-center justify-between cursor-pointer py-1">
-              <span>Show English transliteration on puzzle pieces</span>
+              <span>${t('showTransliteration')}</span>
               <input type="checkbox" id="chk-show-translit" ${settings.showTransliteration ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Autoplay Audio -->
             <label class="flex items-center justify-between cursor-pointer py-1">
-              <span>Auto-play recitation when ayah is solved</span>
+              <span>${t('autoplayAudio')}</span>
               <input type="checkbox" id="chk-auto-audio" ${settings.autoPlayAudio ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Sound Effects -->
             <label class="flex items-center justify-between cursor-pointer py-1">
-              <span>Sound Effects (Chime for correct, tone for mistake)</span>
+              <span>${t('soundEffects')}</span>
               <input type="checkbox" id="chk-sound-effects" ${settings.soundEffects ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
             <!-- Font Size -->
             <div class="flex items-center justify-between py-1">
-              <span>Arabic Script Font Size</span>
+              <span>${t('fontSize')}</span>
               <select id="sel-font-size" class="bg-quran-card border border-quran-border rounded-lg px-2.5 py-1 text-xs text-slate-200">
-                <option value="normal" ${settings.arabicFontSize === 'normal' ? 'selected' : ''}>Medium</option>
-                <option value="large" ${settings.arabicFontSize === 'large' ? 'selected' : ''}>Large (Default)</option>
-                <option value="xlarge" ${settings.arabicFontSize === 'xlarge' ? 'selected' : ''}>Extra Large</option>
+                <option value="normal" ${settings.arabicFontSize === 'normal' ? 'selected' : ''}>${t('fontMedium')}</option>
+                <option value="large" ${settings.arabicFontSize === 'large' ? 'selected' : ''}>${t('fontLarge')}</option>
+                <option value="xlarge" ${settings.arabicFontSize === 'xlarge' ? 'selected' : ''}>${t('fontExtraLarge')}</option>
               </select>
             </div>
 
@@ -81,14 +93,14 @@ export class SettingsModalComponent {
             <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs flex flex-col gap-2">
               <div class="flex items-center justify-between">
                 <div>
-                  <div class="font-semibold text-quran-gold">Offline Recitation Audio</div>
-                  <div class="text-[11px] text-slate-400">Download all 30 ayahs (~3.5 MB) for 100% offline practice.</div>
+                  <div class="font-semibold text-quran-gold">${t('offlineAudioTitle')}</div>
+                  <div class="text-[11px] text-slate-400">${t('offlineAudioDesc')}</div>
                 </div>
                 <button
                   id="btn-download-offline"
                   class="px-3 py-1.5 rounded-lg bg-quran-card hover:bg-quran-border text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all active:scale-95"
                 >
-                  Download Audio
+                  ${t('downloadAudio')}
                 </button>
               </div>
               <div id="offline-download-status" class="text-[11px] text-slate-300 hidden"></div>
@@ -96,26 +108,27 @@ export class SettingsModalComponent {
 
             <!-- Reciter Information -->
             <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
-              <div class="font-semibold text-quran-gold mb-1">Reciter Audio:</div>
-              <p class="text-slate-400">Mishary Rashid Alafasy (EveryAyah CDN). Per-ayah MP3 streaming with automatic offline browser caching.</p>
+              <div class="font-semibold text-quran-gold mb-1">${t('reciterTitle')}</div>
+              <p class="text-slate-400">${t('reciterDescription')}</p>
             </div>
 
             <!-- Keyboard Shortcuts -->
             <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
-              <div class="font-semibold text-slate-300 mb-2">Keyboard Shortcuts:</div>
+              <div class="font-semibold text-slate-300 mb-2">${t('shortcutsTitle')}</div>
               <div class="grid grid-cols-2 gap-2 text-slate-400">
-                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">◀</kbd> Prev Ayah</div>
-                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">▶</kbd> Next Ayah</div>
-                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">Space</kbd> Play / Pause Recite</div>
-                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">H</kbd> Hint</div>
-                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">R</kbd> Reveal Ayah</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">◀</kbd> ${t('prevAyahShortcut')}</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">▶</kbd> ${t('nextAyahShortcut')}</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">C</kbd> ${t('checkShortcut')}</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">Space</kbd> ${t('playPauseShortcut')}</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">H</kbd> ${t('hintShortcut')}</div>
+                <div><kbd class="px-1.5 py-0.5 rounded bg-quran-card border border-quran-border text-slate-200">R</kbd> ${t('revealShortcut')}</div>
               </div>
             </div>
 
             <!-- Reset Progress -->
             <div class="pt-2 border-t border-quran-border/40 flex justify-between items-center">
               <button id="btn-reset-progress" class="text-xs text-red-400 hover:text-red-300 hover:underline">
-                Reset My Learning Progress
+                ${t('resetProgressButton')}
               </button>
             </div>
 
@@ -139,6 +152,16 @@ export class SettingsModalComponent {
     const btnClose = this.container.querySelector('#btn-close-modal');
     if (btnClose) {
       btnClose.addEventListener('click', () => this.close());
+    }
+
+    const selLang = this.container.querySelector('#sel-app-language') as HTMLSelectElement | null;
+    if (selLang) {
+      selLang.addEventListener('change', () => {
+        const lang = selLang.value as AppLanguage;
+        localStorage.setItem('puzzle_al_mulk_language', lang);
+        store.updateLanguage(lang);
+        this.render(); // Re-render modal in chosen language
+      });
     }
 
     const chkTrans = this.container.querySelector('#chk-show-translation') as HTMLInputElement | null;
@@ -190,7 +213,7 @@ export class SettingsModalComponent {
         if (ayahs.length === 0) return;
 
         btnDownloadOffline.disabled = true;
-        btnDownloadOffline.textContent = 'Downloading...';
+        btnDownloadOffline.textContent = '...';
         statusDiv.classList.remove('hidden');
 
         try {
@@ -198,7 +221,7 @@ export class SettingsModalComponent {
           let completed = 0;
 
           for (const a of ayahs) {
-            statusDiv.textContent = `Downloading Ayah ${a.number} of ${ayahs.length}...`;
+            statusDiv.textContent = t('downloadingAudio', { current: a.number, total: ayahs.length });
             try {
               const res = await fetch(a.audioUrl);
               if (res.ok) {
@@ -210,12 +233,12 @@ export class SettingsModalComponent {
             completed++;
           }
 
-          statusDiv.innerHTML = `<span class="text-emerald-400 font-semibold">✓ All ${completed} Ayahs downloaded! Ready for 100% offline use.</span>`;
-          btnDownloadOffline.textContent = 'Downloaded ✓';
+          statusDiv.innerHTML = `<span class="text-emerald-400 font-semibold">${t('downloadedSuccess', { total: completed })}</span>`;
+          btnDownloadOffline.textContent = '✓';
         } catch (err) {
-          statusDiv.innerHTML = `<span class="text-red-400">Download failed: ${err}</span>`;
+          statusDiv.innerHTML = `<span class="text-red-400">${t('downloadFailed', { err: String(err) })}</span>`;
           btnDownloadOffline.disabled = false;
-          btnDownloadOffline.textContent = 'Retry';
+          btnDownloadOffline.textContent = t('retryDownload');
         }
       });
     }
@@ -223,7 +246,7 @@ export class SettingsModalComponent {
     const btnResetProg = this.container.querySelector('#btn-reset-progress');
     if (btnResetProg) {
       btnResetProg.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all saved stars and progress for this surah?')) {
+        if (confirm(t('resetProgressConfirm'))) {
           store.progress = {};
           store.saveProgress();
           this.close();

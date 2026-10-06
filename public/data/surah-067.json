@@ -13,11 +13,19 @@
       "textUthmani": "تَبَـٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ",
       "endMarker": "١",
       "translation": "Blessed is He in whose hand is dominion, and He is over all things competent -",
+      "translations": {
+        "en": "Blessed is He in whose hand is dominion, and He is over all things competent -",
+        "id": "Maha Suci Allah Yang di tangan-Nya-lah segala kerajaan, dan Dia Maha Kuasa atas segala sesuatu,"
+      },
       "words": [
         {
           "index": 0,
           "text": "تَبَـٰرَكَ",
           "translation": "Blessed is",
+          "translations": {
+            "en": "Blessed is",
+            "id": "Maha Suci"
+          },
           "transliteration": "tabāraka",
           "audio": "https://audio.qurancdn.com/wbw/067_001_001.mp3"
         },
@@ -25,6 +33,10 @@
           "index": 1,
           "text": "ٱلَّذِى",
           "translation": "He",
+          "translations": {
+            "en": "He",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_001_002.mp3"
         },
@@ -32,6 +44,10 @@
           "index": 2,
           "text": "بِيَدِهِ",
           "translation": "in Whose Hand",
+          "translations": {
+            "en": "in Whose Hand",
+            "id": "di tangan-Nya"
+          },
           "transliteration": "biyadihi",
           "audio": "https://audio.qurancdn.com/wbw/067_001_003.mp3"
         },
@@ -39,6 +55,10 @@
           "index": 3,
           "text": "ٱلْمُلْكُ",
           "translation": "(is) the Dominion",
+          "translations": {
+            "en": "(is) the Dominion",
+            "id": "kerajaan"
+          },
           "transliteration": "l-mul'ku",
           "audio": "https://audio.qurancdn.com/wbw/067_001_004.mp3"
         },
@@ -46,6 +66,10 @@
           "index": 4,
           "text": "وَهُوَ",
           "translation": "and He",
+          "translations": {
+            "en": "and He",
+            "id": "dan Dia"
+          },
           "transliteration": "wahuwa",
           "audio": "https://audio.qurancdn.com/wbw/067_001_005.mp3"
         },
@@ -53,6 +77,10 @@
           "index": 5,
           "text": "عَلَىٰ",
           "translation": "(is) over",
+          "translations": {
+            "en": "(is) over",
+            "id": "atas"
+          },
           "transliteration": "ʿalā",
           "audio": "https://audio.qurancdn.com/wbw/067_001_006.mp3"
         },
@@ -60,6 +88,10 @@
           "index": 6,
           "text": "كُلِّ",
           "translation": "every",
+          "translations": {
+            "en": "every",
+            "id": "segala"
+          },
           "transliteration": "kulli",
           "audio": "https://audio.qurancdn.com/wbw/067_001_007.mp3"
         },
@@ -67,6 +99,10 @@
           "index": 7,
           "text": "شَىْءٍۢ",
           "translation": "thing",
+          "translations": {
+            "en": "thing",
+            "id": "sesuatu"
+          },
           "transliteration": "shayin",
           "audio": "https://audio.qurancdn.com/wbw/067_001_008.mp3"
         },
@@ -74,6 +110,10 @@
           "index": 8,
           "text": "قَدِيرٌ",
           "translation": "All-Powerful",
+          "translations": {
+            "en": "All-Powerful",
+            "id": "Maha Kuasa"
+          },
           "transliteration": "qadīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_001_009.mp3"
         }
@@ -88,11 +128,19 @@
       "textUthmani": "ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ",
       "endMarker": "٢",
       "translation": "[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -",
+      "translations": {
+        "en": "[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -",
+        "id": "Yang menjadikan mati dan hidup, supaya Dia menguji kamu, siapa di antara kamu yang lebih baik amalnya. Dan Dia Maha Perkasa lagi Maha Pengampun,"
+      },
       "words": [
         {
           "index": 0,
           "text": "ٱلَّذِى",
           "translation": "The One Who",
+          "translations": {
+            "en": "The One Who",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_002_001.mp3"
         },
@@ -100,6 +148,10 @@
           "index": 1,
           "text": "خَلَقَ",
           "translation": "created",
+          "translations": {
+            "en": "created",
+            "id": "menciptakan"
+          },
           "transliteration": "khalaqa",
           "audio": "https://audio.qurancdn.com/wbw/067_002_002.mp3"
         },
@@ -107,6 +159,10 @@
           "index": 2,
           "text": "ٱلْمَوْتَ",
           "translation": "death",
+          "translations": {
+            "en": "death",
+            "id": "kematian"
+          },
           "transliteration": "l-mawta",
           "audio": "https://audio.qurancdn.com/wbw/067_002_003.mp3"
         },
@@ -114,6 +170,10 @@
           "index": 3,
           "text": "وَٱلْحَيَوٰةَ",
           "translation": "and life",
+          "translations": {
+            "en": "and life",
+            "id": "dan kehidupan"
+          },
           "transliteration": "wal-ḥayata",
           "audio": "https://audio.qurancdn.com/wbw/067_002_004.mp3"
         },
@@ -121,6 +181,10 @@
           "index": 4,
           "text": "لِيَبْلُوَكُمْ",
           "translation": "that He may test you",
+          "translations": {
+            "en": "that He may test you",
+            "id": "karena Dia akan mengujimu"
+          },
           "transliteration": "liyabluwakum",
           "audio": "https://audio.qurancdn.com/wbw/067_002_005.mp3"
         },
@@ -128,6 +192,10 @@
           "index": 5,
           "text": "أَيُّكُمْ",
           "translation": "which of you",
+          "translations": {
+            "en": "which of you",
+            "id": "siapa diantara kamu"
+          },
           "transliteration": "ayyukum",
           "audio": "https://audio.qurancdn.com/wbw/067_002_006.mp3"
         },
@@ -135,6 +203,10 @@
           "index": 6,
           "text": "أَحْسَنُ",
           "translation": "(is) best",
+          "translations": {
+            "en": "(is) best",
+            "id": "lebih baik"
+          },
           "transliteration": "aḥsanu",
           "audio": "https://audio.qurancdn.com/wbw/067_002_007.mp3"
         },
@@ -142,6 +214,10 @@
           "index": 7,
           "text": "عَمَلًۭا ۚ",
           "translation": "(in) deed",
+          "translations": {
+            "en": "(in) deed",
+            "id": "perbuatan"
+          },
           "transliteration": "ʿamalan",
           "audio": "https://audio.qurancdn.com/wbw/067_002_008.mp3"
         },
@@ -149,6 +225,10 @@
           "index": 8,
           "text": "وَهُوَ",
           "translation": "And He",
+          "translations": {
+            "en": "And He",
+            "id": "dan Dia"
+          },
           "transliteration": "wahuwa",
           "audio": "https://audio.qurancdn.com/wbw/067_002_010.mp3"
         },
@@ -156,6 +236,10 @@
           "index": 9,
           "text": "ٱلْعَزِيزُ",
           "translation": "(is) the All-Mighty",
+          "translations": {
+            "en": "(is) the All-Mighty",
+            "id": "Maha Perkasa"
+          },
           "transliteration": "l-ʿazīzu",
           "audio": "https://audio.qurancdn.com/wbw/067_002_011.mp3"
         },
@@ -163,6 +247,10 @@
           "index": 10,
           "text": "ٱلْغَفُورُ",
           "translation": "the Oft-Forgiving",
+          "translations": {
+            "en": "the Oft-Forgiving",
+            "id": "Maha Pengampun"
+          },
           "transliteration": "l-ghafūru",
           "audio": "https://audio.qurancdn.com/wbw/067_002_012.mp3"
         }
@@ -177,11 +265,19 @@
       "textUthmani": "ٱلَّذِى خَلَقَ سَبْعَ سَمَـٰوَٰتٍۢ طِبَاقًۭا ۖ مَّا تَرَىٰ فِى خَلْقِ ٱلرَّحْمَـٰنِ مِن تَفَـٰوُتٍۢ ۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍۢ",
       "endMarker": "٣",
       "translation": "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision [to the sky]; do you see any breaks?",
+      "translations": {
+        "en": "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision [to the sky]; do you see any breaks?",
+        "id": "Yang telah menciptakan tujuh langit berlapis-lapis. Kamu sekali-kali tidak melihat pada ciptaan Tuhan Yang Maha Pemurah sesuatu yang tidak seimbang. Maka lihatlah berulang-ulang, adakah kamu lihat sesuatu yang tidak seimbang?"
+      },
       "words": [
         {
           "index": 0,
           "text": "ٱلَّذِى",
           "translation": "The One Who",
+          "translations": {
+            "en": "The One Who",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_003_001.mp3"
         },
@@ -189,6 +285,10 @@
           "index": 1,
           "text": "خَلَقَ",
           "translation": "created",
+          "translations": {
+            "en": "created",
+            "id": "menciptakan"
+          },
           "transliteration": "khalaqa",
           "audio": "https://audio.qurancdn.com/wbw/067_003_002.mp3"
         },
@@ -196,6 +296,10 @@
           "index": 2,
           "text": "سَبْعَ",
           "translation": "seven",
+          "translations": {
+            "en": "seven",
+            "id": "tujuh"
+          },
           "transliteration": "sabʿa",
           "audio": "https://audio.qurancdn.com/wbw/067_003_003.mp3"
         },
@@ -203,6 +307,10 @@
           "index": 3,
           "text": "سَمَـٰوَٰتٍۢ",
           "translation": "heavens",
+          "translations": {
+            "en": "heavens",
+            "id": "langit"
+          },
           "transliteration": "samāwātin",
           "audio": "https://audio.qurancdn.com/wbw/067_003_004.mp3"
         },
@@ -210,6 +318,10 @@
           "index": 4,
           "text": "طِبَاقًۭا ۖ",
           "translation": "one above another",
+          "translations": {
+            "en": "one above another",
+            "id": "berlapis-lapis"
+          },
           "transliteration": "ṭibāqan",
           "audio": "https://audio.qurancdn.com/wbw/067_003_005.mp3"
         },
@@ -217,6 +329,10 @@
           "index": 5,
           "text": "مَّا",
           "translation": "Not",
+          "translations": {
+            "en": "Not",
+            "id": "tidak"
+          },
           "transliteration": "mā",
           "audio": "https://audio.qurancdn.com/wbw/067_003_007.mp3"
         },
@@ -224,6 +340,10 @@
           "index": 6,
           "text": "تَرَىٰ",
           "translation": "you see",
+          "translations": {
+            "en": "you see",
+            "id": "kamu lihat"
+          },
           "transliteration": "tarā",
           "audio": "https://audio.qurancdn.com/wbw/067_003_008.mp3"
         },
@@ -231,6 +351,10 @@
           "index": 7,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "dalam/pada"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_003_009.mp3"
         },
@@ -238,6 +362,10 @@
           "index": 8,
           "text": "خَلْقِ",
           "translation": "(the) creation",
+          "translations": {
+            "en": "(the) creation",
+            "id": "penciptaan"
+          },
           "transliteration": "khalqi",
           "audio": "https://audio.qurancdn.com/wbw/067_003_010.mp3"
         },
@@ -245,6 +373,10 @@
           "index": 9,
           "text": "ٱلرَّحْمَـٰنِ",
           "translation": "(of) the Most Gracious",
+          "translations": {
+            "en": "(of) the Most Gracious",
+            "id": "Yang Maha Pengasih"
+          },
           "transliteration": "l-raḥmāni",
           "audio": "https://audio.qurancdn.com/wbw/067_003_011.mp3"
         },
@@ -252,6 +384,10 @@
           "index": 10,
           "text": "مِن",
           "translation": "any",
+          "translations": {
+            "en": "any",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_003_012.mp3"
         },
@@ -259,6 +395,10 @@
           "index": 11,
           "text": "تَفَـٰوُتٍۢ ۖ",
           "translation": "fault",
+          "translations": {
+            "en": "fault",
+            "id": "tidak seimbang"
+          },
           "transliteration": "tafāwutin",
           "audio": "https://audio.qurancdn.com/wbw/067_003_013.mp3"
         },
@@ -266,6 +406,10 @@
           "index": 12,
           "text": "فَٱرْجِعِ",
           "translation": "So return",
+          "translations": {
+            "en": "So return",
+            "id": "maka kembalilah"
+          },
           "transliteration": "fa-ir'jiʿi",
           "audio": "https://audio.qurancdn.com/wbw/067_003_015.mp3"
         },
@@ -273,6 +417,10 @@
           "index": 13,
           "text": "ٱلْبَصَرَ",
           "translation": "the vision",
+          "translations": {
+            "en": "the vision",
+            "id": "pandangan"
+          },
           "transliteration": "l-baṣara",
           "audio": "https://audio.qurancdn.com/wbw/067_003_016.mp3"
         },
@@ -280,6 +428,10 @@
           "index": 14,
           "text": "هَلْ",
           "translation": "can",
+          "translations": {
+            "en": "can",
+            "id": "apakah"
+          },
           "transliteration": "hal",
           "audio": "https://audio.qurancdn.com/wbw/067_003_017.mp3"
         },
@@ -287,6 +439,10 @@
           "index": 15,
           "text": "تَرَىٰ",
           "translation": "you see",
+          "translations": {
+            "en": "you see",
+            "id": "kamu melihat"
+          },
           "transliteration": "tarā",
           "audio": "https://audio.qurancdn.com/wbw/067_003_018.mp3"
         },
@@ -294,6 +450,10 @@
           "index": 16,
           "text": "مِن",
           "translation": "any",
+          "translations": {
+            "en": "any",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_003_019.mp3"
         },
@@ -301,6 +461,10 @@
           "index": 17,
           "text": "فُطُورٍۢ",
           "translation": "flaw",
+          "translations": {
+            "en": "flaw",
+            "id": "teratur/seimbang"
+          },
           "transliteration": "fuṭūrin",
           "audio": "https://audio.qurancdn.com/wbw/067_003_020.mp3"
         }
@@ -315,11 +479,19 @@
       "textUthmani": "ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًۭا وَهُوَ حَسِيرٌۭ",
       "endMarker": "٤",
       "translation": "Then return [your] vision twice again. [Your] vision will return to you humbled while it is fatigued.",
+      "translations": {
+        "en": "Then return [your] vision twice again. [Your] vision will return to you humbled while it is fatigued.",
+        "id": "Kemudian pandanglah sekali lagi niscaya penglihatanmu akan kembali kepadamu dengan tidak menemukan sesuatu cacat dan penglihatanmu itupun dalam keadaan payah."
+      },
       "words": [
         {
           "index": 0,
           "text": "ثُمَّ",
           "translation": "Then",
+          "translations": {
+            "en": "Then",
+            "id": "kemudian"
+          },
           "transliteration": "thumma",
           "audio": "https://audio.qurancdn.com/wbw/067_004_001.mp3"
         },
@@ -327,6 +499,10 @@
           "index": 1,
           "text": "ٱرْجِعِ",
           "translation": "return",
+          "translations": {
+            "en": "return",
+            "id": "kembalilah"
+          },
           "transliteration": "ir'jiʿi",
           "audio": "https://audio.qurancdn.com/wbw/067_004_002.mp3"
         },
@@ -334,6 +510,10 @@
           "index": 2,
           "text": "ٱلْبَصَرَ",
           "translation": "the vision",
+          "translations": {
+            "en": "the vision",
+            "id": "pandangan"
+          },
           "transliteration": "l-baṣara",
           "audio": "https://audio.qurancdn.com/wbw/067_004_003.mp3"
         },
@@ -341,6 +521,10 @@
           "index": 3,
           "text": "كَرَّتَيْنِ",
           "translation": "twice (again)",
+          "translations": {
+            "en": "twice (again)",
+            "id": "dua kali ulang"
+          },
           "transliteration": "karratayni",
           "audio": "https://audio.qurancdn.com/wbw/067_004_004.mp3"
         },
@@ -348,6 +532,10 @@
           "index": 4,
           "text": "يَنقَلِبْ",
           "translation": "Will return",
+          "translations": {
+            "en": "Will return",
+            "id": "berbalik/kembali"
+          },
           "transliteration": "yanqalib",
           "audio": "https://audio.qurancdn.com/wbw/067_004_005.mp3"
         },
@@ -355,6 +543,10 @@
           "index": 5,
           "text": "إِلَيْكَ",
           "translation": "to you",
+          "translations": {
+            "en": "to you",
+            "id": "kepadamu"
+          },
           "transliteration": "ilayka",
           "audio": "https://audio.qurancdn.com/wbw/067_004_006.mp3"
         },
@@ -362,6 +554,10 @@
           "index": 6,
           "text": "ٱلْبَصَرُ",
           "translation": "the vision",
+          "translations": {
+            "en": "the vision",
+            "id": "pandangan"
+          },
           "transliteration": "l-baṣaru",
           "audio": "https://audio.qurancdn.com/wbw/067_004_007.mp3"
         },
@@ -369,6 +565,10 @@
           "index": 7,
           "text": "خَاسِئًۭا",
           "translation": "humbled",
+          "translations": {
+            "en": "humbled",
+            "id": "membingungkan"
+          },
           "transliteration": "khāsi-an",
           "audio": "https://audio.qurancdn.com/wbw/067_004_008.mp3"
         },
@@ -376,6 +576,10 @@
           "index": 8,
           "text": "وَهُوَ",
           "translation": "while it",
+          "translations": {
+            "en": "while it",
+            "id": "dan ia"
+          },
           "transliteration": "wahuwa",
           "audio": "https://audio.qurancdn.com/wbw/067_004_009.mp3"
         },
@@ -383,6 +587,10 @@
           "index": 9,
           "text": "حَسِيرٌۭ",
           "translation": "(is) fatigued",
+          "translations": {
+            "en": "(is) fatigued",
+            "id": "lemah"
+          },
           "transliteration": "ḥasīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_004_010.mp3"
         }
@@ -397,11 +605,19 @@
       "textUthmani": "وَلَقَدْ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمَصَـٰبِيحَ وَجَعَلْنَـٰهَا رُجُومًۭا لِّلشَّيَـٰطِينِ ۖ وَأَعْتَدْنَا لَهُمْ عَذَابَ ٱلسَّعِيرِ",
       "endMarker": "٥",
       "translation": "And We have certainly beautified the nearest heaven with stars and have made [from] them what is thrown at the devils and have prepared for them the punishment of the Blaze.",
+      "translations": {
+        "en": "And We have certainly beautified the nearest heaven with stars and have made [from] them what is thrown at the devils and have prepared for them the punishment of the Blaze.",
+        "id": "Sesungguhnya Kami telah menghiasi langit yang dekat dengan bintang-bintang, dan Kami jadikan bintang-bintang itu alat-alat pelempar syaitan, dan Kami sediakan bagi mereka siksa neraka yang menyala-nyala."
+      },
       "words": [
         {
           "index": 0,
           "text": "وَلَقَدْ",
           "translation": "And certainly",
+          "translations": {
+            "en": "And certainly",
+            "id": "dan sesungguhnya"
+          },
           "transliteration": "walaqad",
           "audio": "https://audio.qurancdn.com/wbw/067_005_001.mp3"
         },
@@ -409,6 +625,10 @@
           "index": 1,
           "text": "زَيَّنَّا",
           "translation": "We have beautified",
+          "translations": {
+            "en": "We have beautified",
+            "id": "Kami menghiasi"
+          },
           "transliteration": "zayyannā",
           "audio": "https://audio.qurancdn.com/wbw/067_005_002.mp3"
         },
@@ -416,6 +636,10 @@
           "index": 2,
           "text": "ٱلسَّمَآءَ",
           "translation": "the heaven",
+          "translations": {
+            "en": "the heaven",
+            "id": "langit"
+          },
           "transliteration": "l-samāa",
           "audio": "https://audio.qurancdn.com/wbw/067_005_003.mp3"
         },
@@ -423,6 +647,10 @@
           "index": 3,
           "text": "ٱلدُّنْيَا",
           "translation": "nearest",
+          "translations": {
+            "en": "nearest",
+            "id": "dunia/yang dekat"
+          },
           "transliteration": "l-dun'yā",
           "audio": "https://audio.qurancdn.com/wbw/067_005_004.mp3"
         },
@@ -430,6 +658,10 @@
           "index": 4,
           "text": "بِمَصَـٰبِيحَ",
           "translation": "with lamps",
+          "translations": {
+            "en": "with lamps",
+            "id": "dengan bintang-bintang"
+          },
           "transliteration": "bimaṣābīḥa",
           "audio": "https://audio.qurancdn.com/wbw/067_005_005.mp3"
         },
@@ -437,6 +669,10 @@
           "index": 5,
           "text": "وَجَعَلْنَـٰهَا",
           "translation": "and We have made them",
+          "translations": {
+            "en": "and We have made them",
+            "id": "dan Kami menjadikannya"
+          },
           "transliteration": "wajaʿalnāhā",
           "audio": "https://audio.qurancdn.com/wbw/067_005_006.mp3"
         },
@@ -444,6 +680,10 @@
           "index": 6,
           "text": "رُجُومًۭا",
           "translation": "(as) missiles",
+          "translations": {
+            "en": "(as) missiles",
+            "id": "pelempar"
+          },
           "transliteration": "rujūman",
           "audio": "https://audio.qurancdn.com/wbw/067_005_007.mp3"
         },
@@ -451,6 +691,10 @@
           "index": 7,
           "text": "لِّلشَّيَـٰطِينِ ۖ",
           "translation": "for the devils",
+          "translations": {
+            "en": "for the devils",
+            "id": "terhadap syaitan-syaitan"
+          },
           "transliteration": "lilshayāṭīni",
           "audio": "https://audio.qurancdn.com/wbw/067_005_008.mp3"
         },
@@ -458,6 +702,10 @@
           "index": 8,
           "text": "وَأَعْتَدْنَا",
           "translation": "and We have prepared",
+          "translations": {
+            "en": "and We have prepared",
+            "id": "dan Kami sediakan"
+          },
           "transliteration": "wa-aʿtadnā",
           "audio": "https://audio.qurancdn.com/wbw/067_005_010.mp3"
         },
@@ -465,6 +713,10 @@
           "index": 9,
           "text": "لَهُمْ",
           "translation": "for them",
+          "translations": {
+            "en": "for them",
+            "id": "bagi mereka"
+          },
           "transliteration": "lahum",
           "audio": "https://audio.qurancdn.com/wbw/067_005_011.mp3"
         },
@@ -472,6 +724,10 @@
           "index": 10,
           "text": "عَذَابَ",
           "translation": "punishment",
+          "translations": {
+            "en": "punishment",
+            "id": "azab/siksa"
+          },
           "transliteration": "ʿadhāba",
           "audio": "https://audio.qurancdn.com/wbw/067_005_012.mp3"
         },
@@ -479,6 +735,10 @@
           "index": 11,
           "text": "ٱلسَّعِيرِ",
           "translation": "(of) the Blaze",
+          "translations": {
+            "en": "(of) the Blaze",
+            "id": "neraka yang menyala-nyala"
+          },
           "transliteration": "l-saʿīri",
           "audio": "https://audio.qurancdn.com/wbw/067_005_013.mp3"
         }
@@ -493,11 +753,19 @@
       "textUthmani": "وَلِلَّذِينَ كَفَرُوا۟ بِرَبِّهِمْ عَذَابُ جَهَنَّمَ ۖ وَبِئْسَ ٱلْمَصِيرُ",
       "endMarker": "٦",
       "translation": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+      "translations": {
+        "en": "And for those who disbelieved in their Lord is the punishment of Hell, and wretched is the destination.",
+        "id": "Dan orang-orang yang kafir kepada Tuhannya, memperoleh azab Jahannam. Dan itulah seburuk-buruk tempat kembali."
+      },
       "words": [
         {
           "index": 0,
           "text": "وَلِلَّذِينَ",
           "translation": "And for those who",
+          "translations": {
+            "en": "And for those who",
+            "id": "dan bagi orang-orang yang"
+          },
           "transliteration": "walilladhīna",
           "audio": "https://audio.qurancdn.com/wbw/067_006_001.mp3"
         },
@@ -505,6 +773,10 @@
           "index": 1,
           "text": "كَفَرُوا۟",
           "translation": "disbelieved",
+          "translations": {
+            "en": "disbelieved",
+            "id": "kafir/ingkar"
+          },
           "transliteration": "kafarū",
           "audio": "https://audio.qurancdn.com/wbw/067_006_002.mp3"
         },
@@ -512,6 +784,10 @@
           "index": 2,
           "text": "بِرَبِّهِمْ",
           "translation": "in their Lord",
+          "translations": {
+            "en": "in their Lord",
+            "id": "kepada Tuhan mereka"
+          },
           "transliteration": "birabbihim",
           "audio": "https://audio.qurancdn.com/wbw/067_006_003.mp3"
         },
@@ -519,6 +795,10 @@
           "index": 3,
           "text": "عَذَابُ",
           "translation": "(is the) punishment",
+          "translations": {
+            "en": "(is the) punishment",
+            "id": "azab/siksa"
+          },
           "transliteration": "ʿadhābu",
           "audio": "https://audio.qurancdn.com/wbw/067_006_004.mp3"
         },
@@ -526,6 +806,10 @@
           "index": 4,
           "text": "جَهَنَّمَ ۖ",
           "translation": "(of) Hell",
+          "translations": {
+            "en": "(of) Hell",
+            "id": "neraka jahannam"
+          },
           "transliteration": "jahannama",
           "audio": "https://audio.qurancdn.com/wbw/067_006_005.mp3"
         },
@@ -533,6 +817,10 @@
           "index": 5,
           "text": "وَبِئْسَ",
           "translation": "and wretched is",
+          "translations": {
+            "en": "and wretched is",
+            "id": "dan amat buruk"
+          },
           "transliteration": "wabi'sa",
           "audio": "https://audio.qurancdn.com/wbw/067_006_007.mp3"
         },
@@ -540,6 +828,10 @@
           "index": 6,
           "text": "ٱلْمَصِيرُ",
           "translation": "the destination",
+          "translations": {
+            "en": "the destination",
+            "id": "tempat kembali"
+          },
           "transliteration": "l-maṣīru",
           "audio": "https://audio.qurancdn.com/wbw/067_006_008.mp3"
         }
@@ -554,11 +846,19 @@
       "textUthmani": "إِذَآ أُلْقُوا۟ فِيهَا سَمِعُوا۟ لَهَا شَهِيقًۭا وَهِىَ تَفُورُ",
       "endMarker": "٧",
       "translation": "When they are thrown into it, they hear from it a [dreadful] inhaling while it boils up.",
+      "translations": {
+        "en": "When they are thrown into it, they hear from it a [dreadful] inhaling while it boils up.",
+        "id": "Apabila mereka dilemparkan ke dalamnya mereka mendengar suara neraka yang mengerikan, sedang neraka itu menggelegak,"
+      },
       "words": [
         {
           "index": 0,
           "text": "إِذَآ",
           "translation": "When",
+          "translations": {
+            "en": "When",
+            "id": "apabila"
+          },
           "transliteration": "idhā",
           "audio": "https://audio.qurancdn.com/wbw/067_007_001.mp3"
         },
@@ -566,6 +866,10 @@
           "index": 1,
           "text": "أُلْقُوا۟",
           "translation": "they are thrown",
+          "translations": {
+            "en": "they are thrown",
+            "id": "mereka dilemparkan"
+          },
           "transliteration": "ul'qū",
           "audio": "https://audio.qurancdn.com/wbw/067_007_002.mp3"
         },
@@ -573,6 +877,10 @@
           "index": 2,
           "text": "فِيهَا",
           "translation": "therein",
+          "translations": {
+            "en": "therein",
+            "id": "di dalamnya"
+          },
           "transliteration": "fīhā",
           "audio": "https://audio.qurancdn.com/wbw/067_007_003.mp3"
         },
@@ -580,6 +888,10 @@
           "index": 3,
           "text": "سَمِعُوا۟",
           "translation": "they will hear",
+          "translations": {
+            "en": "they will hear",
+            "id": "mereka mendengar"
+          },
           "transliteration": "samiʿū",
           "audio": "https://audio.qurancdn.com/wbw/067_007_004.mp3"
         },
@@ -587,6 +899,10 @@
           "index": 4,
           "text": "لَهَا",
           "translation": "from it",
+          "translations": {
+            "en": "from it",
+            "id": "baginya"
+          },
           "transliteration": "lahā",
           "audio": "https://audio.qurancdn.com/wbw/067_007_005.mp3"
         },
@@ -594,6 +910,10 @@
           "index": 5,
           "text": "شَهِيقًۭا",
           "translation": "an inhaling",
+          "translations": {
+            "en": "an inhaling",
+            "id": "jeritan"
+          },
           "transliteration": "shahīqan",
           "audio": "https://audio.qurancdn.com/wbw/067_007_006.mp3"
         },
@@ -601,6 +921,10 @@
           "index": 6,
           "text": "وَهِىَ",
           "translation": "while it",
+          "translations": {
+            "en": "while it",
+            "id": "dan ia"
+          },
           "transliteration": "wahiya",
           "audio": "https://audio.qurancdn.com/wbw/067_007_007.mp3"
         },
@@ -608,6 +932,10 @@
           "index": 7,
           "text": "تَفُورُ",
           "translation": "boils up",
+          "translations": {
+            "en": "boils up",
+            "id": "mendidih"
+          },
           "transliteration": "tafūru",
           "audio": "https://audio.qurancdn.com/wbw/067_007_008.mp3"
         }
@@ -622,11 +950,19 @@
       "textUthmani": "تَكَادُ تَمَيَّزُ مِنَ ٱلْغَيْظِ ۖ كُلَّمَآ أُلْقِىَ فِيهَا فَوْجٌۭ سَأَلَهُمْ خَزَنَتُهَآ أَلَمْ يَأْتِكُمْ نَذِيرٌۭ",
       "endMarker": "٨",
       "translation": "It almost bursts with rage. Every time a company is thrown into it, its keepers ask them, \"Did there not come to you a warner?\"",
+      "translations": {
+        "en": "It almost bursts with rage. Every time a company is thrown into it, its keepers ask them, \"Did there not come to you a warner?\"",
+        "id": "hampir-hampir (neraka) itu terpecah-pecah lantaran marah. Setiap kali dilemparkan ke dalamnya sekumpulan (orang-orang kafir), penjaga-penjaga (neraka itu) bertanya kepada mereka: \"Apakah belum pernah datang kepada kamu (di dunia) seorang pemberi peringatan?\""
+      },
       "words": [
         {
           "index": 0,
           "text": "تَكَادُ",
           "translation": "It almost",
+          "translations": {
+            "en": "It almost",
+            "id": "hampir-hampir"
+          },
           "transliteration": "takādu",
           "audio": "https://audio.qurancdn.com/wbw/067_008_001.mp3"
         },
@@ -634,6 +970,10 @@
           "index": 1,
           "text": "تَمَيَّزُ",
           "translation": "bursts",
+          "translations": {
+            "en": "bursts",
+            "id": "terpecah belah"
+          },
           "transliteration": "tamayyazu",
           "audio": "https://audio.qurancdn.com/wbw/067_008_002.mp3"
         },
@@ -641,6 +981,10 @@
           "index": 2,
           "text": "مِنَ",
           "translation": "from",
+          "translations": {
+            "en": "from",
+            "id": "dari"
+          },
           "transliteration": "mina",
           "audio": "https://audio.qurancdn.com/wbw/067_008_003.mp3"
         },
@@ -648,6 +992,10 @@
           "index": 3,
           "text": "ٱلْغَيْظِ ۖ",
           "translation": "rage",
+          "translations": {
+            "en": "rage",
+            "id": "lantaran marah"
+          },
           "transliteration": "l-ghayẓi",
           "audio": "https://audio.qurancdn.com/wbw/067_008_004.mp3"
         },
@@ -655,6 +1003,10 @@
           "index": 4,
           "text": "كُلَّمَآ",
           "translation": "Every time",
+          "translations": {
+            "en": "Every time",
+            "id": "setiap kali"
+          },
           "transliteration": "kullamā",
           "audio": "https://audio.qurancdn.com/wbw/067_008_006.mp3"
         },
@@ -662,6 +1014,10 @@
           "index": 5,
           "text": "أُلْقِىَ",
           "translation": "is thrown",
+          "translations": {
+            "en": "is thrown",
+            "id": "dilempar"
+          },
           "transliteration": "ul'qiya",
           "audio": "https://audio.qurancdn.com/wbw/067_008_007.mp3"
         },
@@ -669,6 +1025,10 @@
           "index": 6,
           "text": "فِيهَا",
           "translation": "therein",
+          "translations": {
+            "en": "therein",
+            "id": "di dalamnya"
+          },
           "transliteration": "fīhā",
           "audio": "https://audio.qurancdn.com/wbw/067_008_008.mp3"
         },
@@ -676,6 +1036,10 @@
           "index": 7,
           "text": "فَوْجٌۭ",
           "translation": "a group",
+          "translations": {
+            "en": "a group",
+            "id": "sekumpulan"
+          },
           "transliteration": "fawjun",
           "audio": "https://audio.qurancdn.com/wbw/067_008_009.mp3"
         },
@@ -683,6 +1047,10 @@
           "index": 8,
           "text": "سَأَلَهُمْ",
           "translation": "(will) ask them",
+          "translations": {
+            "en": "(will) ask them",
+            "id": "bertanya kepada mereka"
+          },
           "transliteration": "sa-alahum",
           "audio": "https://audio.qurancdn.com/wbw/067_008_010.mp3"
         },
@@ -690,6 +1058,10 @@
           "index": 9,
           "text": "خَزَنَتُهَآ",
           "translation": "its keepers",
+          "translations": {
+            "en": "its keepers",
+            "id": "penjaga-penjaganya"
+          },
           "transliteration": "khazanatuhā",
           "audio": "https://audio.qurancdn.com/wbw/067_008_011.mp3"
         },
@@ -697,6 +1069,10 @@
           "index": 10,
           "text": "أَلَمْ",
           "translation": "Did not",
+          "translations": {
+            "en": "Did not",
+            "id": "apakah tidak"
+          },
           "transliteration": "alam",
           "audio": "https://audio.qurancdn.com/wbw/067_008_012.mp3"
         },
@@ -704,6 +1080,10 @@
           "index": 11,
           "text": "يَأْتِكُمْ",
           "translation": "come to you",
+          "translations": {
+            "en": "come to you",
+            "id": "datang kepadamu"
+          },
           "transliteration": "yatikum",
           "audio": "https://audio.qurancdn.com/wbw/067_008_013.mp3"
         },
@@ -711,6 +1091,10 @@
           "index": 12,
           "text": "نَذِيرٌۭ",
           "translation": "a warner",
+          "translations": {
+            "en": "a warner",
+            "id": "seorang pemberi peringatan"
+          },
           "transliteration": "nadhīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_008_014.mp3"
         }
@@ -725,11 +1109,19 @@
       "textUthmani": "قَالُوا۟ بَلَىٰ قَدْ جَآءَنَا نَذِيرٌۭ فَكَذَّبْنَا وَقُلْنَا مَا نَزَّلَ ٱللَّهُ مِن شَىْءٍ إِنْ أَنتُمْ إِلَّا فِى ضَلَـٰلٍۢ كَبِيرٍۢ",
       "endMarker": "٩",
       "translation": "They will say,\" Yes, a warner had come to us, but we denied and said, 'Allah has not sent down anything. You are not but in great error.'\"",
+      "translations": {
+        "en": "They will say,\" Yes, a warner had come to us, but we denied and said, 'Allah has not sent down anything. You are not but in great error.'\"",
+        "id": "Mereka menjawab: \"Benar ada\", sesungguhnya telah datang kepada kami seorang pemberi peringatan, maka kami mendustakan(nya) dan kami katakan: \"Allah tidak menurunkan sesuatupun; kamu tidak lain hanyalah di dalam kesesatan yang besar\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "قَالُوا۟",
           "translation": "They will say",
+          "translations": {
+            "en": "They will say",
+            "id": "mereka berkata/menjawab"
+          },
           "transliteration": "qālū",
           "audio": "https://audio.qurancdn.com/wbw/067_009_001.mp3"
         },
@@ -737,6 +1129,10 @@
           "index": 1,
           "text": "بَلَىٰ",
           "translation": "Yes",
+          "translations": {
+            "en": "Yes",
+            "id": "ya benar"
+          },
           "transliteration": "balā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_002.mp3"
         },
@@ -744,6 +1140,10 @@
           "index": 2,
           "text": "قَدْ",
           "translation": "indeed",
+          "translations": {
+            "en": "indeed",
+            "id": "sesungguhnya"
+          },
           "transliteration": "qad",
           "audio": "https://audio.qurancdn.com/wbw/067_009_003.mp3"
         },
@@ -751,6 +1151,10 @@
           "index": 3,
           "text": "جَآءَنَا",
           "translation": "came to us",
+          "translations": {
+            "en": "came to us",
+            "id": "telah datang kepada kami"
+          },
           "transliteration": "jāanā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_004.mp3"
         },
@@ -758,6 +1162,10 @@
           "index": 4,
           "text": "نَذِيرٌۭ",
           "translation": "a warner",
+          "translations": {
+            "en": "a warner",
+            "id": "seorang pemberi peringatan"
+          },
           "transliteration": "nadhīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_009_005.mp3"
         },
@@ -765,6 +1173,10 @@
           "index": 5,
           "text": "فَكَذَّبْنَا",
           "translation": "but we denied",
+          "translations": {
+            "en": "but we denied",
+            "id": "maka kami mendustakan"
+          },
           "transliteration": "fakadhabnā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_006.mp3"
         },
@@ -772,6 +1184,10 @@
           "index": 6,
           "text": "وَقُلْنَا",
           "translation": "and we said",
+          "translations": {
+            "en": "and we said",
+            "id": "dan kami katakan"
+          },
           "transliteration": "waqul'nā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_007.mp3"
         },
@@ -779,6 +1195,10 @@
           "index": 7,
           "text": "مَا",
           "translation": "Not",
+          "translations": {
+            "en": "Not",
+            "id": "tidak"
+          },
           "transliteration": "mā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_008.mp3"
         },
@@ -786,6 +1206,10 @@
           "index": 8,
           "text": "نَزَّلَ",
           "translation": "has sent down",
+          "translations": {
+            "en": "has sent down",
+            "id": "menurunkan"
+          },
           "transliteration": "nazzala",
           "audio": "https://audio.qurancdn.com/wbw/067_009_009.mp3"
         },
@@ -793,6 +1217,10 @@
           "index": 9,
           "text": "ٱللَّهُ",
           "translation": "Allah",
+          "translations": {
+            "en": "Allah",
+            "id": "Allah"
+          },
           "transliteration": "l-lahu",
           "audio": "https://audio.qurancdn.com/wbw/067_009_010.mp3"
         },
@@ -800,6 +1228,10 @@
           "index": 10,
           "text": "مِن",
           "translation": "any",
+          "translations": {
+            "en": "any",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_009_011.mp3"
         },
@@ -807,6 +1239,10 @@
           "index": 11,
           "text": "شَىْءٍ",
           "translation": "thing",
+          "translations": {
+            "en": "thing",
+            "id": "sesuatu"
+          },
           "transliteration": "shayin",
           "audio": "https://audio.qurancdn.com/wbw/067_009_012.mp3"
         },
@@ -814,6 +1250,10 @@
           "index": 12,
           "text": "إِنْ",
           "translation": "Not",
+          "translations": {
+            "en": "Not",
+            "id": "tidaklah"
+          },
           "transliteration": "in",
           "audio": "https://audio.qurancdn.com/wbw/067_009_013.mp3"
         },
@@ -821,6 +1261,10 @@
           "index": 13,
           "text": "أَنتُمْ",
           "translation": "you (are)",
+          "translations": {
+            "en": "you (are)",
+            "id": "kamu"
+          },
           "transliteration": "antum",
           "audio": "https://audio.qurancdn.com/wbw/067_009_014.mp3"
         },
@@ -828,6 +1272,10 @@
           "index": 14,
           "text": "إِلَّا",
           "translation": "but",
+          "translations": {
+            "en": "but",
+            "id": "kecuali"
+          },
           "transliteration": "illā",
           "audio": "https://audio.qurancdn.com/wbw/067_009_015.mp3"
         },
@@ -835,6 +1283,10 @@
           "index": 15,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "dalam"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_009_016.mp3"
         },
@@ -842,6 +1294,10 @@
           "index": 16,
           "text": "ضَلَـٰلٍۢ",
           "translation": "error",
+          "translations": {
+            "en": "error",
+            "id": "kesesatan"
+          },
           "transliteration": "ḍalālin",
           "audio": "https://audio.qurancdn.com/wbw/067_009_017.mp3"
         },
@@ -849,6 +1305,10 @@
           "index": 17,
           "text": "كَبِيرٍۢ",
           "translation": "great",
+          "translations": {
+            "en": "great",
+            "id": "besar"
+          },
           "transliteration": "kabīrin",
           "audio": "https://audio.qurancdn.com/wbw/067_009_018.mp3"
         }
@@ -863,11 +1323,19 @@
       "textUthmani": "وَقَالُوا۟ لَوْ كُنَّا نَسْمَعُ أَوْ نَعْقِلُ مَا كُنَّا فِىٓ أَصْحَـٰبِ ٱلسَّعِيرِ",
       "endMarker": "١٠",
       "translation": "And they will say, \"If only we had been listening or reasoning, we would not be among the companions of the Blaze.\"",
+      "translations": {
+        "en": "And they will say, \"If only we had been listening or reasoning, we would not be among the companions of the Blaze.\"",
+        "id": "Dan mereka berkata: \"Sekiranya kami mendengarkan atau memikirkan (peringatan itu) niscaya tidaklah kami termasuk penghuni-penghuni neraka yang menyala-nyala\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "وَقَالُوا۟",
           "translation": "And they will say",
+          "translations": {
+            "en": "And they will say",
+            "id": "dan mereka berkata"
+          },
           "transliteration": "waqālū",
           "audio": "https://audio.qurancdn.com/wbw/067_010_001.mp3"
         },
@@ -875,6 +1343,10 @@
           "index": 1,
           "text": "لَوْ",
           "translation": "If",
+          "translations": {
+            "en": "If",
+            "id": "sekiranya"
+          },
           "transliteration": "law",
           "audio": "https://audio.qurancdn.com/wbw/067_010_002.mp3"
         },
@@ -882,6 +1354,10 @@
           "index": 2,
           "text": "كُنَّا",
           "translation": "we had",
+          "translations": {
+            "en": "we had",
+            "id": "adalah kami"
+          },
           "transliteration": "kunnā",
           "audio": "https://audio.qurancdn.com/wbw/067_010_003.mp3"
         },
@@ -889,6 +1365,10 @@
           "index": 3,
           "text": "نَسْمَعُ",
           "translation": "listened",
+          "translations": {
+            "en": "listened",
+            "id": "kami mendengarkan"
+          },
           "transliteration": "nasmaʿu",
           "audio": "https://audio.qurancdn.com/wbw/067_010_004.mp3"
         },
@@ -896,6 +1376,10 @@
           "index": 4,
           "text": "أَوْ",
           "translation": "or",
+          "translations": {
+            "en": "or",
+            "id": "atau"
+          },
           "transliteration": "aw",
           "audio": "https://audio.qurancdn.com/wbw/067_010_005.mp3"
         },
@@ -903,6 +1387,10 @@
           "index": 5,
           "text": "نَعْقِلُ",
           "translation": "reasoned",
+          "translations": {
+            "en": "reasoned",
+            "id": "kami berakal"
+          },
           "transliteration": "naʿqilu",
           "audio": "https://audio.qurancdn.com/wbw/067_010_006.mp3"
         },
@@ -910,6 +1398,10 @@
           "index": 6,
           "text": "مَا",
           "translation": "not",
+          "translations": {
+            "en": "not",
+            "id": "tidaklah"
+          },
           "transliteration": "mā",
           "audio": "https://audio.qurancdn.com/wbw/067_010_007.mp3"
         },
@@ -917,6 +1409,10 @@
           "index": 7,
           "text": "كُنَّا",
           "translation": "we (would) have been",
+          "translations": {
+            "en": "we (would) have been",
+            "id": "kami"
+          },
           "transliteration": "kunnā",
           "audio": "https://audio.qurancdn.com/wbw/067_010_008.mp3"
         },
@@ -924,6 +1420,10 @@
           "index": 8,
           "text": "فِىٓ",
           "translation": "among",
+          "translations": {
+            "en": "among",
+            "id": "dalam"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_010_009.mp3"
         },
@@ -931,6 +1431,10 @@
           "index": 9,
           "text": "أَصْحَـٰبِ",
           "translation": "(the) companions",
+          "translations": {
+            "en": "(the) companions",
+            "id": "penghuni"
+          },
           "transliteration": "aṣḥābi",
           "audio": "https://audio.qurancdn.com/wbw/067_010_010.mp3"
         },
@@ -938,6 +1442,10 @@
           "index": 10,
           "text": "ٱلسَّعِيرِ",
           "translation": "(of) the Blaze",
+          "translations": {
+            "en": "(of) the Blaze",
+            "id": "neraka yang menyala-nyala"
+          },
           "transliteration": "l-saʿīri",
           "audio": "https://audio.qurancdn.com/wbw/067_010_011.mp3"
         }
@@ -952,11 +1460,19 @@
       "textUthmani": "فَٱعْتَرَفُوا۟ بِذَنۢبِهِمْ فَسُحْقًۭا لِّأَصْحَـٰبِ ٱلسَّعِيرِ",
       "endMarker": "١١",
       "translation": "And they will admit their sin, so [it is] alienation for the companions of the Blaze.",
+      "translations": {
+        "en": "And they will admit their sin, so [it is] alienation for the companions of the Blaze.",
+        "id": "Mereka mengakui dosa mereka. Maka kebinasaanlah bagi penghuni-penghuni neraka yang menyala-nyala."
+      },
       "words": [
         {
           "index": 0,
           "text": "فَٱعْتَرَفُوا۟",
           "translation": "Then they (will) confess",
+          "translations": {
+            "en": "Then they (will) confess",
+            "id": "maka mereka mengakui"
+          },
           "transliteration": "fa-iʿ'tarafū",
           "audio": "https://audio.qurancdn.com/wbw/067_011_001.mp3"
         },
@@ -964,6 +1480,10 @@
           "index": 1,
           "text": "بِذَنۢبِهِمْ",
           "translation": "their sins",
+          "translations": {
+            "en": "their sins",
+            "id": "dengan/akan dosa mereka"
+          },
           "transliteration": "bidhanbihim",
           "audio": "https://audio.qurancdn.com/wbw/067_011_002.mp3"
         },
@@ -971,6 +1491,10 @@
           "index": 2,
           "text": "فَسُحْقًۭا",
           "translation": "so away with",
+          "translations": {
+            "en": "so away with",
+            "id": "maka kebinasaanlah"
+          },
           "transliteration": "fasuḥ'qan",
           "audio": "https://audio.qurancdn.com/wbw/067_011_003.mp3"
         },
@@ -978,6 +1502,10 @@
           "index": 3,
           "text": "لِّأَصْحَـٰبِ",
           "translation": "(the) companions",
+          "translations": {
+            "en": "(the) companions",
+            "id": "bagi penghuni"
+          },
           "transliteration": "li-aṣḥābi",
           "audio": "https://audio.qurancdn.com/wbw/067_011_004.mp3"
         },
@@ -985,6 +1513,10 @@
           "index": 4,
           "text": "ٱلسَّعِيرِ",
           "translation": "(of) the Blaze",
+          "translations": {
+            "en": "(of) the Blaze",
+            "id": "neraka yang menyala-nyala"
+          },
           "transliteration": "l-saʿīri",
           "audio": "https://audio.qurancdn.com/wbw/067_011_005.mp3"
         }
@@ -999,11 +1531,19 @@
       "textUthmani": "إِنَّ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ لَهُم مَّغْفِرَةٌۭ وَأَجْرٌۭ كَبِيرٌۭ",
       "endMarker": "١٢",
       "translation": "Indeed, those who fear their Lord unseen will have forgiveness and great reward.",
+      "translations": {
+        "en": "Indeed, those who fear their Lord unseen will have forgiveness and great reward.",
+        "id": "Sesungguhnya orang-orang yang takut kepada Tuhannya Yang tidak nampak oleh mereka, mereka akan memperoleh ampunan dan pahala yang besar."
+      },
       "words": [
         {
           "index": 0,
           "text": "إِنَّ",
           "translation": "Indeed",
+          "translations": {
+            "en": "Indeed",
+            "id": "sesungguhnya"
+          },
           "transliteration": "inna",
           "audio": "https://audio.qurancdn.com/wbw/067_012_001.mp3"
         },
@@ -1011,6 +1551,10 @@
           "index": 1,
           "text": "ٱلَّذِينَ",
           "translation": "those who",
+          "translations": {
+            "en": "those who",
+            "id": "orang-orang yang"
+          },
           "transliteration": "alladhīna",
           "audio": "https://audio.qurancdn.com/wbw/067_012_002.mp3"
         },
@@ -1018,6 +1562,10 @@
           "index": 2,
           "text": "يَخْشَوْنَ",
           "translation": "fear",
+          "translations": {
+            "en": "fear",
+            "id": "mereka takut"
+          },
           "transliteration": "yakhshawna",
           "audio": "https://audio.qurancdn.com/wbw/067_012_003.mp3"
         },
@@ -1025,6 +1573,10 @@
           "index": 3,
           "text": "رَبَّهُم",
           "translation": "their Lord",
+          "translations": {
+            "en": "their Lord",
+            "id": "Tuhan mereka"
+          },
           "transliteration": "rabbahum",
           "audio": "https://audio.qurancdn.com/wbw/067_012_004.mp3"
         },
@@ -1032,6 +1584,10 @@
           "index": 4,
           "text": "بِٱلْغَيْبِ",
           "translation": "unseen",
+          "translations": {
+            "en": "unseen",
+            "id": "dengan gaib/tidak kelihatan"
+          },
           "transliteration": "bil-ghaybi",
           "audio": "https://audio.qurancdn.com/wbw/067_012_005.mp3"
         },
@@ -1039,6 +1595,10 @@
           "index": 5,
           "text": "لَهُم",
           "translation": "for them",
+          "translations": {
+            "en": "for them",
+            "id": "bagi mereka"
+          },
           "transliteration": "lahum",
           "audio": "https://audio.qurancdn.com/wbw/067_012_006.mp3"
         },
@@ -1046,6 +1606,10 @@
           "index": 6,
           "text": "مَّغْفِرَةٌۭ",
           "translation": "(is) forgiveness",
+          "translations": {
+            "en": "(is) forgiveness",
+            "id": "ampunan"
+          },
           "transliteration": "maghfiratun",
           "audio": "https://audio.qurancdn.com/wbw/067_012_007.mp3"
         },
@@ -1053,6 +1617,10 @@
           "index": 7,
           "text": "وَأَجْرٌۭ",
           "translation": "and a reward",
+          "translations": {
+            "en": "and a reward",
+            "id": "dan pahala"
+          },
           "transliteration": "wa-ajrun",
           "audio": "https://audio.qurancdn.com/wbw/067_012_008.mp3"
         },
@@ -1060,6 +1628,10 @@
           "index": 8,
           "text": "كَبِيرٌۭ",
           "translation": "great",
+          "translations": {
+            "en": "great",
+            "id": "besar"
+          },
           "transliteration": "kabīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_012_009.mp3"
         }
@@ -1074,11 +1646,19 @@
       "textUthmani": "وَأَسِرُّوا۟ قَوْلَكُمْ أَوِ ٱجْهَرُوا۟ بِهِۦٓ ۖ إِنَّهُۥ عَلِيمٌۢ بِذَاتِ ٱلصُّدُورِ",
       "endMarker": "١٣",
       "translation": "And conceal your speech or publicize it; indeed, He is Knowing of that within the breasts.",
+      "translations": {
+        "en": "And conceal your speech or publicize it; indeed, He is Knowing of that within the breasts.",
+        "id": "Dan rahasiakanlah perkataanmu atau lahirkanlah; sesungguhnya Dia Maha Mengetahui segala isi hati."
+      },
       "words": [
         {
           "index": 0,
           "text": "وَأَسِرُّوا۟",
           "translation": "And conceal",
+          "translations": {
+            "en": "And conceal",
+            "id": "dan rahasiakanlah"
+          },
           "transliteration": "wa-asirrū",
           "audio": "https://audio.qurancdn.com/wbw/067_013_001.mp3"
         },
@@ -1086,6 +1666,10 @@
           "index": 1,
           "text": "قَوْلَكُمْ",
           "translation": "your speech",
+          "translations": {
+            "en": "your speech",
+            "id": "perkataanmu"
+          },
           "transliteration": "qawlakum",
           "audio": "https://audio.qurancdn.com/wbw/067_013_002.mp3"
         },
@@ -1093,6 +1677,10 @@
           "index": 2,
           "text": "أَوِ",
           "translation": "or",
+          "translations": {
+            "en": "or",
+            "id": "atau"
+          },
           "transliteration": "awi",
           "audio": "https://audio.qurancdn.com/wbw/067_013_003.mp3"
         },
@@ -1100,6 +1688,10 @@
           "index": 3,
           "text": "ٱجْهَرُوا۟",
           "translation": "proclaim",
+          "translations": {
+            "en": "proclaim",
+            "id": "keraskanlah"
+          },
           "transliteration": "ij'harū",
           "audio": "https://audio.qurancdn.com/wbw/067_013_004.mp3"
         },
@@ -1107,6 +1699,10 @@
           "index": 4,
           "text": "بِهِۦٓ ۖ",
           "translation": "it",
+          "translations": {
+            "en": "it",
+            "id": "dengannya"
+          },
           "transliteration": "bihi",
           "audio": "https://audio.qurancdn.com/wbw/067_013_005.mp3"
         },
@@ -1114,6 +1710,10 @@
           "index": 5,
           "text": "إِنَّهُۥ",
           "translation": "Indeed, He",
+          "translations": {
+            "en": "Indeed, He",
+            "id": "sesungguhnya Dia"
+          },
           "transliteration": "innahu",
           "audio": "https://audio.qurancdn.com/wbw/067_013_007.mp3"
         },
@@ -1121,6 +1721,10 @@
           "index": 6,
           "text": "عَلِيمٌۢ",
           "translation": "(is the) All-Knower",
+          "translations": {
+            "en": "(is the) All-Knower",
+            "id": "Maha mengetahui"
+          },
           "transliteration": "ʿalīmun",
           "audio": "https://audio.qurancdn.com/wbw/067_013_008.mp3"
         },
@@ -1128,6 +1732,10 @@
           "index": 7,
           "text": "بِذَاتِ",
           "translation": "of what (is in)",
+          "translations": {
+            "en": "of what (is in)",
+            "id": "dengan yang ada"
+          },
           "transliteration": "bidhāti",
           "audio": "https://audio.qurancdn.com/wbw/067_013_009.mp3"
         },
@@ -1135,6 +1743,10 @@
           "index": 8,
           "text": "ٱلصُّدُورِ",
           "translation": "the breasts",
+          "translations": {
+            "en": "the breasts",
+            "id": "dada"
+          },
           "transliteration": "l-ṣudūri",
           "audio": "https://audio.qurancdn.com/wbw/067_013_010.mp3"
         }
@@ -1149,11 +1761,19 @@
       "textUthmani": "أَلَا يَعْلَمُ مَنْ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلْخَبِيرُ",
       "endMarker": "١٤",
       "translation": "Does He who created not know, while He is the Subtle, the Acquainted?",
+      "translations": {
+        "en": "Does He who created not know, while He is the Subtle, the Acquainted?",
+        "id": "Apakah Allah Yang menciptakan itu tidak mengetahui (yang kamu lahirkan atau rahasiakan); dan Dia Maha Halus lagi Maha Mengetahui?"
+      },
       "words": [
         {
           "index": 0,
           "text": "أَلَا",
           "translation": "Does not",
+          "translations": {
+            "en": "Does not",
+            "id": "apakah tidak/tidakkah"
+          },
           "transliteration": "alā",
           "audio": "https://audio.qurancdn.com/wbw/067_014_001.mp3"
         },
@@ -1161,6 +1781,10 @@
           "index": 1,
           "text": "يَعْلَمُ",
           "translation": "know",
+          "translations": {
+            "en": "know",
+            "id": "Dia mengetahui"
+          },
           "transliteration": "yaʿlamu",
           "audio": "https://audio.qurancdn.com/wbw/067_014_002.mp3"
         },
@@ -1168,6 +1792,10 @@
           "index": 2,
           "text": "مَنْ",
           "translation": "(the One) Who",
+          "translations": {
+            "en": "(the One) Who",
+            "id": "siapa/apa"
+          },
           "transliteration": "man",
           "audio": "https://audio.qurancdn.com/wbw/067_014_003.mp3"
         },
@@ -1175,6 +1803,10 @@
           "index": 3,
           "text": "خَلَقَ",
           "translation": "created",
+          "translations": {
+            "en": "created",
+            "id": "Dia ciptakan"
+          },
           "transliteration": "khalaqa",
           "audio": "https://audio.qurancdn.com/wbw/067_014_004.mp3"
         },
@@ -1182,6 +1814,10 @@
           "index": 4,
           "text": "وَهُوَ",
           "translation": "And He",
+          "translations": {
+            "en": "And He",
+            "id": "dan Dia"
+          },
           "transliteration": "wahuwa",
           "audio": "https://audio.qurancdn.com/wbw/067_014_005.mp3"
         },
@@ -1189,6 +1825,10 @@
           "index": 5,
           "text": "ٱللَّطِيفُ",
           "translation": "(is) the Subtle",
+          "translations": {
+            "en": "(is) the Subtle",
+            "id": "Maha Halus"
+          },
           "transliteration": "l-laṭīfu",
           "audio": "https://audio.qurancdn.com/wbw/067_014_006.mp3"
         },
@@ -1196,6 +1836,10 @@
           "index": 6,
           "text": "ٱلْخَبِيرُ",
           "translation": "the All-Aware",
+          "translations": {
+            "en": "the All-Aware",
+            "id": "Maha mengetahui"
+          },
           "transliteration": "l-khabīru",
           "audio": "https://audio.qurancdn.com/wbw/067_014_007.mp3"
         }
@@ -1210,11 +1854,19 @@
       "textUthmani": "هُوَ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولًۭا فَٱمْشُوا۟ فِى مَنَاكِبِهَا وَكُلُوا۟ مِن رِّزْقِهِۦ ۖ وَإِلَيْهِ ٱلنُّشُورُ",
       "endMarker": "١٥",
       "translation": "It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.",
+      "translations": {
+        "en": "It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.",
+        "id": "Dialah Yang menjadikan bumi itu mudah bagi kamu, maka berjalanlah di segala penjurunya dan makanlah sebahagian dari rezeki-Nya. Dan hanya kepada-Nya-lah kamu (kembali setelah) dibangkitkan."
+      },
       "words": [
         {
           "index": 0,
           "text": "هُوَ",
           "translation": "He",
+          "translations": {
+            "en": "He",
+            "id": "dan Dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_015_001.mp3"
         },
@@ -1222,6 +1874,10 @@
           "index": 1,
           "text": "ٱلَّذِى",
           "translation": "(is) the One Who",
+          "translations": {
+            "en": "(is) the One Who",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_015_002.mp3"
         },
@@ -1229,6 +1885,10 @@
           "index": 2,
           "text": "جَعَلَ",
           "translation": "made",
+          "translations": {
+            "en": "made",
+            "id": "menjadikan"
+          },
           "transliteration": "jaʿala",
           "audio": "https://audio.qurancdn.com/wbw/067_015_003.mp3"
         },
@@ -1236,6 +1896,10 @@
           "index": 3,
           "text": "لَكُمُ",
           "translation": "for you",
+          "translations": {
+            "en": "for you",
+            "id": "bagi kalian"
+          },
           "transliteration": "lakumu",
           "audio": "https://audio.qurancdn.com/wbw/067_015_004.mp3"
         },
@@ -1243,6 +1907,10 @@
           "index": 4,
           "text": "ٱلْأَرْضَ",
           "translation": "the earth",
+          "translations": {
+            "en": "the earth",
+            "id": "bumi"
+          },
           "transliteration": "l-arḍa",
           "audio": "https://audio.qurancdn.com/wbw/067_015_005.mp3"
         },
@@ -1250,6 +1918,10 @@
           "index": 5,
           "text": "ذَلُولًۭا",
           "translation": "subservient",
+          "translations": {
+            "en": "subservient",
+            "id": "mudah dipergunakan"
+          },
           "transliteration": "dhalūlan",
           "audio": "https://audio.qurancdn.com/wbw/067_015_006.mp3"
         },
@@ -1257,6 +1929,10 @@
           "index": 6,
           "text": "فَٱمْشُوا۟",
           "translation": "so walk",
+          "translations": {
+            "en": "so walk",
+            "id": "maka berjalanlah kamu"
+          },
           "transliteration": "fa-im'shū",
           "audio": "https://audio.qurancdn.com/wbw/067_015_007.mp3"
         },
@@ -1264,6 +1940,10 @@
           "index": 7,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "di/pada"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_015_008.mp3"
         },
@@ -1271,6 +1951,10 @@
           "index": 8,
           "text": "مَنَاكِبِهَا",
           "translation": "(the) paths thereof",
+          "translations": {
+            "en": "(the) paths thereof",
+            "id": "segala penjuru"
+          },
           "transliteration": "manākibihā",
           "audio": "https://audio.qurancdn.com/wbw/067_015_009.mp3"
         },
@@ -1278,6 +1962,10 @@
           "index": 9,
           "text": "وَكُلُوا۟",
           "translation": "and eat",
+          "translations": {
+            "en": "and eat",
+            "id": "dan makanlah"
+          },
           "transliteration": "wakulū",
           "audio": "https://audio.qurancdn.com/wbw/067_015_010.mp3"
         },
@@ -1285,6 +1973,10 @@
           "index": 10,
           "text": "مِن",
           "translation": "of",
+          "translations": {
+            "en": "of",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_015_011.mp3"
         },
@@ -1292,6 +1984,10 @@
           "index": 11,
           "text": "رِّزْقِهِۦ ۖ",
           "translation": "His provision",
+          "translations": {
+            "en": "His provision",
+            "id": "sebagian rizki-Nya"
+          },
           "transliteration": "riz'qihi",
           "audio": "https://audio.qurancdn.com/wbw/067_015_012.mp3"
         },
@@ -1299,6 +1995,10 @@
           "index": 12,
           "text": "وَإِلَيْهِ",
           "translation": "and to Him",
+          "translations": {
+            "en": "and to Him",
+            "id": "dan kepada-Nya"
+          },
           "transliteration": "wa-ilayhi",
           "audio": "https://audio.qurancdn.com/wbw/067_015_014.mp3"
         },
@@ -1306,6 +2006,10 @@
           "index": 13,
           "text": "ٱلنُّشُورُ",
           "translation": "(is) the Resurrection",
+          "translations": {
+            "en": "(is) the Resurrection",
+            "id": "dibangkitkan kembali"
+          },
           "transliteration": "l-nushūru",
           "audio": "https://audio.qurancdn.com/wbw/067_015_015.mp3"
         }
@@ -1320,11 +2024,19 @@
       "textUthmani": "ءَأَمِنتُم مَّن فِى ٱلسَّمَآءِ أَن يَخْسِفَ بِكُمُ ٱلْأَرْضَ فَإِذَا هِىَ تَمُورُ",
       "endMarker": "١٦",
       "translation": "Do you feel secure that He who [holds authority] in the heaven would not cause the earth to swallow you and suddenly it would sway?",
+      "translations": {
+        "en": "Do you feel secure that He who [holds authority] in the heaven would not cause the earth to swallow you and suddenly it would sway?",
+        "id": "Apakah kamu merasa aman terhadap Allah yang (berkuasa) di langit bahwa Dia akan menjungkir balikkan bumi bersama kamu, sehingga dengan tiba-tiba bumi itu bergoncang?,"
+      },
       "words": [
         {
           "index": 0,
           "text": "ءَأَمِنتُم",
           "translation": "Do you feel secure",
+          "translations": {
+            "en": "Do you feel secure",
+            "id": "apakah kamu merasa aman"
+          },
           "transliteration": "a-amintum",
           "audio": "https://audio.qurancdn.com/wbw/067_016_001.mp3"
         },
@@ -1332,6 +2044,10 @@
           "index": 1,
           "text": "مَّن",
           "translation": "(from Him) Who",
+          "translations": {
+            "en": "(from Him) Who",
+            "id": "siapa (Allah)"
+          },
           "transliteration": "man",
           "audio": "https://audio.qurancdn.com/wbw/067_016_002.mp3"
         },
@@ -1339,6 +2055,10 @@
           "index": 2,
           "text": "فِى",
           "translation": "(is) in",
+          "translations": {
+            "en": "(is) in",
+            "id": "di"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_016_003.mp3"
         },
@@ -1346,6 +2066,10 @@
           "index": 3,
           "text": "ٱلسَّمَآءِ",
           "translation": "the heaven",
+          "translations": {
+            "en": "the heaven",
+            "id": "langit"
+          },
           "transliteration": "l-samāi",
           "audio": "https://audio.qurancdn.com/wbw/067_016_004.mp3"
         },
@@ -1353,6 +2077,10 @@
           "index": 4,
           "text": "أَن",
           "translation": "not",
+          "translations": {
+            "en": "not",
+            "id": "bahwa"
+          },
           "transliteration": "an",
           "audio": "https://audio.qurancdn.com/wbw/067_016_005.mp3"
         },
@@ -1360,6 +2088,10 @@
           "index": 5,
           "text": "يَخْسِفَ",
           "translation": "He will cause to swallow",
+          "translations": {
+            "en": "He will cause to swallow",
+            "id": "Dia akan membenamkan"
+          },
           "transliteration": "yakhsifa",
           "audio": "https://audio.qurancdn.com/wbw/067_016_006.mp3"
         },
@@ -1367,6 +2099,10 @@
           "index": 6,
           "text": "بِكُمُ",
           "translation": "you",
+          "translations": {
+            "en": "you",
+            "id": "dengan/untuk kalian"
+          },
           "transliteration": "bikumu",
           "audio": "https://audio.qurancdn.com/wbw/067_016_007.mp3"
         },
@@ -1374,6 +2110,10 @@
           "index": 7,
           "text": "ٱلْأَرْضَ",
           "translation": "the earth",
+          "translations": {
+            "en": "the earth",
+            "id": "bumi"
+          },
           "transliteration": "l-arḍa",
           "audio": "https://audio.qurancdn.com/wbw/067_016_008.mp3"
         },
@@ -1381,6 +2121,10 @@
           "index": 8,
           "text": "فَإِذَا",
           "translation": "when",
+          "translations": {
+            "en": "when",
+            "id": "maka tiba-tiba"
+          },
           "transliteration": "fa-idhā",
           "audio": "https://audio.qurancdn.com/wbw/067_016_009.mp3"
         },
@@ -1388,6 +2132,10 @@
           "index": 9,
           "text": "هِىَ",
           "translation": "it",
+          "translations": {
+            "en": "it",
+            "id": "ia/bumi"
+          },
           "transliteration": "hiya",
           "audio": "https://audio.qurancdn.com/wbw/067_016_010.mp3"
         },
@@ -1395,6 +2143,10 @@
           "index": 10,
           "text": "تَمُورُ",
           "translation": "sways",
+          "translations": {
+            "en": "sways",
+            "id": "bergoncang"
+          },
           "transliteration": "tamūru",
           "audio": "https://audio.qurancdn.com/wbw/067_016_011.mp3"
         }
@@ -1409,11 +2161,19 @@
       "textUthmani": "أَمْ أَمِنتُم مَّن فِى ٱلسَّمَآءِ أَن يُرْسِلَ عَلَيْكُمْ حَاصِبًۭا ۖ فَسَتَعْلَمُونَ كَيْفَ نَذِيرِ",
       "endMarker": "١٧",
       "translation": "Or do you feel secure that He who [holds authority] in the heaven would not send against you a storm of stones? Then you would know how [severe] was My warning.",
+      "translations": {
+        "en": "Or do you feel secure that He who [holds authority] in the heaven would not send against you a storm of stones? Then you would know how [severe] was My warning.",
+        "id": "atau apakah kamu merasa aman terhadap Allah yang (berkuasa) di langit bahwa Dia akan mengirimkan badai yang berbatu. Maka kelak kamu akan mengetahui bagaimana (akibat mendustakan) peringatan-Ku?"
+      },
       "words": [
         {
           "index": 0,
           "text": "أَمْ",
           "translation": "Or",
+          "translations": {
+            "en": "Or",
+            "id": "atau"
+          },
           "transliteration": "am",
           "audio": "https://audio.qurancdn.com/wbw/067_017_001.mp3"
         },
@@ -1421,6 +2181,10 @@
           "index": 1,
           "text": "أَمِنتُم",
           "translation": "do you feel secure",
+          "translations": {
+            "en": "do you feel secure",
+            "id": "kamu merasa aman"
+          },
           "transliteration": "amintum",
           "audio": "https://audio.qurancdn.com/wbw/067_017_002.mp3"
         },
@@ -1428,6 +2192,10 @@
           "index": 2,
           "text": "مَّن",
           "translation": "(from Him) Who",
+          "translations": {
+            "en": "(from Him) Who",
+            "id": "siapa (Allah)"
+          },
           "transliteration": "man",
           "audio": "https://audio.qurancdn.com/wbw/067_017_003.mp3"
         },
@@ -1435,6 +2203,10 @@
           "index": 3,
           "text": "فِى",
           "translation": "(is) in",
+          "translations": {
+            "en": "(is) in",
+            "id": "di"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_017_004.mp3"
         },
@@ -1442,6 +2214,10 @@
           "index": 4,
           "text": "ٱلسَّمَآءِ",
           "translation": "the heaven",
+          "translations": {
+            "en": "the heaven",
+            "id": "langit"
+          },
           "transliteration": "l-samāi",
           "audio": "https://audio.qurancdn.com/wbw/067_017_005.mp3"
         },
@@ -1449,6 +2225,10 @@
           "index": 5,
           "text": "أَن",
           "translation": "that",
+          "translations": {
+            "en": "that",
+            "id": "bahwa"
+          },
           "transliteration": "an",
           "audio": "https://audio.qurancdn.com/wbw/067_017_006.mp3"
         },
@@ -1456,6 +2236,10 @@
           "index": 6,
           "text": "يُرْسِلَ",
           "translation": "He will send",
+          "translations": {
+            "en": "He will send",
+            "id": "Dia akan mengirimkan"
+          },
           "transliteration": "yur'sila",
           "audio": "https://audio.qurancdn.com/wbw/067_017_007.mp3"
         },
@@ -1463,6 +2247,10 @@
           "index": 7,
           "text": "عَلَيْكُمْ",
           "translation": "against you",
+          "translations": {
+            "en": "against you",
+            "id": "atas kalian"
+          },
           "transliteration": "ʿalaykum",
           "audio": "https://audio.qurancdn.com/wbw/067_017_008.mp3"
         },
@@ -1470,6 +2258,10 @@
           "index": 8,
           "text": "حَاصِبًۭا ۖ",
           "translation": "a storm of stones",
+          "translations": {
+            "en": "a storm of stones",
+            "id": "angin yang mengandung batu"
+          },
           "transliteration": "ḥāṣiban",
           "audio": "https://audio.qurancdn.com/wbw/067_017_009.mp3"
         },
@@ -1477,6 +2269,10 @@
           "index": 9,
           "text": "فَسَتَعْلَمُونَ",
           "translation": "Then you would know",
+          "translations": {
+            "en": "Then you would know",
+            "id": "maka kelak kamu akan mengetahui"
+          },
           "transliteration": "fasataʿlamūna",
           "audio": "https://audio.qurancdn.com/wbw/067_017_011.mp3"
         },
@@ -1484,6 +2280,10 @@
           "index": 10,
           "text": "كَيْفَ",
           "translation": "how",
+          "translations": {
+            "en": "how",
+            "id": "bagaimana"
+          },
           "transliteration": "kayfa",
           "audio": "https://audio.qurancdn.com/wbw/067_017_012.mp3"
         },
@@ -1491,6 +2291,10 @@
           "index": 11,
           "text": "نَذِيرِ",
           "translation": "(was) My warning",
+          "translations": {
+            "en": "(was) My warning",
+            "id": "peringatan-Ku"
+          },
           "transliteration": "nadhīri",
           "audio": "https://audio.qurancdn.com/wbw/067_017_013.mp3"
         }
@@ -1505,11 +2309,19 @@
       "textUthmani": "وَلَقَدْ كَذَّبَ ٱلَّذِينَ مِن قَبْلِهِمْ فَكَيْفَ كَانَ نَكِيرِ",
       "endMarker": "١٨",
       "translation": "And already had those before them denied, and how [terrible] was My reproach.",
+      "translations": {
+        "en": "And already had those before them denied, and how [terrible] was My reproach.",
+        "id": "Dan sesungguhnya orang-orang yang sebelum mereka telah mendustakan (rasul-rasul-Nya). Maka alangkah hebatnya kemurkaan-Ku."
+      },
       "words": [
         {
           "index": 0,
           "text": "وَلَقَدْ",
           "translation": "And indeed",
+          "translations": {
+            "en": "And indeed",
+            "id": "dan sesungguhnya"
+          },
           "transliteration": "walaqad",
           "audio": "https://audio.qurancdn.com/wbw/067_018_001.mp3"
         },
@@ -1517,6 +2329,10 @@
           "index": 1,
           "text": "كَذَّبَ",
           "translation": "denied",
+          "translations": {
+            "en": "denied",
+            "id": "telah mendustakan"
+          },
           "transliteration": "kadhaba",
           "audio": "https://audio.qurancdn.com/wbw/067_018_002.mp3"
         },
@@ -1524,6 +2340,10 @@
           "index": 2,
           "text": "ٱلَّذِينَ",
           "translation": "those",
+          "translations": {
+            "en": "those",
+            "id": "orang-orang yang"
+          },
           "transliteration": "alladhīna",
           "audio": "https://audio.qurancdn.com/wbw/067_018_003.mp3"
         },
@@ -1531,6 +2351,10 @@
           "index": 3,
           "text": "مِن",
           "translation": "from",
+          "translations": {
+            "en": "from",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_018_004.mp3"
         },
@@ -1538,6 +2362,10 @@
           "index": 4,
           "text": "قَبْلِهِمْ",
           "translation": "before them",
+          "translations": {
+            "en": "before them",
+            "id": "sebelum mereka"
+          },
           "transliteration": "qablihim",
           "audio": "https://audio.qurancdn.com/wbw/067_018_005.mp3"
         },
@@ -1545,6 +2373,10 @@
           "index": 5,
           "text": "فَكَيْفَ",
           "translation": "and how",
+          "translations": {
+            "en": "and how",
+            "id": "maka bagaimana"
+          },
           "transliteration": "fakayfa",
           "audio": "https://audio.qurancdn.com/wbw/067_018_006.mp3"
         },
@@ -1552,6 +2384,10 @@
           "index": 6,
           "text": "كَانَ",
           "translation": "was",
+          "translations": {
+            "en": "was",
+            "id": "adalah ia"
+          },
           "transliteration": "kāna",
           "audio": "https://audio.qurancdn.com/wbw/067_018_007.mp3"
         },
@@ -1559,6 +2395,10 @@
           "index": 7,
           "text": "نَكِيرِ",
           "translation": "My rejection",
+          "translations": {
+            "en": "My rejection",
+            "id": "celaan-Ku/kemurkaan-Ku"
+          },
           "transliteration": "nakīri",
           "audio": "https://audio.qurancdn.com/wbw/067_018_008.mp3"
         }
@@ -1573,11 +2413,19 @@
       "textUthmani": "أَوَلَمْ يَرَوْا۟ إِلَى ٱلطَّيْرِ فَوْقَهُمْ صَـٰٓفَّـٰتٍۢ وَيَقْبِضْنَ ۚ مَا يُمْسِكُهُنَّ إِلَّا ٱلرَّحْمَـٰنُ ۚ إِنَّهُۥ بِكُلِّ شَىْءٍۭ بَصِيرٌ",
       "endMarker": "١٩",
       "translation": "Do they not see the birds above them with wings outspread and [sometimes] folded in? None holds them [aloft] except the Most Merciful. Indeed He is, of all things, Seeing.",
+      "translations": {
+        "en": "Do they not see the birds above them with wings outspread and [sometimes] folded in? None holds them [aloft] except the Most Merciful. Indeed He is, of all things, Seeing.",
+        "id": "Dan apakah mereka tidak memperhatikan burung-burung yang mengembangkan dan mengatupkan sayapnya di atas mereka? Tidak ada yang menahannya (di udara) selain Yang Maha Pemurah. Sesungguhnya Dia Maha Melihat segala sesuatu."
+      },
       "words": [
         {
           "index": 0,
           "text": "أَوَلَمْ",
           "translation": "Do not",
+          "translations": {
+            "en": "Do not",
+            "id": "ataukah tidak"
+          },
           "transliteration": "awalam",
           "audio": "https://audio.qurancdn.com/wbw/067_019_001.mp3"
         },
@@ -1585,6 +2433,10 @@
           "index": 1,
           "text": "يَرَوْا۟",
           "translation": "they see",
+          "translations": {
+            "en": "they see",
+            "id": "mereka memperhatikan"
+          },
           "transliteration": "yaraw",
           "audio": "https://audio.qurancdn.com/wbw/067_019_002.mp3"
         },
@@ -1592,6 +2444,10 @@
           "index": 2,
           "text": "إِلَى",
           "translation": "[to]",
+          "translations": {
+            "en": "[to]",
+            "id": "kepada"
+          },
           "transliteration": "ilā",
           "audio": "https://audio.qurancdn.com/wbw/067_019_003.mp3"
         },
@@ -1599,6 +2455,10 @@
           "index": 3,
           "text": "ٱلطَّيْرِ",
           "translation": "the birds",
+          "translations": {
+            "en": "the birds",
+            "id": "burung"
+          },
           "transliteration": "l-ṭayri",
           "audio": "https://audio.qurancdn.com/wbw/067_019_004.mp3"
         },
@@ -1606,6 +2466,10 @@
           "index": 4,
           "text": "فَوْقَهُمْ",
           "translation": "above them",
+          "translations": {
+            "en": "above them",
+            "id": "di atas mereka"
+          },
           "transliteration": "fawqahum",
           "audio": "https://audio.qurancdn.com/wbw/067_019_005.mp3"
         },
@@ -1613,6 +2477,10 @@
           "index": 5,
           "text": "صَـٰٓفَّـٰتٍۢ",
           "translation": "spreading (their wings)",
+          "translations": {
+            "en": "spreading (their wings)",
+            "id": "mengembangkan sayap"
+          },
           "transliteration": "ṣāffātin",
           "audio": "https://audio.qurancdn.com/wbw/067_019_006.mp3"
         },
@@ -1620,6 +2488,10 @@
           "index": 6,
           "text": "وَيَقْبِضْنَ ۚ",
           "translation": "and folding",
+          "translations": {
+            "en": "and folding",
+            "id": "dan ia mengatupkannya"
+          },
           "transliteration": "wayaqbiḍ'na",
           "audio": "https://audio.qurancdn.com/wbw/067_019_007.mp3"
         },
@@ -1627,6 +2499,10 @@
           "index": 7,
           "text": "مَا",
           "translation": "Not",
+          "translations": {
+            "en": "Not",
+            "id": "tidak ada"
+          },
           "transliteration": "mā",
           "audio": "https://audio.qurancdn.com/wbw/067_019_009.mp3"
         },
@@ -1634,6 +2510,10 @@
           "index": 8,
           "text": "يُمْسِكُهُنَّ",
           "translation": "holds them",
+          "translations": {
+            "en": "holds them",
+            "id": "yang menahan mereka"
+          },
           "transliteration": "yum'sikuhunna",
           "audio": "https://audio.qurancdn.com/wbw/067_019_010.mp3"
         },
@@ -1641,6 +2521,10 @@
           "index": 9,
           "text": "إِلَّا",
           "translation": "except",
+          "translations": {
+            "en": "except",
+            "id": "kecuali"
+          },
           "transliteration": "illā",
           "audio": "https://audio.qurancdn.com/wbw/067_019_011.mp3"
         },
@@ -1648,6 +2532,10 @@
           "index": 10,
           "text": "ٱلرَّحْمَـٰنُ ۚ",
           "translation": "the Most Gracious",
+          "translations": {
+            "en": "the Most Gracious",
+            "id": "Maha Pengasih"
+          },
           "transliteration": "l-raḥmānu",
           "audio": "https://audio.qurancdn.com/wbw/067_019_012.mp3"
         },
@@ -1655,6 +2543,10 @@
           "index": 11,
           "text": "إِنَّهُۥ",
           "translation": "Indeed, He",
+          "translations": {
+            "en": "Indeed, He",
+            "id": "sesungguhnya Dia"
+          },
           "transliteration": "innahu",
           "audio": "https://audio.qurancdn.com/wbw/067_019_014.mp3"
         },
@@ -1662,6 +2554,10 @@
           "index": 12,
           "text": "بِكُلِّ",
           "translation": "(is) of every",
+          "translations": {
+            "en": "(is) of every",
+            "id": "dengan segala"
+          },
           "transliteration": "bikulli",
           "audio": "https://audio.qurancdn.com/wbw/067_019_015.mp3"
         },
@@ -1669,6 +2565,10 @@
           "index": 13,
           "text": "شَىْءٍۭ",
           "translation": "thing",
+          "translations": {
+            "en": "thing",
+            "id": "sesuatu"
+          },
           "transliteration": "shayin",
           "audio": "https://audio.qurancdn.com/wbw/067_019_016.mp3"
         },
@@ -1676,6 +2576,10 @@
           "index": 14,
           "text": "بَصِيرٌ",
           "translation": "All-Seer",
+          "translations": {
+            "en": "All-Seer",
+            "id": "Maha melihat"
+          },
           "transliteration": "baṣīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_019_017.mp3"
         }
@@ -1690,11 +2594,19 @@
       "textUthmani": "أَمَّنْ هَـٰذَا ٱلَّذِى هُوَ جُندٌۭ لَّكُمْ يَنصُرُكُم مِّن دُونِ ٱلرَّحْمَـٰنِ ۚ إِنِ ٱلْكَـٰفِرُونَ إِلَّا فِى غُرُورٍ",
       "endMarker": "٢٠",
       "translation": "Or who is it that could be an army for you to aid you other than the Most Merciful? The disbelievers are not but in delusion.",
+      "translations": {
+        "en": "Or who is it that could be an army for you to aid you other than the Most Merciful? The disbelievers are not but in delusion.",
+        "id": "Atau siapakah dia yang menjadi tentara bagimu yang akan menolongmu selain daripada Allah Yang Maha Pemurah? Orang-orang kafir itu tidak lain hanyalah dalam (keadaan) tertipu."
+      },
       "words": [
         {
           "index": 0,
           "text": "أَمَّنْ",
           "translation": "Who is",
+          "translations": {
+            "en": "Who is",
+            "id": "atau siapakah"
+          },
           "transliteration": "amman",
           "audio": "https://audio.qurancdn.com/wbw/067_020_001.mp3"
         },
@@ -1702,6 +2614,10 @@
           "index": 1,
           "text": "هَـٰذَا",
           "translation": "this",
+          "translations": {
+            "en": "this",
+            "id": "ini"
+          },
           "transliteration": "hādhā",
           "audio": "https://audio.qurancdn.com/wbw/067_020_002.mp3"
         },
@@ -1709,6 +2625,10 @@
           "index": 2,
           "text": "ٱلَّذِى",
           "translation": "the one",
+          "translations": {
+            "en": "the one",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_020_003.mp3"
         },
@@ -1716,6 +2636,10 @@
           "index": 3,
           "text": "هُوَ",
           "translation": "he",
+          "translations": {
+            "en": "he",
+            "id": "dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_020_004.mp3"
         },
@@ -1723,6 +2647,10 @@
           "index": 4,
           "text": "جُندٌۭ",
           "translation": "(is) an army",
+          "translations": {
+            "en": "(is) an army",
+            "id": "bala tentara"
+          },
           "transliteration": "jundun",
           "audio": "https://audio.qurancdn.com/wbw/067_020_005.mp3"
         },
@@ -1730,6 +2658,10 @@
           "index": 5,
           "text": "لَّكُمْ",
           "translation": "for you",
+          "translations": {
+            "en": "for you",
+            "id": "bagi kalian"
+          },
           "transliteration": "lakum",
           "audio": "https://audio.qurancdn.com/wbw/067_020_006.mp3"
         },
@@ -1737,6 +2669,10 @@
           "index": 6,
           "text": "يَنصُرُكُم",
           "translation": "to help you",
+          "translations": {
+            "en": "to help you",
+            "id": "dia menolongmu"
+          },
           "transliteration": "yanṣurukum",
           "audio": "https://audio.qurancdn.com/wbw/067_020_007.mp3"
         },
@@ -1744,6 +2680,10 @@
           "index": 7,
           "text": "مِّن",
           "translation": "from",
+          "translations": {
+            "en": "from",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_020_008.mp3"
         },
@@ -1751,6 +2691,10 @@
           "index": 8,
           "text": "دُونِ",
           "translation": "besides",
+          "translations": {
+            "en": "besides",
+            "id": "selain"
+          },
           "transliteration": "dūni",
           "audio": "https://audio.qurancdn.com/wbw/067_020_009.mp3"
         },
@@ -1758,6 +2702,10 @@
           "index": 9,
           "text": "ٱلرَّحْمَـٰنِ ۚ",
           "translation": "the Most Gracious",
+          "translations": {
+            "en": "the Most Gracious",
+            "id": "Maha Pengasih"
+          },
           "transliteration": "l-raḥmāni",
           "audio": "https://audio.qurancdn.com/wbw/067_020_010.mp3"
         },
@@ -1765,6 +2713,10 @@
           "index": 10,
           "text": "إِنِ",
           "translation": "Not",
+          "translations": {
+            "en": "Not",
+            "id": "tidaklah"
+          },
           "transliteration": "ini",
           "audio": "https://audio.qurancdn.com/wbw/067_020_012.mp3"
         },
@@ -1772,6 +2724,10 @@
           "index": 11,
           "text": "ٱلْكَـٰفِرُونَ",
           "translation": "(are) the disbelievers",
+          "translations": {
+            "en": "(are) the disbelievers",
+            "id": "orang-orang kafir"
+          },
           "transliteration": "l-kāfirūna",
           "audio": "https://audio.qurancdn.com/wbw/067_020_013.mp3"
         },
@@ -1779,6 +2735,10 @@
           "index": 12,
           "text": "إِلَّا",
           "translation": "but",
+          "translations": {
+            "en": "but",
+            "id": "kecuali"
+          },
           "transliteration": "illā",
           "audio": "https://audio.qurancdn.com/wbw/067_020_014.mp3"
         },
@@ -1786,6 +2746,10 @@
           "index": 13,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "dalam"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_020_015.mp3"
         },
@@ -1793,6 +2757,10 @@
           "index": 14,
           "text": "غُرُورٍ",
           "translation": "delusion",
+          "translations": {
+            "en": "delusion",
+            "id": "keadaan tertipu"
+          },
           "transliteration": "ghurūrin",
           "audio": "https://audio.qurancdn.com/wbw/067_020_016.mp3"
         }
@@ -1807,11 +2775,19 @@
       "textUthmani": "أَمَّنْ هَـٰذَا ٱلَّذِى يَرْزُقُكُمْ إِنْ أَمْسَكَ رِزْقَهُۥ ۚ بَل لَّجُّوا۟ فِى عُتُوٍّۢ وَنُفُورٍ",
       "endMarker": "٢١",
       "translation": "Or who is it that could provide for you if He withheld His provision? But they have persisted in insolence and aversion.",
+      "translations": {
+        "en": "Or who is it that could provide for you if He withheld His provision? But they have persisted in insolence and aversion.",
+        "id": "Atau siapakah dia yang memberi kamu rezeki jika Allah menahan rezeki-Nya? Sebenarnya mereka terus menerus dalam kesombongan dan menjauhkan diri?"
+      },
       "words": [
         {
           "index": 0,
           "text": "أَمَّنْ",
           "translation": "Who is",
+          "translations": {
+            "en": "Who is",
+            "id": "atau siapakah"
+          },
           "transliteration": "amman",
           "audio": "https://audio.qurancdn.com/wbw/067_021_001.mp3"
         },
@@ -1819,6 +2795,10 @@
           "index": 1,
           "text": "هَـٰذَا",
           "translation": "this",
+          "translations": {
+            "en": "this",
+            "id": "ini"
+          },
           "transliteration": "hādhā",
           "audio": "https://audio.qurancdn.com/wbw/067_021_002.mp3"
         },
@@ -1826,6 +2806,10 @@
           "index": 2,
           "text": "ٱلَّذِى",
           "translation": "the one",
+          "translations": {
+            "en": "the one",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_021_003.mp3"
         },
@@ -1833,6 +2817,10 @@
           "index": 3,
           "text": "يَرْزُقُكُمْ",
           "translation": "to provide you",
+          "translations": {
+            "en": "to provide you",
+            "id": "memberi rezeki kamu"
+          },
           "transliteration": "yarzuqukum",
           "audio": "https://audio.qurancdn.com/wbw/067_021_004.mp3"
         },
@@ -1840,6 +2828,10 @@
           "index": 4,
           "text": "إِنْ",
           "translation": "if",
+          "translations": {
+            "en": "if",
+            "id": "jika"
+          },
           "transliteration": "in",
           "audio": "https://audio.qurancdn.com/wbw/067_021_005.mp3"
         },
@@ -1847,6 +2839,10 @@
           "index": 5,
           "text": "أَمْسَكَ",
           "translation": "He withheld",
+          "translations": {
+            "en": "He withheld",
+            "id": "Dia menahan"
+          },
           "transliteration": "amsaka",
           "audio": "https://audio.qurancdn.com/wbw/067_021_006.mp3"
         },
@@ -1854,6 +2850,10 @@
           "index": 6,
           "text": "رِزْقَهُۥ ۚ",
           "translation": "His provision",
+          "translations": {
+            "en": "His provision",
+            "id": "rezekinya"
+          },
           "transliteration": "riz'qahu",
           "audio": "https://audio.qurancdn.com/wbw/067_021_007.mp3"
         },
@@ -1861,6 +2861,10 @@
           "index": 7,
           "text": "بَل",
           "translation": "Nay",
+          "translations": {
+            "en": "Nay",
+            "id": "bahkan/tetapi"
+          },
           "transliteration": "bal",
           "audio": "https://audio.qurancdn.com/wbw/067_021_009.mp3"
         },
@@ -1868,6 +2872,10 @@
           "index": 8,
           "text": "لَّجُّوا۟",
           "translation": "they persist",
+          "translations": {
+            "en": "they persist",
+            "id": "mereka terus-menerus"
+          },
           "transliteration": "lajjū",
           "audio": "https://audio.qurancdn.com/wbw/067_021_010.mp3"
         },
@@ -1875,6 +2883,10 @@
           "index": 9,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "dalam"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_021_011.mp3"
         },
@@ -1882,6 +2894,10 @@
           "index": 10,
           "text": "عُتُوٍّۢ",
           "translation": "pride",
+          "translations": {
+            "en": "pride",
+            "id": "kesombongan"
+          },
           "transliteration": "ʿutuwwin",
           "audio": "https://audio.qurancdn.com/wbw/067_021_012.mp3"
         },
@@ -1889,6 +2905,10 @@
           "index": 11,
           "text": "وَنُفُورٍ",
           "translation": "and aversion",
+          "translations": {
+            "en": "and aversion",
+            "id": "dan lari/berpaling"
+          },
           "transliteration": "wanufūrin",
           "audio": "https://audio.qurancdn.com/wbw/067_021_013.mp3"
         }
@@ -1903,11 +2923,19 @@
       "textUthmani": "أَفَمَن يَمْشِى مُكِبًّا عَلَىٰ وَجْهِهِۦٓ أَهْدَىٰٓ أَمَّن يَمْشِى سَوِيًّا عَلَىٰ صِرَٰطٍۢ مُّسْتَقِيمٍۢ",
       "endMarker": "٢٢",
       "translation": "Then is one who walks fallen on his face better guided or one who walks erect on a straight path?",
+      "translations": {
+        "en": "Then is one who walks fallen on his face better guided or one who walks erect on a straight path?",
+        "id": "Maka apakah orang yang berjalan terjungkal di atas mukanya itu lebih banyak mendapatkan petunjuk ataukah orang yang berjalan tegap di atas jalan yang lurus?"
+      },
       "words": [
         {
           "index": 0,
           "text": "أَفَمَن",
           "translation": "Then is he who",
+          "translations": {
+            "en": "Then is he who",
+            "id": "maka apakah orang"
+          },
           "transliteration": "afaman",
           "audio": "https://audio.qurancdn.com/wbw/067_022_001.mp3"
         },
@@ -1915,6 +2943,10 @@
           "index": 1,
           "text": "يَمْشِى",
           "translation": "walks",
+          "translations": {
+            "en": "walks",
+            "id": "dia berjalan"
+          },
           "transliteration": "yamshī",
           "audio": "https://audio.qurancdn.com/wbw/067_022_002.mp3"
         },
@@ -1922,6 +2954,10 @@
           "index": 2,
           "text": "مُكِبًّا",
           "translation": "fallen",
+          "translations": {
+            "en": "fallen",
+            "id": "tiarap/telengkup"
+          },
           "transliteration": "mukibban",
           "audio": "https://audio.qurancdn.com/wbw/067_022_003.mp3"
         },
@@ -1929,6 +2965,10 @@
           "index": 3,
           "text": "عَلَىٰ",
           "translation": "on",
+          "translations": {
+            "en": "on",
+            "id": "di atas"
+          },
           "transliteration": "ʿalā",
           "audio": "https://audio.qurancdn.com/wbw/067_022_004.mp3"
         },
@@ -1936,6 +2976,10 @@
           "index": 4,
           "text": "وَجْهِهِۦٓ",
           "translation": "his face",
+          "translations": {
+            "en": "his face",
+            "id": "mukanya"
+          },
           "transliteration": "wajhihi",
           "audio": "https://audio.qurancdn.com/wbw/067_022_005.mp3"
         },
@@ -1943,6 +2987,10 @@
           "index": 5,
           "text": "أَهْدَىٰٓ",
           "translation": "better guided",
+          "translations": {
+            "en": "better guided",
+            "id": "lebih mendapat petunjuk"
+          },
           "transliteration": "ahdā",
           "audio": "https://audio.qurancdn.com/wbw/067_022_006.mp3"
         },
@@ -1950,6 +2998,10 @@
           "index": 6,
           "text": "أَمَّن",
           "translation": "or (he) who",
+          "translations": {
+            "en": "or (he) who",
+            "id": "ataukah orang"
+          },
           "transliteration": "amman",
           "audio": "https://audio.qurancdn.com/wbw/067_022_007.mp3"
         },
@@ -1957,6 +3009,10 @@
           "index": 7,
           "text": "يَمْشِى",
           "translation": "walks",
+          "translations": {
+            "en": "walks",
+            "id": "dia berjalan"
+          },
           "transliteration": "yamshī",
           "audio": "https://audio.qurancdn.com/wbw/067_022_008.mp3"
         },
@@ -1964,6 +3020,10 @@
           "index": 8,
           "text": "سَوِيًّا",
           "translation": "upright",
+          "translations": {
+            "en": "upright",
+            "id": "sama lurus"
+          },
           "transliteration": "sawiyyan",
           "audio": "https://audio.qurancdn.com/wbw/067_022_009.mp3"
         },
@@ -1971,6 +3031,10 @@
           "index": 9,
           "text": "عَلَىٰ",
           "translation": "on",
+          "translations": {
+            "en": "on",
+            "id": "di atas"
+          },
           "transliteration": "ʿalā",
           "audio": "https://audio.qurancdn.com/wbw/067_022_010.mp3"
         },
@@ -1978,6 +3042,10 @@
           "index": 10,
           "text": "صِرَٰطٍۢ",
           "translation": "(the) Path",
+          "translations": {
+            "en": "(the) Path",
+            "id": "jalan"
+          },
           "transliteration": "ṣirāṭin",
           "audio": "https://audio.qurancdn.com/wbw/067_022_011.mp3"
         },
@@ -1985,6 +3053,10 @@
           "index": 11,
           "text": "مُّسْتَقِيمٍۢ",
           "translation": "Straight",
+          "translations": {
+            "en": "Straight",
+            "id": "yang lurus"
+          },
           "transliteration": "mus'taqīmin",
           "audio": "https://audio.qurancdn.com/wbw/067_022_012.mp3"
         }
@@ -1999,11 +3071,19 @@
       "textUthmani": "قُلْ هُوَ ٱلَّذِىٓ أَنشَأَكُمْ وَجَعَلَ لَكُمُ ٱلسَّمْعَ وَٱلْأَبْصَـٰرَ وَٱلْأَفْـِٔدَةَ ۖ قَلِيلًۭا مَّا تَشْكُرُونَ",
       "endMarker": "٢٣",
       "translation": "Say, \"It is He who has produced you and made for you hearing and vision and hearts; little are you grateful.\"",
+      "translations": {
+        "en": "Say, \"It is He who has produced you and made for you hearing and vision and hearts; little are you grateful.\"",
+        "id": "Katakanlah: \"Dialah Yang menciptakan kamu dan menjadikan bagi kamu pendengaran, penglihatan dan hati\". (Tetapi) amat sedikit kamu bersyukur."
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_023_001.mp3"
         },
@@ -2011,6 +3091,10 @@
           "index": 1,
           "text": "هُوَ",
           "translation": "He",
+          "translations": {
+            "en": "He",
+            "id": "Dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_023_002.mp3"
         },
@@ -2018,6 +3102,10 @@
           "index": 2,
           "text": "ٱلَّذِىٓ",
           "translation": "(is) the One Who",
+          "translations": {
+            "en": "(is) the One Who",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_023_003.mp3"
         },
@@ -2025,6 +3113,10 @@
           "index": 3,
           "text": "أَنشَأَكُمْ",
           "translation": "produced you",
+          "translations": {
+            "en": "produced you",
+            "id": "menumbuhkan/menciptakan kamu"
+          },
           "transliteration": "ansha-akum",
           "audio": "https://audio.qurancdn.com/wbw/067_023_004.mp3"
         },
@@ -2032,6 +3124,10 @@
           "index": 4,
           "text": "وَجَعَلَ",
           "translation": "and made",
+          "translations": {
+            "en": "and made",
+            "id": "dan menjadikan"
+          },
           "transliteration": "wajaʿala",
           "audio": "https://audio.qurancdn.com/wbw/067_023_005.mp3"
         },
@@ -2039,6 +3135,10 @@
           "index": 5,
           "text": "لَكُمُ",
           "translation": "for you",
+          "translations": {
+            "en": "for you",
+            "id": "bagi kalian"
+          },
           "transliteration": "lakumu",
           "audio": "https://audio.qurancdn.com/wbw/067_023_006.mp3"
         },
@@ -2046,6 +3146,10 @@
           "index": 6,
           "text": "ٱلسَّمْعَ",
           "translation": "the hearing",
+          "translations": {
+            "en": "the hearing",
+            "id": "pendengaran"
+          },
           "transliteration": "l-samʿa",
           "audio": "https://audio.qurancdn.com/wbw/067_023_007.mp3"
         },
@@ -2053,6 +3157,10 @@
           "index": 7,
           "text": "وَٱلْأَبْصَـٰرَ",
           "translation": "and the vision",
+          "translations": {
+            "en": "and the vision",
+            "id": "dan penglihatan"
+          },
           "transliteration": "wal-abṣāra",
           "audio": "https://audio.qurancdn.com/wbw/067_023_008.mp3"
         },
@@ -2060,6 +3168,10 @@
           "index": 8,
           "text": "وَٱلْأَفْـِٔدَةَ ۖ",
           "translation": "and the feelings",
+          "translations": {
+            "en": "and the feelings",
+            "id": "dan hati"
+          },
           "transliteration": "wal-afidata",
           "audio": "https://audio.qurancdn.com/wbw/067_023_009.mp3"
         },
@@ -2067,6 +3179,10 @@
           "index": 9,
           "text": "قَلِيلًۭا",
           "translation": "Little",
+          "translations": {
+            "en": "Little",
+            "id": "sedikit"
+          },
           "transliteration": "qalīlan",
           "audio": "https://audio.qurancdn.com/wbw/067_023_011.mp3"
         },
@@ -2074,6 +3190,10 @@
           "index": 10,
           "text": "مَّا",
           "translation": "(is) what",
+          "translations": {
+            "en": "(is) what",
+            "id": "apa"
+          },
           "transliteration": "mā",
           "audio": "https://audio.qurancdn.com/wbw/067_023_012.mp3"
         },
@@ -2081,6 +3201,10 @@
           "index": 11,
           "text": "تَشْكُرُونَ",
           "translation": "you give thanks",
+          "translations": {
+            "en": "you give thanks",
+            "id": "kalian bersyukur"
+          },
           "transliteration": "tashkurūna",
           "audio": "https://audio.qurancdn.com/wbw/067_023_013.mp3"
         }
@@ -2095,11 +3219,19 @@
       "textUthmani": "قُلْ هُوَ ٱلَّذِى ذَرَأَكُمْ فِى ٱلْأَرْضِ وَإِلَيْهِ تُحْشَرُونَ",
       "endMarker": "٢٤",
       "translation": "Say, \"It is He who has multiplied you throughout the earth, and to Him you will be gathered.\"",
+      "translations": {
+        "en": "Say, \"It is He who has multiplied you throughout the earth, and to Him you will be gathered.\"",
+        "id": "Katakanlah: \"Dialah Yang menjadikan kamu berkembang biak di muka bumi, dan hanya kepada-Nya-lah kamu kelak dikumpulkan\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_024_001.mp3"
         },
@@ -2107,6 +3239,10 @@
           "index": 1,
           "text": "هُوَ",
           "translation": "He",
+          "translations": {
+            "en": "He",
+            "id": "Dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_024_002.mp3"
         },
@@ -2114,6 +3250,10 @@
           "index": 2,
           "text": "ٱلَّذِى",
           "translation": "(is) the One Who",
+          "translations": {
+            "en": "(is) the One Who",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_024_003.mp3"
         },
@@ -2121,6 +3261,10 @@
           "index": 3,
           "text": "ذَرَأَكُمْ",
           "translation": "multiplied you",
+          "translations": {
+            "en": "multiplied you",
+            "id": "menjadikan kamu berkembang biak"
+          },
           "transliteration": "dhara-akum",
           "audio": "https://audio.qurancdn.com/wbw/067_024_004.mp3"
         },
@@ -2128,6 +3272,10 @@
           "index": 4,
           "text": "فِى",
           "translation": "in",
+          "translations": {
+            "en": "in",
+            "id": "di muka"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_024_005.mp3"
         },
@@ -2135,6 +3283,10 @@
           "index": 5,
           "text": "ٱلْأَرْضِ",
           "translation": "the earth",
+          "translations": {
+            "en": "the earth",
+            "id": "bumi"
+          },
           "transliteration": "l-arḍi",
           "audio": "https://audio.qurancdn.com/wbw/067_024_006.mp3"
         },
@@ -2142,6 +3294,10 @@
           "index": 6,
           "text": "وَإِلَيْهِ",
           "translation": "and to Him",
+          "translations": {
+            "en": "and to Him",
+            "id": "dan kepada-Nya"
+          },
           "transliteration": "wa-ilayhi",
           "audio": "https://audio.qurancdn.com/wbw/067_024_007.mp3"
         },
@@ -2149,6 +3305,10 @@
           "index": 7,
           "text": "تُحْشَرُونَ",
           "translation": "you will be gathered",
+          "translations": {
+            "en": "you will be gathered",
+            "id": "kamu akan dikumpulkan"
+          },
           "transliteration": "tuḥ'sharūna",
           "audio": "https://audio.qurancdn.com/wbw/067_024_008.mp3"
         }
@@ -2163,11 +3323,19 @@
       "textUthmani": "وَيَقُولُونَ مَتَىٰ هَـٰذَا ٱلْوَعْدُ إِن كُنتُمْ صَـٰدِقِينَ",
       "endMarker": "٢٥",
       "translation": "And they say, \"When is this promise, if you should be truthful?\"",
+      "translations": {
+        "en": "And they say, \"When is this promise, if you should be truthful?\"",
+        "id": "Dan mereka berkata: \"Kapankah datangnya ancaman itu jika kamu adalah orang-orang yang benar?\""
+      },
       "words": [
         {
           "index": 0,
           "text": "وَيَقُولُونَ",
           "translation": "And they say",
+          "translations": {
+            "en": "And they say",
+            "id": "dan mereka berkata"
+          },
           "transliteration": "wayaqūlūna",
           "audio": "https://audio.qurancdn.com/wbw/067_025_001.mp3"
         },
@@ -2175,6 +3343,10 @@
           "index": 1,
           "text": "مَتَىٰ",
           "translation": "When",
+          "translations": {
+            "en": "When",
+            "id": "kapan"
+          },
           "transliteration": "matā",
           "audio": "https://audio.qurancdn.com/wbw/067_025_002.mp3"
         },
@@ -2182,6 +3354,10 @@
           "index": 2,
           "text": "هَـٰذَا",
           "translation": "(is) this",
+          "translations": {
+            "en": "(is) this",
+            "id": "ini"
+          },
           "transliteration": "hādhā",
           "audio": "https://audio.qurancdn.com/wbw/067_025_003.mp3"
         },
@@ -2189,6 +3365,10 @@
           "index": 3,
           "text": "ٱلْوَعْدُ",
           "translation": "promise",
+          "translations": {
+            "en": "promise",
+            "id": "janji/ancaman"
+          },
           "transliteration": "l-waʿdu",
           "audio": "https://audio.qurancdn.com/wbw/067_025_004.mp3"
         },
@@ -2196,6 +3376,10 @@
           "index": 4,
           "text": "إِن",
           "translation": "if",
+          "translations": {
+            "en": "if",
+            "id": "jika"
+          },
           "transliteration": "in",
           "audio": "https://audio.qurancdn.com/wbw/067_025_005.mp3"
         },
@@ -2203,6 +3387,10 @@
           "index": 5,
           "text": "كُنتُمْ",
           "translation": "you are",
+          "translations": {
+            "en": "you are",
+            "id": "kalian adalah"
+          },
           "transliteration": "kuntum",
           "audio": "https://audio.qurancdn.com/wbw/067_025_006.mp3"
         },
@@ -2210,6 +3398,10 @@
           "index": 6,
           "text": "صَـٰدِقِينَ",
           "translation": "truthful",
+          "translations": {
+            "en": "truthful",
+            "id": "orang-orang yang benar"
+          },
           "transliteration": "ṣādiqīna",
           "audio": "https://audio.qurancdn.com/wbw/067_025_007.mp3"
         }
@@ -2224,11 +3416,19 @@
       "textUthmani": "قُلْ إِنَّمَا ٱلْعِلْمُ عِندَ ٱللَّهِ وَإِنَّمَآ أَنَا۠ نَذِيرٌۭ مُّبِينٌۭ",
       "endMarker": "٢٦",
       "translation": "Say, \"The knowledge is only with Allah, and I am only a clear warner.\"",
+      "translations": {
+        "en": "Say, \"The knowledge is only with Allah, and I am only a clear warner.\"",
+        "id": "Katakanlah: \"Sesungguhnya ilmu (tentang hari kiamat itu) hanya pada sisi Allah. Dan sesungguhnya aku hanyalah seorang pemberi peringatan yang menjelaskan\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_026_001.mp3"
         },
@@ -2236,6 +3436,10 @@
           "index": 1,
           "text": "إِنَّمَا",
           "translation": "Only",
+          "translations": {
+            "en": "Only",
+            "id": "sesungguhnya"
+          },
           "transliteration": "innamā",
           "audio": "https://audio.qurancdn.com/wbw/067_026_002.mp3"
         },
@@ -2243,6 +3447,10 @@
           "index": 2,
           "text": "ٱلْعِلْمُ",
           "translation": "the knowledge",
+          "translations": {
+            "en": "the knowledge",
+            "id": "pengetahuan"
+          },
           "transliteration": "l-ʿil'mu",
           "audio": "https://audio.qurancdn.com/wbw/067_026_003.mp3"
         },
@@ -2250,6 +3458,10 @@
           "index": 3,
           "text": "عِندَ",
           "translation": "(is) with",
+          "translations": {
+            "en": "(is) with",
+            "id": "di sisi"
+          },
           "transliteration": "ʿinda",
           "audio": "https://audio.qurancdn.com/wbw/067_026_004.mp3"
         },
@@ -2257,6 +3469,10 @@
           "index": 4,
           "text": "ٱللَّهِ",
           "translation": "Allah",
+          "translations": {
+            "en": "Allah",
+            "id": "Allah"
+          },
           "transliteration": "l-lahi",
           "audio": "https://audio.qurancdn.com/wbw/067_026_005.mp3"
         },
@@ -2264,6 +3480,10 @@
           "index": 5,
           "text": "وَإِنَّمَآ",
           "translation": "and only",
+          "translations": {
+            "en": "and only",
+            "id": "dan sesungguhnya"
+          },
           "transliteration": "wa-innamā",
           "audio": "https://audio.qurancdn.com/wbw/067_026_006.mp3"
         },
@@ -2271,6 +3491,10 @@
           "index": 6,
           "text": "أَنَا۠",
           "translation": "I am",
+          "translations": {
+            "en": "I am",
+            "id": "Aku"
+          },
           "transliteration": "anā",
           "audio": "https://audio.qurancdn.com/wbw/067_026_007.mp3"
         },
@@ -2278,6 +3502,10 @@
           "index": 7,
           "text": "نَذِيرٌۭ",
           "translation": "a warner",
+          "translations": {
+            "en": "a warner",
+            "id": "seorang pemberi peringatan"
+          },
           "transliteration": "nadhīrun",
           "audio": "https://audio.qurancdn.com/wbw/067_026_008.mp3"
         },
@@ -2285,6 +3513,10 @@
           "index": 8,
           "text": "مُّبِينٌۭ",
           "translation": "clear",
+          "translations": {
+            "en": "clear",
+            "id": "yang nyata"
+          },
           "transliteration": "mubīnun",
           "audio": "https://audio.qurancdn.com/wbw/067_026_009.mp3"
         }
@@ -2299,11 +3531,19 @@
       "textUthmani": "فَلَمَّا رَأَوْهُ زُلْفَةًۭ سِيٓـَٔتْ وُجُوهُ ٱلَّذِينَ كَفَرُوا۟ وَقِيلَ هَـٰذَا ٱلَّذِى كُنتُم بِهِۦ تَدَّعُونَ",
       "endMarker": "٢٧",
       "translation": "But when they see it approaching, the faces of those who disbelieve will be distressed, and it will be said, \"This is that for which you used to call.\"",
+      "translations": {
+        "en": "But when they see it approaching, the faces of those who disbelieve will be distressed, and it will be said, \"This is that for which you used to call.\"",
+        "id": "Ketika mereka melihat azab (pada hari kiamat) sudah dekat, muka orang-orang kafir itu menjadi muram. Dan dikatakan (kepada mereka) inilah (azab) yang dahulunya kamu selalu meminta-mintanya."
+      },
       "words": [
         {
           "index": 0,
           "text": "فَلَمَّا",
           "translation": "But when",
+          "translations": {
+            "en": "But when",
+            "id": "maka ketika"
+          },
           "transliteration": "falammā",
           "audio": "https://audio.qurancdn.com/wbw/067_027_001.mp3"
         },
@@ -2311,6 +3551,10 @@
           "index": 1,
           "text": "رَأَوْهُ",
           "translation": "they (will) see it",
+          "translations": {
+            "en": "they (will) see it",
+            "id": "mereka melihatnya (azab)"
+          },
           "transliteration": "ra-awhu",
           "audio": "https://audio.qurancdn.com/wbw/067_027_002.mp3"
         },
@@ -2318,6 +3562,10 @@
           "index": 2,
           "text": "زُلْفَةًۭ",
           "translation": "approaching",
+          "translations": {
+            "en": "approaching",
+            "id": "dekat"
+          },
           "transliteration": "zul'fatan",
           "audio": "https://audio.qurancdn.com/wbw/067_027_003.mp3"
         },
@@ -2325,6 +3573,10 @@
           "index": 3,
           "text": "سِيٓـَٔتْ",
           "translation": "(will be) distressed",
+          "translations": {
+            "en": "(will be) distressed",
+            "id": "menjadi buruk/jelek"
+          },
           "transliteration": "sīat",
           "audio": "https://audio.qurancdn.com/wbw/067_027_004.mp3"
         },
@@ -2332,6 +3584,10 @@
           "index": 4,
           "text": "وُجُوهُ",
           "translation": "(the) faces",
+          "translations": {
+            "en": "(the) faces",
+            "id": "muka-muka"
+          },
           "transliteration": "wujūhu",
           "audio": "https://audio.qurancdn.com/wbw/067_027_005.mp3"
         },
@@ -2339,6 +3595,10 @@
           "index": 5,
           "text": "ٱلَّذِينَ",
           "translation": "(of) those who",
+          "translations": {
+            "en": "(of) those who",
+            "id": "orang-orang yang"
+          },
           "transliteration": "alladhīna",
           "audio": "https://audio.qurancdn.com/wbw/067_027_006.mp3"
         },
@@ -2346,6 +3606,10 @@
           "index": 6,
           "text": "كَفَرُوا۟",
           "translation": "disbelieved",
+          "translations": {
+            "en": "disbelieved",
+            "id": "kafir/ingkar"
+          },
           "transliteration": "kafarū",
           "audio": "https://audio.qurancdn.com/wbw/067_027_007.mp3"
         },
@@ -2353,6 +3617,10 @@
           "index": 7,
           "text": "وَقِيلَ",
           "translation": "and it will be said",
+          "translations": {
+            "en": "and it will be said",
+            "id": "dan dikatakan"
+          },
           "transliteration": "waqīla",
           "audio": "https://audio.qurancdn.com/wbw/067_027_008.mp3"
         },
@@ -2360,6 +3628,10 @@
           "index": 8,
           "text": "هَـٰذَا",
           "translation": "This",
+          "translations": {
+            "en": "This",
+            "id": "ini"
+          },
           "transliteration": "hādhā",
           "audio": "https://audio.qurancdn.com/wbw/067_027_009.mp3"
         },
@@ -2367,6 +3639,10 @@
           "index": 9,
           "text": "ٱلَّذِى",
           "translation": "(is) that which",
+          "translations": {
+            "en": "(is) that which",
+            "id": "yang"
+          },
           "transliteration": "alladhī",
           "audio": "https://audio.qurancdn.com/wbw/067_027_010.mp3"
         },
@@ -2374,6 +3650,10 @@
           "index": 10,
           "text": "كُنتُم",
           "translation": "you used to",
+          "translations": {
+            "en": "you used to",
+            "id": "kalian adalah"
+          },
           "transliteration": "kuntum",
           "audio": "https://audio.qurancdn.com/wbw/067_027_011.mp3"
         },
@@ -2381,6 +3661,10 @@
           "index": 11,
           "text": "بِهِۦ",
           "translation": "for it",
+          "translations": {
+            "en": "for it",
+            "id": "dengannya"
+          },
           "transliteration": "bihi",
           "audio": "https://audio.qurancdn.com/wbw/067_027_012.mp3"
         },
@@ -2388,6 +3672,10 @@
           "index": 12,
           "text": "تَدَّعُونَ",
           "translation": "call",
+          "translations": {
+            "en": "call",
+            "id": "kamu meminta"
+          },
           "transliteration": "taddaʿūna",
           "audio": "https://audio.qurancdn.com/wbw/067_027_013.mp3"
         }
@@ -2402,11 +3690,19 @@
       "textUthmani": "قُلْ أَرَءَيْتُمْ إِنْ أَهْلَكَنِىَ ٱللَّهُ وَمَن مَّعِىَ أَوْ رَحِمَنَا فَمَن يُجِيرُ ٱلْكَـٰفِرِينَ مِنْ عَذَابٍ أَلِيمٍۢ",
       "endMarker": "٢٨",
       "translation": "Say, [O Muhammad], \"Have you considered: whether Allah should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?\"",
+      "translations": {
+        "en": "Say, [O Muhammad], \"Have you considered: whether Allah should cause my death and those with me or have mercy upon us, who can protect the disbelievers from a painful punishment?\"",
+        "id": "Katakanlah: \"Terangkanlah kepadaku jika Allah mematikan aku dan orang-orang yang bersama dengan aku atau memberi rahmat kepada kami, (maka kami akan masuk surga), tetapi siapakah yang dapat melindungi orang-orang yang kafir dari siksa yang pedih?\""
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_028_001.mp3"
         },
@@ -2414,6 +3710,10 @@
           "index": 1,
           "text": "أَرَءَيْتُمْ",
           "translation": "Have you seen",
+          "translations": {
+            "en": "Have you seen",
+            "id": "adakah kamu perhatikan"
+          },
           "transliteration": "ara-aytum",
           "audio": "https://audio.qurancdn.com/wbw/067_028_002.mp3"
         },
@@ -2421,6 +3721,10 @@
           "index": 2,
           "text": "إِنْ",
           "translation": "if",
+          "translations": {
+            "en": "if",
+            "id": "jika"
+          },
           "transliteration": "in",
           "audio": "https://audio.qurancdn.com/wbw/067_028_003.mp3"
         },
@@ -2428,6 +3732,10 @@
           "index": 3,
           "text": "أَهْلَكَنِىَ",
           "translation": "destroys me",
+          "translations": {
+            "en": "destroys me",
+            "id": "membinasakan aku"
+          },
           "transliteration": "ahlakaniya",
           "audio": "https://audio.qurancdn.com/wbw/067_028_004.mp3"
         },
@@ -2435,6 +3743,10 @@
           "index": 4,
           "text": "ٱللَّهُ",
           "translation": "Allah",
+          "translations": {
+            "en": "Allah",
+            "id": "Allah"
+          },
           "transliteration": "l-lahu",
           "audio": "https://audio.qurancdn.com/wbw/067_028_005.mp3"
         },
@@ -2442,6 +3754,10 @@
           "index": 5,
           "text": "وَمَن",
           "translation": "and whoever",
+          "translations": {
+            "en": "and whoever",
+            "id": "dan orang-orang yang"
+          },
           "transliteration": "waman",
           "audio": "https://audio.qurancdn.com/wbw/067_028_006.mp3"
         },
@@ -2449,6 +3765,10 @@
           "index": 6,
           "text": "مَّعِىَ",
           "translation": "(is) with me",
+          "translations": {
+            "en": "(is) with me",
+            "id": "bersamaku"
+          },
           "transliteration": "maʿiya",
           "audio": "https://audio.qurancdn.com/wbw/067_028_007.mp3"
         },
@@ -2456,6 +3776,10 @@
           "index": 7,
           "text": "أَوْ",
           "translation": "or",
+          "translations": {
+            "en": "or",
+            "id": "atau"
+          },
           "transliteration": "aw",
           "audio": "https://audio.qurancdn.com/wbw/067_028_008.mp3"
         },
@@ -2463,6 +3787,10 @@
           "index": 8,
           "text": "رَحِمَنَا",
           "translation": "has mercy upon us",
+          "translations": {
+            "en": "has mercy upon us",
+            "id": "Dia memberi rahmat kami"
+          },
           "transliteration": "raḥimanā",
           "audio": "https://audio.qurancdn.com/wbw/067_028_009.mp3"
         },
@@ -2470,6 +3798,10 @@
           "index": 9,
           "text": "فَمَن",
           "translation": "then who",
+          "translations": {
+            "en": "then who",
+            "id": "maka barang siapa"
+          },
           "transliteration": "faman",
           "audio": "https://audio.qurancdn.com/wbw/067_028_010.mp3"
         },
@@ -2477,6 +3809,10 @@
           "index": 10,
           "text": "يُجِيرُ",
           "translation": "(can) protect",
+          "translations": {
+            "en": "(can) protect",
+            "id": "menolong/melindungi"
+          },
           "transliteration": "yujīru",
           "audio": "https://audio.qurancdn.com/wbw/067_028_011.mp3"
         },
@@ -2484,6 +3820,10 @@
           "index": 11,
           "text": "ٱلْكَـٰفِرِينَ",
           "translation": "the disbelievers",
+          "translations": {
+            "en": "the disbelievers",
+            "id": "orang-orang yang kafir"
+          },
           "transliteration": "l-kāfirīna",
           "audio": "https://audio.qurancdn.com/wbw/067_028_012.mp3"
         },
@@ -2491,6 +3831,10 @@
           "index": 12,
           "text": "مِنْ",
           "translation": "from",
+          "translations": {
+            "en": "from",
+            "id": "dari"
+          },
           "transliteration": "min",
           "audio": "https://audio.qurancdn.com/wbw/067_028_013.mp3"
         },
@@ -2498,6 +3842,10 @@
           "index": 13,
           "text": "عَذَابٍ",
           "translation": "a punishment",
+          "translations": {
+            "en": "a punishment",
+            "id": "azab"
+          },
           "transliteration": "ʿadhābin",
           "audio": "https://audio.qurancdn.com/wbw/067_028_014.mp3"
         },
@@ -2505,6 +3853,10 @@
           "index": 14,
           "text": "أَلِيمٍۢ",
           "translation": "painful",
+          "translations": {
+            "en": "painful",
+            "id": "yang pedih"
+          },
           "transliteration": "alīmin",
           "audio": "https://audio.qurancdn.com/wbw/067_028_015.mp3"
         }
@@ -2519,11 +3871,19 @@
       "textUthmani": "قُلْ هُوَ ٱلرَّحْمَـٰنُ ءَامَنَّا بِهِۦ وَعَلَيْهِ تَوَكَّلْنَا ۖ فَسَتَعْلَمُونَ مَنْ هُوَ فِى ضَلَـٰلٍۢ مُّبِينٍۢ",
       "endMarker": "٢٩",
       "translation": "Say, \"He is the Most Merciful; we have believed in Him, and upon Him we have relied. And you will [come to] know who it is that is in clear error.\"",
+      "translations": {
+        "en": "Say, \"He is the Most Merciful; we have believed in Him, and upon Him we have relied. And you will [come to] know who it is that is in clear error.\"",
+        "id": "Katakanlah: \"Dialah Allah Yang Maha Penyayang kami beriman kepada-Nya dan kepada-Nya-lah kami bertawakkal. Kelak kamu akan mengetahui siapakah yang berada dalam kesesatan yang nyata\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_029_001.mp3"
         },
@@ -2531,6 +3891,10 @@
           "index": 1,
           "text": "هُوَ",
           "translation": "He",
+          "translations": {
+            "en": "He",
+            "id": "Dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_029_002.mp3"
         },
@@ -2538,6 +3902,10 @@
           "index": 2,
           "text": "ٱلرَّحْمَـٰنُ",
           "translation": "(is) the Most Gracious",
+          "translations": {
+            "en": "(is) the Most Gracious",
+            "id": "Maha Pengasih"
+          },
           "transliteration": "l-raḥmānu",
           "audio": "https://audio.qurancdn.com/wbw/067_029_003.mp3"
         },
@@ -2545,6 +3913,10 @@
           "index": 3,
           "text": "ءَامَنَّا",
           "translation": "we believe",
+          "translations": {
+            "en": "we believe",
+            "id": "kami beriman"
+          },
           "transliteration": "āmannā",
           "audio": "https://audio.qurancdn.com/wbw/067_029_004.mp3"
         },
@@ -2552,6 +3924,10 @@
           "index": 4,
           "text": "بِهِۦ",
           "translation": "in Him",
+          "translations": {
+            "en": "in Him",
+            "id": "kepada-Nya"
+          },
           "transliteration": "bihi",
           "audio": "https://audio.qurancdn.com/wbw/067_029_005.mp3"
         },
@@ -2559,6 +3935,10 @@
           "index": 5,
           "text": "وَعَلَيْهِ",
           "translation": "and upon Him",
+          "translations": {
+            "en": "and upon Him",
+            "id": "dan atas-Nya"
+          },
           "transliteration": "waʿalayhi",
           "audio": "https://audio.qurancdn.com/wbw/067_029_006.mp3"
         },
@@ -2566,6 +3946,10 @@
           "index": 6,
           "text": "تَوَكَّلْنَا ۖ",
           "translation": "we put (our) trust",
+          "translations": {
+            "en": "we put (our) trust",
+            "id": "kami bertawakal"
+          },
           "transliteration": "tawakkalnā",
           "audio": "https://audio.qurancdn.com/wbw/067_029_007.mp3"
         },
@@ -2573,6 +3957,10 @@
           "index": 7,
           "text": "فَسَتَعْلَمُونَ",
           "translation": "So you will know",
+          "translations": {
+            "en": "So you will know",
+            "id": "maka kelak kamu akan mengetahuinya"
+          },
           "transliteration": "fasataʿlamūna",
           "audio": "https://audio.qurancdn.com/wbw/067_029_009.mp3"
         },
@@ -2580,6 +3968,10 @@
           "index": 8,
           "text": "مَنْ",
           "translation": "who",
+          "translations": {
+            "en": "who",
+            "id": "siapa"
+          },
           "transliteration": "man",
           "audio": "https://audio.qurancdn.com/wbw/067_029_010.mp3"
         },
@@ -2587,6 +3979,10 @@
           "index": 9,
           "text": "هُوَ",
           "translation": "(is) it",
+          "translations": {
+            "en": "(is) it",
+            "id": "dia"
+          },
           "transliteration": "huwa",
           "audio": "https://audio.qurancdn.com/wbw/067_029_011.mp3"
         },
@@ -2594,6 +3990,10 @@
           "index": 10,
           "text": "فِى",
           "translation": "(that is) in",
+          "translations": {
+            "en": "(that is) in",
+            "id": "dalam"
+          },
           "transliteration": "fī",
           "audio": "https://audio.qurancdn.com/wbw/067_029_012.mp3"
         },
@@ -2601,6 +4001,10 @@
           "index": 11,
           "text": "ضَلَـٰلٍۢ",
           "translation": "error",
+          "translations": {
+            "en": "error",
+            "id": "kesesatan"
+          },
           "transliteration": "ḍalālin",
           "audio": "https://audio.qurancdn.com/wbw/067_029_013.mp3"
         },
@@ -2608,6 +4012,10 @@
           "index": 12,
           "text": "مُّبِينٍۢ",
           "translation": "clear",
+          "translations": {
+            "en": "clear",
+            "id": "nyata"
+          },
           "transliteration": "mubīnin",
           "audio": "https://audio.qurancdn.com/wbw/067_029_014.mp3"
         }
@@ -2622,11 +4030,19 @@
       "textUthmani": "قُلْ أَرَءَيْتُمْ إِنْ أَصْبَحَ مَآؤُكُمْ غَوْرًۭا فَمَن يَأْتِيكُم بِمَآءٍۢ مَّعِينٍۭ",
       "endMarker": "٣٠",
       "translation": "Say, \"Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?\"",
+      "translations": {
+        "en": "Say, \"Have you considered: if your water was to become sunken [into the earth], then who could bring you flowing water?\"",
+        "id": "Katakanlah: \"Terangkanlah kepadaku jika sumber air kamu menjadi kering; maka siapakah yang akan mendatangkan air yang mengalir bagimu?\"."
+      },
       "words": [
         {
           "index": 0,
           "text": "قُلْ",
           "translation": "Say",
+          "translations": {
+            "en": "Say",
+            "id": "katakanlah"
+          },
           "transliteration": "qul",
           "audio": "https://audio.qurancdn.com/wbw/067_030_001.mp3"
         },
@@ -2634,6 +4050,10 @@
           "index": 1,
           "text": "أَرَءَيْتُمْ",
           "translation": "Have you seen",
+          "translations": {
+            "en": "Have you seen",
+            "id": "adakah kamu perhatikan"
+          },
           "transliteration": "ara-aytum",
           "audio": "https://audio.qurancdn.com/wbw/067_030_002.mp3"
         },
@@ -2641,6 +4061,10 @@
           "index": 2,
           "text": "إِنْ",
           "translation": "if",
+          "translations": {
+            "en": "if",
+            "id": "jika"
+          },
           "transliteration": "in",
           "audio": "https://audio.qurancdn.com/wbw/067_030_003.mp3"
         },
@@ -2648,6 +4072,10 @@
           "index": 3,
           "text": "أَصْبَحَ",
           "translation": "becomes",
+          "translations": {
+            "en": "becomes",
+            "id": "menjadi"
+          },
           "transliteration": "aṣbaḥa",
           "audio": "https://audio.qurancdn.com/wbw/067_030_004.mp3"
         },
@@ -2655,6 +4083,10 @@
           "index": 4,
           "text": "مَآؤُكُمْ",
           "translation": "your water",
+          "translations": {
+            "en": "your water",
+            "id": "air kamu"
+          },
           "transliteration": "māukum",
           "audio": "https://audio.qurancdn.com/wbw/067_030_005.mp3"
         },
@@ -2662,6 +4094,10 @@
           "index": 5,
           "text": "غَوْرًۭا",
           "translation": "sunken",
+          "translations": {
+            "en": "sunken",
+            "id": "masuk dalam tanah kering"
+          },
           "transliteration": "ghawran",
           "audio": "https://audio.qurancdn.com/wbw/067_030_006.mp3"
         },
@@ -2669,6 +4105,10 @@
           "index": 6,
           "text": "فَمَن",
           "translation": "then who",
+          "translations": {
+            "en": "then who",
+            "id": "maka siapa"
+          },
           "transliteration": "faman",
           "audio": "https://audio.qurancdn.com/wbw/067_030_007.mp3"
         },
@@ -2676,6 +4116,10 @@
           "index": 7,
           "text": "يَأْتِيكُم",
           "translation": "could bring you",
+          "translations": {
+            "en": "could bring you",
+            "id": "mendatangkan kepadamu"
+          },
           "transliteration": "yatīkum",
           "audio": "https://audio.qurancdn.com/wbw/067_030_008.mp3"
         },
@@ -2683,6 +4127,10 @@
           "index": 8,
           "text": "بِمَآءٍۢ",
           "translation": "water",
+          "translations": {
+            "en": "water",
+            "id": "dengan air"
+          },
           "transliteration": "bimāin",
           "audio": "https://audio.qurancdn.com/wbw/067_030_009.mp3"
         },
@@ -2690,6 +4138,10 @@
           "index": 9,
           "text": "مَّعِينٍۭ",
           "translation": "flowing",
+          "translations": {
+            "en": "flowing",
+            "id": "mata air/mengalir"
+          },
           "transliteration": "maʿīnin",
           "audio": "https://audio.qurancdn.com/wbw/067_030_010.mp3"
         }

@@ -1,4 +1,5 @@
 import { store } from '../core/store';
+import { t } from '../i18n';
 
 export class NavigationComponent {
   private container: HTMLElement;
@@ -18,7 +19,6 @@ export class NavigationComponent {
     const isFirst = currentAyahIndex === 0;
     const isLast = currentAyahIndex === totalAyahs - 1;
 
-    // Calculate overall surah progress
     let solvedCount = 0;
     currentSurah.ayahs.forEach((a) => {
       const key = `${currentSurah.id}:${a.number}`;
@@ -40,10 +40,10 @@ export class NavigationComponent {
                 ? 'opacity-30 cursor-not-allowed text-slate-500'
                 : 'bg-quran-card hover:bg-quran-border text-slate-200 hover:text-quran-gold active:scale-95'
             }"
-            title="Previous Ayah (Left Arrow)"
+            title="${t('prevAyahShortcut')}"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            <span class="hidden sm:inline">Prev</span>
+            <span class="hidden sm:inline">${t('prev')}</span>
           </button>
 
           <!-- Ayah Dropdown Selector -->
@@ -57,15 +57,14 @@ export class NavigationComponent {
                   const key = `${currentSurah.id}:${a.number}`;
                   const prog = progress[key];
                   let statusBadge = '';
-                  if (prog?.solved) statusBadge = '✓ Solved';
-                  else if (prog?.revealed) statusBadge = '👁 Revealed';
+                  if (prog?.solved) statusBadge = '✓ ' + t('correctPosition');
+                  else if (prog?.revealed) statusBadge = '👁 ' + t('ayahRevealed');
 
-                  // Truncate start of ayah for dropdown
                   const snippet = a.words.slice(0, 3).map((w) => w.text).join(' ');
 
                   return `
                   <option value="${idx}" ${idx === currentAyahIndex ? 'selected' : ''}>
-                    Ayah ${a.number} of ${totalAyahs} — ${snippet}... ${statusBadge ? `[${statusBadge}]` : ''}
+                    ${t('ayah')} ${a.number} / ${totalAyahs} — ${snippet}... ${statusBadge ? `[${statusBadge}]` : ''}
                   </option>
                 `;
                 })
@@ -85,9 +84,9 @@ export class NavigationComponent {
                 ? 'opacity-30 cursor-not-allowed text-slate-500'
                 : 'bg-quran-card hover:bg-quran-border text-slate-200 hover:text-quran-gold active:scale-95'
             }"
-            title="Next Ayah (Right Arrow)"
+            title="${t('nextAyahShortcut')}"
           >
-            <span class="hidden sm:inline">Next</span>
+            <span class="hidden sm:inline">${t('next')}</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
@@ -95,8 +94,8 @@ export class NavigationComponent {
         <!-- Surah Progress Tracker Bar -->
         <div class="flex items-center justify-between text-[11px] text-quran-textMuted px-1">
           <div class="flex items-center gap-1.5">
-            <span>Progress:</span>
-            <span class="font-semibold text-emerald-400">${solvedCount}/${totalAyahs} Ayahs</span>
+            <span>${t('progress')}</span>
+            <span class="font-semibold text-emerald-400">${solvedCount}/${totalAyahs} ${t('ayahs')}</span>
             <span>(${percentSolved}%)</span>
           </div>
           <div class="w-32 md:w-48 bg-quran-card h-1.5 rounded-full overflow-hidden border border-quran-border/50">

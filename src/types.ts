@@ -1,7 +1,13 @@
+export type AppLanguage = 'en' | 'id';
+
 export interface Word {
   index: number;
   text: string;
   translation: string;
+  translations?: {
+    en: string;
+    id: string;
+  };
   transliteration: string;
   audio: string | null;
 }
@@ -14,6 +20,10 @@ export interface Ayah {
   textUthmani: string;
   endMarker: string;
   translation: string;
+  translations?: {
+    en: string;
+    id: string;
+  };
   words: Word[];
   audioUrl: string;
 }
@@ -42,6 +52,10 @@ export interface PuzzlePiece {
   words: Word[]; // 1 word for word mode, 2-3 words for phrase mode
   text: string; // combined text
   translation: string; // combined translation
+  translations?: {
+    en: string;
+    id: string;
+  };
   transliteration: string;
 }
 
@@ -63,6 +77,7 @@ export interface AyahProgress {
 }
 
 export interface AppSettings {
+  language: AppLanguage;
   gameLevel: 1 | 2; // 1 = Guided Repetition, 2 = Full Puzzle Assembly
   difficulty: DifficultyMode;
   showTranslation: boolean;

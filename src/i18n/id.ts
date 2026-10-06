@@ -1,0 +1,106 @@
+import { TranslationKeys } from './en';
+
+export const id: Record<TranslationKeys, string> = {
+  // App Header
+  appTitle: 'Puzzle Al-Mulk',
+  surahArabicTitle: 'سُورَةُ المُلْكِ',
+  reciterInfo: 'Mishary Alafasy • 30 Ayat',
+
+  // Levels
+  level1Title: 'Level 1 (Dipandu)',
+  level1Tooltip: 'Level 1: Latihan Bertahap Berulang (Umpan balik instan setiap memilih kata)',
+  level2Title: 'Level 2 (Lengkap)',
+  level2Tooltip: 'Level 2: Susun Teka-teki Penuh (Geser, tukar, dan periksa semua kotak)',
+  level1Heading: 'Level 1: Panduan Bertahap',
+  level2Heading: 'Level 2: Susunan Teka-teki Penuh',
+  level1Instruction: 'Pilih kata berikutnya untuk kotak {n} (disorot di bawah). Koreksi langsung di setiap pilihan!',
+  level2Instruction: 'Geser bagian ke dalam kotak atau tukar posisi. Bagian diperiksa langsung saat ditempatkan!',
+
+  // Difficulty Pills
+  words: 'Kata',
+  wordsTooltip: 'Pisah per satu kata',
+  phrases: 'Frasa',
+  phrasesTooltip: 'Pisah per kelompok frasa',
+
+  // Board Navigation & Status
+  prev: 'Sebelumnya',
+  next: 'Selanjutnya',
+  ayah: 'Ayat',
+  ayahOf: 'Ayat {current} dari {total}',
+  progress: 'Kemajuan:',
+  ayahs: 'Ayat',
+  assembled: 'tersusun',
+  checkNow: 'Periksa Sekarang',
+  ayahStart: 'Mulai ◀',
+  ayahStartRTL: 'Mulai ◀ Kanan ke Kiri Urutan Quran',
+  ayahSentence: 'Susunan Ayat:',
+  nextWordSlot: '👈 Berikutnya',
+  emptySlot: 'Kosong',
+  allPartsAssembled: 'Semua bagian sudah terpasang di kotak atas!',
+  trayTitleLevel1: 'Pilih Kata Berikutnya (Sentuh atau Geser):',
+  trayTitleLevel2: 'Pilihan Bagian Ayat (Geser atau Sentuh):',
+
+  // Actions
+  checkCombination: 'Periksa Susunan',
+  recite: 'Dengarkan',
+  playing: 'Memutar...',
+  hint: 'Petunjuk',
+  revealAyah: 'Buka Ayat',
+  reset: 'Ulangi',
+  practiceAgain: 'Latihan Lagi',
+  replayAudio: 'Putar Ulang',
+  nextAyahButton: 'Ayat Berikutnya',
+
+  // Feedback Messages
+  mashaAllahCompleted: 'Masya Allah! Selesai ✓',
+  ayahRevealed: 'Ayat Dibuka',
+  wrongPosition: '✗ Salah',
+  correctPosition: '✓ Benar',
+  tryAgain: '✗ Coba Lagi',
+  incorrectCombination: 'Susunan Belum Tepat',
+  partsInWrongPosition: '{n} bagian di posisi yang salah',
+  partsInWrongPositionDesc: 'Bagian yang berwarna MERAH belum pada posisinya. Geser atau tukar ke posisi yang benar!',
+  mistakeSequential: '❌ Bukan kata ini. Cari kata berikutnya dalam ayat!',
+
+  // Settings Modal
+  settingsTitle: 'Pengaturan & Pintasan',
+  languageLabel: 'Bahasa Aplikasi',
+  showTranslation: 'Tampilkan terjemahan pada kepingan',
+  showTransliteration: 'Tampilkan transliterasi pada kepingan',
+  autoplayAudio: 'Putar audio otomatis saat ayat selesai',
+  soundEffects: 'Efek Suara (Denting untuk benar, nada untuk salah)',
+  fontSize: 'Ukuran Huruf Arab',
+  fontMedium: 'Sedang',
+  fontLarge: 'Besar (Bawaan)',
+  fontExtraLarge: 'Sangat Besar',
+  reciterTitle: 'Audio Qari:',
+  reciterDescription: 'Mishary Rashid Alafasy (EveryAyah CDN). Streaming MP3 per ayat dengan penyimpanan offline otomatis.',
+  offlineAudioTitle: 'Audio Bacaan Offline',
+  offlineAudioDesc: 'Unduh seluruh 30 ayat (~3.5 MB) untuk latihan 100% tanpa internet.',
+  downloadAudio: 'Unduh Audio',
+  downloadingAudio: 'Mengunduh Ayat {current} dari {total}...',
+  downloadedSuccess: '✓ Semua {total} Ayat berhasil diunduh! Siap digunakan tanpa internet.',
+  downloadFailed: 'Gagal mengunduh: {err}',
+  retryDownload: 'Coba Lagi',
+  shortcutsTitle: 'Pintasan Tombol Keyboard:',
+  prevAyahShortcut: 'Ayat Sebelumnya',
+  nextAyahShortcut: 'Ayat Selanjutnya',
+  checkShortcut: 'Periksa Susunan',
+  playPauseShortcut: 'Putar / Jeda Audio',
+  hintShortcut: 'Petunjuk',
+  revealShortcut: 'Buka Ayat',
+  resetProgressButton: 'Reset Riwayat Belajar Saya',
+  resetProgressConfirm: 'Apakah Anda yakin ingin menghapus semua bintang dan kemajuan pada surah ini?',
+
+  // Language Gate
+  welcomeTitle: 'Selamat Datang di Puzzle Al-Mulk',
+  welcomeSubtitle: 'Silakan pilih bahasa untuk mulai menghafal:',
+  selectLanguagePrompt: 'Pilih bahasa Anda:',
+  englishTitle: 'English',
+  indonesianTitle: 'Bahasa Indonesia',
+  germanTitle: 'Deutsch',
+  germanComingSoon: 'Sedang ditinjau • Segera Hadir',
+  germanNotice: 'Terjemahan bahasa Jerman sedang ditinjau akurasinya dan akan hadir pada pembaruan mendatang. Silakan pilih English atau Bahasa Indonesia.',
+  startLearning: 'Mulai Menghafal ➔',
+  changeAnytimeNotice: 'Anda dapat mengganti bahasa kapan saja di menu Pengaturan (⚙️).'
+};

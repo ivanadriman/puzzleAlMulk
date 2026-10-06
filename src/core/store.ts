@@ -1,13 +1,15 @@
-import { AppSettings, Ayah, AyahProgress, CheckStatus, DifficultyMode, PuzzlePiece, SurahData, SurahMeta } from '../types';
+import { AppLanguage, AppSettings, Ayah, AyahProgress, CheckStatus, DifficultyMode, PuzzlePiece, SurahData, SurahMeta } from '../types';
 import { audioService } from '../services/audio';
 import { dataService } from '../services/data';
 import { soundService } from '../services/sound';
+import { setLanguage, t } from '../i18n';
 import { evaluateSlots, generatePieces, shufflePieces } from './puzzle';
 
 const SETTINGS_KEY = 'puzzle_al_mulk_settings_v1';
 const PROGRESS_KEY = 'puzzle_al_mulk_progress_v1';
 
 const defaultSettings: AppSettings = {
+  language: 'en',
   gameLevel: 1, // Default to Level 1 Guided Repetition
   difficulty: 'word',
   showTranslation: true,
@@ -43,6 +45,7 @@ export class AppStore {
   constructor() {
     this.loadPersistedState();
     soundService.enabled = this.settings.soundEffects;
+    setLanguage(this.settings.language);
   }
 
   // Backwards compatibility helper
@@ -111,6 +114,16 @@ export class AppStore {
     return this.currentSurah.ayahs[this.currentAyahIndex] || null;
   }
 
+  public getCurrentAyahTranslation(): string {
+    const ayah = this.getCurrentAyah();
+    if (!ayah) return '';
+    return ayah.translations?.[this.settings.language] || ayah.translation || '';
+  }
+
+  public getPieceTranslation(piece: PuzzlePiece): string {
+    return piece.translations?.[this.settings.language] || piece.translation || '';
+  }
+
   public getAyahProgress(ayahNumber: number): AyahProgress {
     if (!this.currentSurah) return { solved: false, revealed: false, attempts: 0, hintsUsed: 0 };
     const key = `${this.currentSurah.id}:${ayahNumber}`;
@@ -145,7 +158,6 @@ export class AppStore {
     const ayah = this.getCurrentAyah();
     if (!ayah) return;
 
-    // Preload audio for active and next ayah
     audioService.preload(ayah.audioUrl);
     if (this.currentSurah && this.currentAyahIndex + 1 < this.currentSurah.ayahs.length) {
       audioService.preload(this.currentSurah.ayahs[this.currentAyahIndex + 1].audioUrl);
@@ -161,7 +173,6 @@ export class AppStore {
     this.lastMistakeSlotIndex = null;
     this.mistakeMessage = null;
 
-    // Track attempt in progress
     const key = `${ayah.surah}:${ayah.number}`;
     if (!this.progress[key]) {
       this.progress[key] = { solved: false, revealed: false, attempts: 1, hintsUsed: 0 };
@@ -171,9 +182,6 @@ export class AppStore {
     this.saveProgress();
   }
 
-  /**
-   * Action when user selects a piece from tray (tap or drag)
-   */
   public selectPieceFromTray(pieceId: string, targetSlotIdx?: number) {
     if (this.status !== 'solving') return;
 
@@ -184,10 +192,9 @@ export class AppStore {
     if (this.settings.gameLevel === 1) {
       // LEVEL 1: Sequential Guided Repetition
       const currentTargetSlot = this.activeSlotIndex;
-      if (currentTargetSlot === -1) return; // All full
+      if (currentTargetSlot === -1) return;
 
       if (piece.targetIndex === currentTargetSlot) {
-        // CORRECT!
         soundService.playCorrect();
         this.availablePieces.splice(trayIdx, 1);
         this.slots[currentTargetSlot] = piece;
@@ -200,10 +207,9 @@ export class AppStore {
           this.notify();
         }
       } else {
-        // INSTANTLY FIRE WRONG!
         soundService.playMistake();
         this.lastMistakePieceId = piece.id;
-        this.mistakeMessage = `❌ Not this word. Look for the part that comes next!`;
+        this.mistakeMessage = t('mistakeSequential');
         this.notify();
 
         setTimeout(() => {
@@ -214,7 +220,7 @@ export class AppStore {
         }, 750);
       }
     } else {
-      // LEVEL 2: Free Puzzle Assembly with Instant Slot Diagnostics
+      // LEVEL 2: Free Puzzle Assembly
       const slotIndex = targetSlotIdx !== undefined ? targetSlotIdx : this.activeSlotIndex;
       if (slotIndex < 0 || slotIndex >= this.slots.length) return;
 
@@ -225,7 +231,6 @@ export class AppStore {
       }
       this.slots[slotIndex] = newPiece;
 
-      // Instant feedback for this specific slot placement
       if (newPiece.targetIndex === slotIndex) {
         soundService.playCorrect();
       } else {
@@ -248,9 +253,6 @@ export class AppStore {
     }
   }
 
-  /**
-   * Action when dragging/dropping piece between slots (Level 2)
-   */
   public placePieceInSlot(pieceId: string, targetSlotIndex: number, fromSlotIndex?: number) {
     if (this.status !== 'solving') return;
 
@@ -280,9 +282,6 @@ export class AppStore {
     }
   }
 
-  /**
-   * Remove a piece from a slot and return it to the tray
-   */
   public removePieceFromSlot(slotIndex: number) {
     if (this.status !== 'solving') return;
     if (slotIndex < 0 || slotIndex >= this.slots.length) return;
@@ -389,14 +388,12 @@ export class AppStore {
     const targetIdx = this.slots.findIndex((piece, idx) => !piece || piece.targetIndex !== idx);
     if (targetIdx === -1) return;
 
-    // Return misplaced piece to tray
     const currentMisplaced = this.slots[targetIdx];
     if (currentMisplaced) {
       this.availablePieces.push(currentMisplaced);
       this.slots[targetIdx] = null;
     }
 
-    // Find correct piece
     let correctPiece: PuzzlePiece | null = null;
     const trayIdx = this.availablePieces.findIndex((p) => p.targetIndex === targetIdx);
     if (trayIdx !== -1) {
@@ -434,6 +431,13 @@ export class AppStore {
     this.notify();
   }
 
+  public updateLanguage(lang: AppLanguage) {
+    this.settings.language = lang;
+    setLanguage(lang);
+    this.saveSettings();
+    this.notify();
+  }
+
   public setGameLevel(level: 1 | 2) {
     if (this.settings.gameLevel === level) return;
     this.settings.gameLevel = level;
@@ -452,6 +456,9 @@ export class AppStore {
 
   public updateSettings(partial: Partial<AppSettings>) {
     this.settings = { ...this.settings, ...partial };
+    if (partial.language !== undefined) {
+      setLanguage(partial.language);
+    }
     if (partial.soundEffects !== undefined) {
       soundService.enabled = partial.soundEffects;
     }

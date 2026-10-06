@@ -2,6 +2,7 @@ import { store } from '../core/store';
 import { audioService } from '../services/audio';
 import { triggerConfetti } from './celebration';
 import { DragController } from './dragController';
+import { t } from '../i18n';
 
 export class BoardComponent {
   private container: HTMLElement;
@@ -54,6 +55,8 @@ export class BoardComponent {
         ? 'text-2xl md:text-3xl'
         : 'text-xl md:text-2xl';
 
+    const currentTranslation = store.getCurrentAyahTranslation();
+
     let html = `
       <div class="w-full max-w-4xl mx-auto flex flex-col gap-6">
     `;
@@ -72,19 +75,19 @@ export class BoardComponent {
                 status === 'solved'
                   ? `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                       <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                      Masha'Allah! Completed ✓
+                      ${t('mashaAllahCompleted')}
                     </span>`
                   : `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                      Ayah Revealed
+                      ${t('ayahRevealed')}
                     </span>`
               }
-              <span class="text-xs text-quran-textMuted">Ayah ${ayah.number} of ${store.currentSurah?.versesCount || 30}</span>
+              <span class="text-xs text-quran-textMuted">${t('ayahOf', { current: ayah.number, total: store.currentSurah?.versesCount || 30 })}</span>
             </div>
 
-            <button id="btn-replay-audio" class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-quran-card hover:bg-quran-border text-xs text-quran-gold transition-colors" title="Listen again">
+            <button id="btn-replay-audio" class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-quran-card hover:bg-quran-border text-xs text-quran-gold transition-colors" title="${t('replayAudio')}">
               <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
-              Replay Audio
+              ${t('replayAudio')}
             </button>
           </div>
 
@@ -97,11 +100,11 @@ export class BoardComponent {
 
           <!-- Translation -->
           ${
-            settings.showTranslation
+            settings.showTranslation && currentTranslation
               ? `
               <div class="mt-4 pt-4 border-t border-quran-border/40 text-center">
                 <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light italic max-w-2xl mx-auto">
-                  "${ayah.translation}"
+                  "${currentTranslation}"
                 </p>
               </div>
             `
@@ -116,7 +119,7 @@ export class BoardComponent {
               </button>
               <div class="flex flex-col">
                 <span class="text-xs font-medium text-slate-200">Reciter: Mishary Alafasy</span>
-                <span class="text-[11px] text-quran-textMuted">Recitation playing</span>
+                <span class="text-[11px] text-quran-textMuted">${t('playing')}</span>
               </div>
             </div>
 
@@ -128,7 +131,7 @@ export class BoardComponent {
               </select>
 
               <button id="btn-next-ayah-prompt" class="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl text-xs md:text-sm font-semibold flex items-center gap-1.5 shadow-md transition-all active:scale-95">
-                <span>Next Ayah</span>
+                <span>${t('nextAyahButton')}</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
@@ -157,13 +160,13 @@ export class BoardComponent {
             <span class="text-base">❌</span>
             <div class="flex-1">
               <div class="font-bold text-xs md:text-sm text-red-100 flex items-center gap-2">
-                <span>Combination Incorrect</span>
+                <span>${t('incorrectCombination')}</span>
                 <span class="text-[11px] font-normal px-2 py-0.5 rounded-full bg-red-500/20 border border-red-500/40 text-red-200">
-                  ${checkStatus.wrongCount} part(s) in wrong position
+                  ${t('partsInWrongPosition', { n: checkStatus.wrongCount })}
                 </span>
               </div>
               <p class="text-[11px] md:text-xs text-red-300 mt-1">
-                The parts highlighted in <span class="font-bold text-red-200">RED</span> are in the wrong positions. Drag or swap them into their correct spots!
+                ${t('partsInWrongPositionDesc')}
               </p>
             </div>
           </div>
@@ -182,17 +185,17 @@ export class BoardComponent {
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full ${isLevel1 ? 'bg-emerald-400' : 'bg-quran-gold'} animate-pulse"></span>
               <span class="font-bold text-slate-200">
-                ${isLevel1 ? 'Level 1: Step-by-Step Guided' : 'Level 2: Full Puzzle Assembly'}
+                ${isLevel1 ? t('level1Heading') : t('level2Heading')}
               </span>
               <span class="text-[11px] text-quran-gold font-arabic" dir="rtl">
-                بداية ◀ اليمين إلى اليسار
+                ${t('ayahStartRTL')}
               </span>
             </div>
             <div class="text-right flex items-center gap-2">
-              <span class="text-slate-300 font-medium">${filledSlotsCount} / ${totalSlots} assembled</span>
+              <span class="text-slate-300 font-medium">${filledSlotsCount} / ${totalSlots} ${t('assembled')}</span>
               ${
                 !isLevel1 && filledSlotsCount === totalSlots
-                  ? `<button id="btn-recheck" class="px-2 py-0.5 rounded bg-quran-gold text-black font-semibold text-[11px] hover:bg-quran-goldLight active:scale-95 transition-all">Check Now</button>`
+                  ? `<button id="btn-recheck" class="px-2 py-0.5 rounded bg-quran-gold text-black font-semibold text-[11px] hover:bg-quran-goldLight active:scale-95 transition-all">${t('checkNow')}</button>`
                   : ''
               }
             </div>
@@ -202,8 +205,8 @@ export class BoardComponent {
           <div class="text-[11px] text-slate-400 mb-3">
             ${
               isLevel1
-                ? `Pick the next word in sequence for slot <span class="font-bold text-quran-gold">${activeSlotIndex + 1}</span> (highlighted below). Instant feedback on every choice!`
-                : `Drag parts into slots or swap them. Parts are checked instantly as you place them!`
+                ? t('level1Instruction', { n: activeSlotIndex + 1 })
+                : t('level2Instruction')
             }
           </div>
 
@@ -215,7 +218,7 @@ export class BoardComponent {
           >
             <!-- Decorative Ayah Start on Far Right -->
             <div class="select-none flex items-center px-2 py-1 rounded-lg bg-quran-card/60 border border-quran-border/40 text-[11px] text-quran-gold font-medium">
-              <span>بداية ◀</span>
+              <span>${t('ayahStart')}</span>
             </div>
 
             ${slots
@@ -228,6 +231,7 @@ export class BoardComponent {
                   (piece !== null && piece.targetIndex !== slotIdx)
                 );
                 const isSlotCorrect = piece !== null && piece.targetIndex === slotIdx;
+                const pieceGloss = piece ? store.getPieceTranslation(piece) : '';
 
                 if (piece === null) {
                   // Empty Slot
@@ -243,7 +247,7 @@ export class BoardComponent {
                     >
                       <span class="${isActiveTarget ? 'text-quran-gold font-bold' : 'text-slate-600'} text-xs select-none">${numeral}</span>
                       <span class="text-[10px] ${isActiveTarget ? 'text-amber-300 font-semibold' : 'text-slate-600'} select-none mt-1">
-                        ${isActiveTarget ? '👈 Next' : 'Empty'}
+                        ${isActiveTarget ? t('nextWordSlot') : t('emptySlot')}
                       </span>
                     </div>
                   `;
@@ -271,9 +275,9 @@ export class BoardComponent {
                         <span class="text-[10px] font-mono text-slate-400 font-semibold">${numeral}</span>
                         ${
                           isSlotMisplaced
-                            ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-500 text-white">✗ Wrong</span>`
+                            ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-500 text-white">${t('wrongPosition')}</span>`
                             : isSlotCorrect
-                            ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-emerald-500 text-black">✓ Correct</span>`
+                            ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-emerald-500 text-black">${t('correctPosition')}</span>`
                             : ''
                         }
                       </div>
@@ -283,8 +287,8 @@ export class BoardComponent {
                       } leading-relaxed">${piece.text}</span>
                       
                       ${
-                        settings.showTranslation && piece.translation
-                          ? `<span class="text-[11px] text-slate-400 mt-0.5 font-light">${piece.translation}</span>`
+                        settings.showTranslation && pieceGloss
+                          ? `<span class="text-[11px] text-slate-400 mt-0.5 font-light">${pieceGloss}</span>`
                           : ''
                       }
                     </div>
@@ -304,9 +308,9 @@ export class BoardComponent {
         <div class="glass-card rounded-2xl p-5 md:p-6 border border-quran-border/60">
           <div class="flex items-center justify-between mb-3 text-xs text-quran-textMuted">
             <span class="font-medium text-slate-300">
-              ${isLevel1 ? 'Select the Next Word (Tap or Drag):' : 'Available Parts Tray:'}
+              ${isLevel1 ? t('trayTitleLevel1') : t('trayTitleLevel2')}
             </span>
-            <span class="text-[11px] text-quran-gold">${settings.difficulty === 'word' ? 'Word by Word' : 'Phrase Chunks'}</span>
+            <span class="text-[11px] text-quran-gold">${settings.difficulty === 'word' ? t('words') : t('phrases')}</span>
           </div>
 
           <!-- Tray Container (RTL) -->
@@ -317,10 +321,11 @@ export class BoardComponent {
           >
             ${
               availablePieces.length === 0
-                ? `<div class="text-xs text-emerald-400 py-3 font-semibold">All parts assembled! Well done!</div>`
+                ? `<div class="text-xs text-emerald-400 py-3 font-semibold">${t('allPartsAssembled')}</div>`
                 : availablePieces
                     .map((piece) => {
                       const isWrongMistake = lastMistakePieceId === piece.id;
+                      const pieceGloss = store.getPieceTranslation(piece);
 
                       return `
                   <div
@@ -334,13 +339,13 @@ export class BoardComponent {
                   >
                     ${
                       isWrongMistake
-                        ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-500 text-white mb-1">✗ Try Again</span>`
+                        ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-500 text-white mb-1">${t('tryAgain')}</span>`
                         : ''
                     }
                     <span class="font-quran ${fontSizeClass} ${isWrongMistake ? 'text-red-100' : 'text-slate-100'} leading-relaxed">${piece.text}</span>
                     ${
-                      settings.showTranslation && piece.translation
-                        ? `<span class="text-[11px] text-slate-400 mt-0.5 font-light">${piece.translation}</span>`
+                      settings.showTranslation && pieceGloss
+                        ? `<span class="text-[11px] text-slate-400 mt-0.5 font-light">${pieceGloss}</span>`
                         : ''
                     }
                   </div>
@@ -390,14 +395,6 @@ export class BoardComponent {
       btnRecheck.addEventListener('click', () => store.checkCombination());
     }
 
-    // Direct slot click in Level 1 (if user clicks the active slot, acts as target)
-    this.container.querySelectorAll('.puzzle-slot').forEach((slotEl) => {
-      slotEl.addEventListener('click', () => {
-        // Slotted items handle their own click in slotted-piece-item
-      });
-    });
-
-    // Bind Tray pieces to DragController
     if (this.dragController) {
       this.container.querySelectorAll('.tray-piece-item').forEach((el) => {
         const pieceId = el.getAttribute('data-piece-id');
@@ -406,7 +403,6 @@ export class BoardComponent {
         }
       });
 
-      // Bind Slotted pieces to DragController
       this.container.querySelectorAll('.slotted-piece-item').forEach((el) => {
         const pieceId = el.getAttribute('data-piece-id');
         const slotIdx = parseInt(el.getAttribute('data-slot-index') || '-1', 10);
