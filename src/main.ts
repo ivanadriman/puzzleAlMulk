@@ -81,6 +81,15 @@ async function bootstrap() {
 
   // Load data (defaults to Surah 67 Al-Mulk)
   await store.initialize(67);
+
+  // Register Service Worker for offline PWA functionality
+  if ('serviceWorker' in navigator && !window.location.hostname.includes('localhost')) {
+    navigator.serviceWorker.register('./sw.js').catch((err) => {
+      console.info('Service Worker registration skipped or failed:', err);
+    });
+  } else if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(console.warn);
+  }
 }
 
 bootstrap().catch(console.error);

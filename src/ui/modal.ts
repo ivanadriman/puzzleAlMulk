@@ -71,6 +71,23 @@ export class SettingsModalComponent {
               </select>
             </div>
 
+            <!-- Offline Audio Pre-caching -->
+            <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="font-semibold text-quran-gold">Offline Recitation Audio</div>
+                  <div class="text-[11px] text-slate-400">Download all 30 ayahs (~3.5 MB) for 100% offline practice.</div>
+                </div>
+                <button
+                  id="btn-download-offline"
+                  class="px-3 py-1.5 rounded-lg bg-quran-card hover:bg-quran-border text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all active:scale-95"
+                >
+                  Download Audio
+                </button>
+              </div>
+              <div id="offline-download-status" class="text-[11px] text-slate-300 hidden"></div>
+            </div>
+
             <!-- Reciter Information -->
             <div class="p-3 rounded-xl bg-quran-bg/60 border border-quran-border/60 text-xs">
               <div class="font-semibold text-quran-gold mb-1">Reciter Audio:</div>
@@ -143,6 +160,50 @@ export class SettingsModalComponent {
     if (selFont) {
       selFont.addEventListener('change', () => {
         store.updateSettings({ arabicFontSize: selFont.value as any });
+      });
+    }
+
+    const btnDownloadOffline = this.container.querySelector('#btn-download-offline') as HTMLButtonElement | null;
+    const statusDiv = this.container.querySelector('#offline-download-status') as HTMLElement | null;
+
+    if (btnDownloadOffline && statusDiv) {
+      btnDownloadOffline.addEventListener('click', async () => {
+        if (!('caches' in window)) {
+          alert('Offline Cache is not supported in this browser.');
+          return;
+        }
+
+        const ayahs = store.currentSurah?.ayahs || [];
+        if (ayahs.length === 0) return;
+
+        btnDownloadOffline.disabled = true;
+        btnDownloadOffline.textContent = 'Downloading...';
+        statusDiv.classList.remove('hidden');
+
+        try {
+          const cache = await caches.open('puzzle-al-mulk-audio-v1');
+          let completed = 0;
+
+          for (const a of ayahs) {
+            statusDiv.textContent = `Downloading Ayah ${a.number} of ${ayahs.length}...`;
+            try {
+              const res = await fetch(a.audioUrl);
+              if (res.ok) {
+                await cache.put(a.audioUrl, res.clone());
+              }
+            } catch (err) {
+              console.warn(`Failed caching audio for ayah ${a.number}:`, err);
+            }
+            completed++;
+          }
+
+          statusDiv.innerHTML = `<span class="text-emerald-400 font-semibold">✓ All ${completed} Ayahs downloaded! Ready for 100% offline use.</span>`;
+          btnDownloadOffline.textContent = 'Downloaded ✓';
+        } catch (err) {
+          statusDiv.innerHTML = `<span class="text-red-400">Download failed: ${err}</span>`;
+          btnDownloadOffline.disabled = false;
+          btnDownloadOffline.textContent = 'Retry';
+        }
       });
     }
 

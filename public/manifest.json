@@ -1,0 +1,19 @@
+{
+  "name": "Puzzle Al-Mulk - Quran Memorization",
+  "short_name": "Al-Mulk Puzzle",
+  "description": "Interactive Quran Ayah drag-and-drop puzzle game to memorize Surah Al-Mulk with Mishary Alafasy audio recitation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a1412",
+  "theme_color": "#0a1412",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%230a1412'/><circle cx='256' cy='256' r='200' fill='%2311221e' stroke='%23e6af45' stroke-width='12'/><text x='256' y='320' font-size='200' text-anchor='middle'>📖</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
