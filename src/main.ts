@@ -1,0 +1,86 @@
+import './styles.css';
+import { store } from './core/store';
+import { audioService } from './services/audio';
+import { HeaderComponent } from './ui/header';
+import { NavigationComponent } from './ui/navigation';
+import { BoardComponent } from './ui/board';
+import { ActionsComponent } from './ui/actions';
+import { SettingsModalComponent } from './ui/modal';
+
+async function bootstrap() {
+  const appEl = document.getElementById('app');
+  if (!appEl) return;
+
+  appEl.innerHTML = `
+    <div class="min-h-screen bg-islamic-pattern flex flex-col justify-between p-3 md:p-6 select-none">
+      <div id="header-root"></div>
+      <main class="flex-1 flex flex-col justify-center gap-5 my-4">
+        <div id="navigation-root"></div>
+        <div id="board-root"></div>
+        <div id="actions-root"></div>
+      </main>
+      <footer class="w-full max-w-4xl mx-auto text-center py-4 text-xs text-quran-textMuted border-t border-quran-border/40">
+        <p>Surah Al-Mulk Memorization Puzzle • Mishary Rashid Alafasy Recitation</p>
+      </footer>
+      <div id="modal-root"></div>
+    </div>
+  `;
+
+  const headerRoot = document.getElementById('header-root')!;
+  const navigationRoot = document.getElementById('navigation-root')!;
+  const boardRoot = document.getElementById('board-root')!;
+  const actionsRoot = document.getElementById('actions-root')!;
+  const modalRoot = document.getElementById('modal-root')!;
+
+  const modal = new SettingsModalComponent(modalRoot);
+  const header = new HeaderComponent(headerRoot, () => modal.open());
+  const navigation = new NavigationComponent(navigationRoot);
+  const board = new BoardComponent(boardRoot);
+  const actions = new ActionsComponent(actionsRoot);
+
+  const renderAll = () => {
+    header.render();
+    navigation.render();
+    board.render();
+    actions.render();
+  };
+
+  store.subscribe(() => {
+    renderAll();
+  });
+
+  audioService.onPlay(() => actions.render());
+  audioService.onPause(() => actions.render());
+  audioService.onEnded(() => actions.render());
+
+  // Global Keyboard shortcuts
+  window.addEventListener('keydown', (e: KeyboardEvent) => {
+    // Don't trigger if user is inside a select or input
+    if (['INPUT', 'SELECT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
+      return;
+    }
+
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      store.prevAyah();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      store.nextAyah();
+    } else if (e.key === ' ' || e.code === 'Space') {
+      e.preventDefault();
+      const ayah = store.getCurrentAyah();
+      if (ayah) audioService.toggle(ayah.audioUrl);
+    } else if (e.key.toLowerCase() === 'h') {
+      e.preventDefault();
+      store.useHint();
+    } else if (e.key.toLowerCase() === 'r') {
+      e.preventDefault();
+      store.revealAyah();
+    }
+  });
+
+  // Load data (defaults to Surah 67 Al-Mulk)
+  await store.initialize(67);
+}
+
+bootstrap().catch(console.error);

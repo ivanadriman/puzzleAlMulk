@@ -1,0 +1,65 @@
+export interface Word {
+  index: number;
+  text: string;
+  translation: string;
+  transliteration: string;
+  audio: string | null;
+}
+
+export interface Ayah {
+  id: number;
+  surah: number;
+  number: number;
+  verseKey: string;
+  textUthmani: string;
+  endMarker: string;
+  translation: string;
+  words: Word[];
+  audioUrl: string;
+}
+
+export interface SurahMeta {
+  id: number;
+  nameSimple: string;
+  nameArabic: string;
+  versesCount: number;
+  revelationPlace: string;
+  file: string;
+}
+
+export interface SurahData {
+  id: number;
+  nameSimple: string;
+  nameArabic: string;
+  revelationPlace: string;
+  versesCount: number;
+  ayahs: Ayah[];
+}
+
+export interface PuzzlePiece {
+  id: string; // unique piece id
+  targetIndex: number; // 0-based position in target sentence
+  words: Word[]; // 1 word for word mode, 2-3 words for phrase mode
+  text: string; // combined text
+  translation: string; // combined translation
+  transliteration: string;
+}
+
+export type DifficultyMode = 'word' | 'phrase';
+
+export interface AyahProgress {
+  solved: boolean;
+  revealed: boolean;
+  attempts: number;
+  hintsUsed: number;
+  solvedAt?: number;
+}
+
+export interface AppSettings {
+  difficulty: DifficultyMode;
+  showTranslation: boolean;
+  showTransliteration: boolean;
+  autoPlayAudio: boolean;
+  playbackSpeed: number;
+  arabicFontSize: 'normal' | 'large' | 'xlarge';
+}

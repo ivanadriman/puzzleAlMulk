@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-quran-bg text-quran-textPrimary font-sans antialiased min-h-screen selection:bg-quran-gold selection:text-black;
+  }
+}
+
+/* Custom Quranic Arabic typography styling */
+.font-quran {
+  font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  font-feature-settings: 'cv01' on, 'cv02' on;
+  line-height: 1.8;
+  direction: rtl;
+}
+
+/* Subtle gold and emerald gradients */
+.bg-islamic-pattern {
+  background-color: #0a1412;
+  background-image: radial-gradient(rgba(230, 175, 69, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+  background-position: -19px -19px;
+}
+
+/* Glassmorphism cards */
+.glass-panel {
+  background: rgba(17, 34, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 175, 69, 0.18);
+}
+
+.glass-card {
+  background: rgba(22, 46, 41, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(230, 175, 69, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 175, 69, 0.55);
+  }
+}
+
+.glow-active {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Sortable ghost / drag styling */
+.sortable-ghost {
+  opacity: 0.35;
+  background: rgba(16, 185, 129, 0.2) !important;
+  border: 2px dashed #10b981 !important;
+}
+
+.sortable-chosen {
+  cursor: grabbing !important;
+  transform: scale(1.04);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1412;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f3f38;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e6af45;
+}
