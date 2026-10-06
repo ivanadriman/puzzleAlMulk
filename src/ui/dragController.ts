@@ -105,7 +105,7 @@ export class DragController {
       if (!isDragging) {
         // Was a TAP!
         if (sourceType === 'tray') {
-          store.placePieceInFirstSlot(pieceId);
+          store.selectPieceFromTray(pieceId);
         } else if (sourceType === 'slot' && fromSlotIndex !== undefined) {
           store.removePieceFromSlot(fromSlotIndex);
         }
@@ -181,7 +181,11 @@ export class DragController {
     if (slotTarget) {
       const targetSlotIdx = parseInt(slotTarget.getAttribute('data-slot-index') || '-1', 10);
       if (targetSlotIdx >= 0) {
-        store.placePieceInSlot(pieceId, targetSlotIdx, fromSlotIndex);
+        if (sourceType === 'tray') {
+          store.selectPieceFromTray(pieceId, targetSlotIdx);
+        } else {
+          store.placePieceInSlot(pieceId, targetSlotIdx, fromSlotIndex);
+        }
         return;
       }
     }

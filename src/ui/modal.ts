@@ -61,6 +61,12 @@ export class SettingsModalComponent {
               <input type="checkbox" id="chk-auto-audio" ${settings.autoPlayAudio ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
             </label>
 
+            <!-- Sound Effects -->
+            <label class="flex items-center justify-between cursor-pointer py-1">
+              <span>Sound Effects (Chime for correct, tone for mistake)</span>
+              <input type="checkbox" id="chk-sound-effects" ${settings.soundEffects ? 'checked' : ''} class="w-4 h-4 rounded text-quran-gold focus:ring-0 accent-amber-500 cursor-pointer">
+            </label>
+
             <!-- Font Size -->
             <div class="flex items-center justify-between py-1">
               <span>Arabic Script Font Size</span>
@@ -153,6 +159,13 @@ export class SettingsModalComponent {
     if (chkAudio) {
       chkAudio.addEventListener('change', () => {
         store.updateSettings({ autoPlayAudio: chkAudio.checked });
+      });
+    }
+
+    const chkSound = this.container.querySelector('#chk-sound-effects') as HTMLInputElement | null;
+    if (chkSound) {
+      chkSound.addEventListener('change', () => {
+        store.updateSettings({ soundEffects: chkSound.checked });
       });
     }
 

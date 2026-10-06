@@ -26,43 +26,49 @@ export class HeaderComponent {
               <span class="font-quran text-lg md:text-xl text-quran-gold" dir="rtl">سُورَةُ المُلْكِ</span>
             </div>
             <p class="text-[11px] text-quran-textMuted flex items-center gap-1.5">
-              <span>Reciter: Mishary Alafasy</span>
+              <span>Mishary Alafasy</span>
               <span>•</span>
               <span>30 Ayahs</span>
             </p>
           </div>
         </div>
 
-        <!-- Controls: Multi-Surah (if >1), Difficulty & Settings -->
-        <div class="flex items-center gap-2">
+        <!-- Controls: Level Selector, Mode & Settings -->
+        <div class="flex flex-wrap items-center justify-center gap-2">
           
-          ${
-            surahList.length > 1
-              ? `
-            <!-- Surah Picker (Data-driven for multi-surahs) -->
-            <select
-              id="select-surah"
-              class="bg-quran-card text-xs text-slate-200 border border-quran-border rounded-xl px-2.5 py-1.5 focus:outline-none focus:border-quran-gold cursor-pointer"
+          <!-- Level 1 vs Level 2 Switcher -->
+          <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
+            <button
+              id="btn-level-1"
+              class="px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1 ${
+                settings.gameLevel === 1
+                  ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }"
+              title="Level 1: Sequential Guided Repetition (Instant feedback on each pick)"
             >
-              ${surahList
-                .map(
-                  (s) => `
-                <option value="${s.id}" ${currentSurah?.id === s.id ? 'selected' : ''}>
-                  ${s.id}. ${s.nameSimple} (${s.nameArabic})
-                </option>
-              `
-                )
-                .join('')}
-            </select>
-          `
-              : ''
-          }
+              <span>🎯</span>
+              <span>Level 1 (Guided)</span>
+            </button>
+            <button
+              id="btn-level-2"
+              class="px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1 ${
+                settings.gameLevel === 2
+                  ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }"
+              title="Level 2: Full Puzzle Assembly (Drag, swap and check all slots)"
+            >
+              <span>🧩</span>
+              <span>Level 2 (Full)</span>
+            </button>
+          </div>
 
-          <!-- Difficulty Pill Selector -->
+          <!-- Difficulty Pill: Words vs Phrases -->
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs">
             <button
               id="btn-diff-word"
-              class="px-2.5 py-1 rounded-lg font-medium transition-all ${
+              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
                 settings.difficulty === 'word'
                   ? 'bg-quran-gold text-black shadow-sm font-semibold'
                   : 'text-slate-400 hover:text-slate-200'
@@ -73,16 +79,37 @@ export class HeaderComponent {
             </button>
             <button
               id="btn-diff-phrase"
-              class="px-2.5 py-1 rounded-lg font-medium transition-all ${
+              class="px-2 py-1.5 rounded-lg font-medium transition-all ${
                 settings.difficulty === 'phrase'
                   ? 'bg-quran-gold text-black shadow-sm font-semibold'
                   : 'text-slate-400 hover:text-slate-200'
               }"
-              title="Split into 2-3 word phrase chunks"
+              title="Split into phrase chunks"
             >
               Phrases
             </button>
           </div>
+
+          ${
+            surahList.length > 1
+              ? `
+            <select
+              id="select-surah"
+              class="bg-quran-card text-xs text-slate-200 border border-quran-border rounded-xl px-2 py-1.5 focus:outline-none focus:border-quran-gold cursor-pointer"
+            >
+              ${surahList
+                .map(
+                  (s) => `
+                <option value="${s.id}" ${currentSurah?.id === s.id ? 'selected' : ''}>
+                  ${s.id}. ${s.nameSimple}
+                </option>
+              `
+                )
+                .join('')}
+            </select>
+          `
+              : ''
+          }
 
           <!-- Settings Button -->
           <button
@@ -101,6 +128,16 @@ export class HeaderComponent {
   }
 
   private attachEvents() {
+    const btnLevel1 = this.container.querySelector('#btn-level-1');
+    if (btnLevel1) {
+      btnLevel1.addEventListener('click', () => store.setGameLevel(1));
+    }
+
+    const btnLevel2 = this.container.querySelector('#btn-level-2');
+    if (btnLevel2) {
+      btnLevel2.addEventListener('click', () => store.setGameLevel(2));
+    }
+
     const btnWord = this.container.querySelector('#btn-diff-word');
     if (btnWord) {
       btnWord.addEventListener('click', () => store.updateDifficulty('word'));

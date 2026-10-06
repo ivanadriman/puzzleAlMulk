@@ -63,10 +63,12 @@ export interface AyahProgress {
 }
 
 export interface AppSettings {
+  gameLevel: 1 | 2; // 1 = Guided Repetition, 2 = Full Puzzle Assembly
   difficulty: DifficultyMode;
   showTranslation: boolean;
   showTransliteration: boolean;
   autoPlayAudio: boolean;
+  soundEffects: boolean;
   playbackSpeed: number;
   arabicFontSize: 'normal' | 'large' | 'xlarge';
 }
