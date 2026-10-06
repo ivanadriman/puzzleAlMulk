@@ -1,4 +1,4 @@
-const CACHE_NAME = 'puzzle-al-mulk-v2';
+const CACHE_NAME = 'puzzle-al-mulk-v3';
 const AUDIO_CACHE = 'puzzle-al-mulk-audio-v1';
 
 const STATIC_ASSETS = [
