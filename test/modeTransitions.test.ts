@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { store } from '../src/core/store';
+import { audioService } from '../src/services/audio';
 import { SurahData } from '../src/types';
 
 const mockSurah: SurahData = {
@@ -115,8 +116,9 @@ describe('Store Mode Switching & State Transitions', () => {
     expect(store.bridgeState?.streak).toBe(1);
   });
 
-  it('automatically advances to the next ayah after 1 second delay when puzzle is finished', () => {
+  it('automatically advances to the next ayah after audio finishes plus 1 second delay', () => {
     vi.useFakeTimers();
+    store.settings.autoPlayAudio = true;
     store.setGameMode('puzzle');
     expect(store.currentAyahIndex).toBe(0);
 
@@ -131,11 +133,18 @@ describe('Store Mode Switching & State Transitions', () => {
     expect(store.status).toBe('solved');
     expect(store.currentAyahIndex).toBe(0);
 
-    // 500ms: still on ayah 0
+    // Audio is still playing, time advances
+    vi.advanceTimersByTime(2000);
+    expect(store.currentAyahIndex).toBe(0);
+
+    // Audio finishes!
+    audioService.triggerEnded();
+
+    // 500ms after audio ended: still on ayah 0
     vi.advanceTimersByTime(500);
     expect(store.currentAyahIndex).toBe(0);
 
-    // 1000ms: automatically goes to ayah 1
+    // 1000ms after audio ended: automatically goes to ayah 1!
     vi.advanceTimersByTime(500);
     expect(store.currentAyahIndex).toBe(1);
 

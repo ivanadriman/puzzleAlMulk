@@ -70,6 +70,7 @@ export class AppStore {
   public sprintState: SprintState | null = null;
   private audioSnatchTimer: any = null;
   private autoAdvanceTimer: any = null;
+  private audioEndedUnsubscribe: (() => void) | null = null;
 
   private listeners: Set<() => void> = new Set();
 
@@ -211,6 +212,10 @@ export class AppStore {
     if (this.autoAdvanceTimer) {
       clearTimeout(this.autoAdvanceTimer);
       this.autoAdvanceTimer = null;
+    }
+    if (this.audioEndedUnsubscribe) {
+      this.audioEndedUnsubscribe();
+      this.audioEndedUnsubscribe = null;
     }
   }
 
@@ -723,14 +728,42 @@ export class AppStore {
     };
     this.saveProgress();
 
-    if (this.settings.autoPlayAudio) {
-      audioService.play(ayah.audioUrl);
-    }
     this.notify();
 
-    // 1-second delay after finishing puzzle, then automatically advance to the next ayah
     this.clearAutoAdvanceTimer();
-    if (this.currentSurah && this.currentAyahIndex < this.currentSurah.ayahs.length - 1) {
+
+    // Check if there is a next ayah in the current surah
+    const hasNextAyah = !!(this.currentSurah && this.currentAyahIndex < this.currentSurah.ayahs.length - 1);
+    if (!hasNextAyah) {
+      if (this.settings.autoPlayAudio) {
+        audioService.play(ayah.audioUrl);
+      }
+      return;
+    }
+
+    if (this.settings.autoPlayAudio) {
+      let hasTriggered = false;
+
+      const scheduleAdvanceAfterAudio = () => {
+        if (hasTriggered) return;
+        hasTriggered = true;
+        this.clearAutoAdvanceTimer();
+        this.autoAdvanceTimer = setTimeout(() => {
+          this.nextAyah();
+        }, 1000);
+      };
+
+      // Listen for audio ended, then wait 1 second before going to next ayah
+      this.audioEndedUnsubscribe = audioService.onEnded(() => {
+        scheduleAdvanceAfterAudio();
+      });
+
+      // Play audio and handle fallback if playback fails or is blocked
+      audioService.play(ayah.audioUrl).catch(() => {
+        scheduleAdvanceAfterAudio();
+      });
+    } else {
+      // If auto-play audio is disabled, wait 1 second after puzzle completion and advance
       this.autoAdvanceTimer = setTimeout(() => {
         this.nextAyah();
       }, 1000);

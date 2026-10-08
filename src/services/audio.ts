@@ -146,16 +146,32 @@ class AudioService {
     this.onPauseCallbacks.push(cb);
   }
 
-  public onEnded(cb: AudioEventCallback) {
+  public onEnded(cb: AudioEventCallback): () => void {
     this.onEndedCallbacks.push(cb);
+    return () => {
+      const idx = this.onEndedCallbacks.indexOf(cb);
+      if (idx !== -1) {
+        this.onEndedCallbacks.splice(idx, 1);
+      }
+    };
   }
 
   public onTimeUpdate(cb: TimeUpdateCallback) {
     this.onTimeUpdateCallbacks.push(cb);
   }
 
-  public onError(cb: (err: any) => void) {
+  public onError(cb: (err: any) => void): () => void {
     this.onErrorCallbacks.push(cb);
+    return () => {
+      const idx = this.onErrorCallbacks.indexOf(cb);
+      if (idx !== -1) {
+        this.onErrorCallbacks.splice(idx, 1);
+      }
+    };
+  }
+
+  public triggerEnded() {
+    this.onEndedCallbacks.forEach((cb) => cb());
   }
 }
 
