@@ -10,6 +10,12 @@ export class ActionsComponent {
   }
 
   public render() {
+    // Actions bar (hints, combination checks, reveal, reset) is specific to the sentence puzzle mode
+    if (store.settings.activeGameMode !== 'puzzle') {
+      this.container.innerHTML = '';
+      return;
+    }
+
     const isSolving = store.status === 'solving';
     const isPlaying = audioService.isPlaying();
 

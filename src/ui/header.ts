@@ -116,7 +116,10 @@ export class HeaderComponent {
             </button>
           </div>
 
-          <!-- Difficulty Pill: Words vs Phrases -->
+          <!-- Difficulty Pill: Words vs Phrases (Only in Sentence Puzzle mode) -->
+          ${
+            activeModeId === 'puzzle'
+              ? `
           <div class="bg-quran-card p-0.5 rounded-xl border border-quran-border flex text-xs shadow-inner">
             <button
               id="btn-diff-word"
@@ -141,6 +144,9 @@ export class HeaderComponent {
               ${t('phrases')}
             </button>
           </div>
+          `
+              : ''
+          }
 
           ${
             surahList.length > 1

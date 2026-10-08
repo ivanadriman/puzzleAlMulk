@@ -169,16 +169,20 @@ export class VanishingView {
             ${
               isStageComplete
                 ? `
-              <div class="text-xs sm:text-sm text-emerald-300 font-semibold bg-emerald-950/60 border border-emerald-500/50 px-4 py-2 rounded-xl text-center">
+              <div class="text-xs sm:text-sm text-emerald-300 font-semibold bg-emerald-950/60 border border-emerald-500/50 px-5 py-2.5 rounded-2xl text-center shadow-sm">
                 ${t('vanishingComplete')}
               </div>
-              <button id="btn-advance-stage" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-2">
+              <button id="btn-advance-stage" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-2">
                 <span>${t('nextAyahButton')} ➔</span>
               </button>
             `
                 : `
-              <button id="btn-reveal-vanishing" class="px-6 py-3 rounded-xl bg-quran-gold hover:bg-quran-goldLight text-black font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-2">
-                <span>👁️ ${t('revealAyah')}</span>
+              <div class="text-[11px] sm:text-xs text-amber-300/90 bg-amber-950/50 border border-amber-500/30 px-4 py-2 rounded-xl text-center max-w-md">
+                🎙️ ${t('vanishingInstruction4')}
+              </div>
+              <button id="btn-reveal-vanishing" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-quran-gold hover:from-amber-400 hover:to-yellow-400 text-black font-bold text-sm shadow-glow-gold transition-all active:scale-95 flex items-center gap-2">
+                <span>👁️</span>
+                <span>${store.settings.language === 'id' ? 'Buka & Cocokkan Hafalan' : 'Verify & Reveal Ayah'}</span>
               </button>
             `
             }
