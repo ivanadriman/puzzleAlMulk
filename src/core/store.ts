@@ -69,6 +69,7 @@ export class AppStore {
   public bridgeState: BridgeState | null = null;
   public sprintState: SprintState | null = null;
   private audioSnatchTimer: any = null;
+  private autoAdvanceTimer: any = null;
 
   private listeners: Set<() => void> = new Set();
 
@@ -168,6 +169,7 @@ export class AppStore {
     if (index < 0 || index >= this.currentSurah.ayahs.length) return;
     if (this.currentAyahIndex === index) return;
 
+    this.clearAutoAdvanceTimer();
     audioService.pause();
     this.currentAyahIndex = index;
     this.setupModeForCurrentAyah();
@@ -205,7 +207,15 @@ export class AppStore {
     this.notify();
   }
 
+  public clearAutoAdvanceTimer() {
+    if (this.autoAdvanceTimer) {
+      clearTimeout(this.autoAdvanceTimer);
+      this.autoAdvanceTimer = null;
+    }
+  }
+
   private clearModeTimers() {
+    this.clearAutoAdvanceTimer();
     if (this.audioSnatchTimer) {
       clearInterval(this.audioSnatchTimer);
       this.audioSnatchTimer = null;
@@ -717,6 +727,14 @@ export class AppStore {
       audioService.play(ayah.audioUrl);
     }
     this.notify();
+
+    // 1-second delay after finishing puzzle, then automatically advance to the next ayah
+    this.clearAutoAdvanceTimer();
+    if (this.currentSurah && this.currentAyahIndex < this.currentSurah.ayahs.length - 1) {
+      this.autoAdvanceTimer = setTimeout(() => {
+        this.nextAyah();
+      }, 1000);
+    }
   }
 
   public revealAyah() {

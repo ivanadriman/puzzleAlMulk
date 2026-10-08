@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { store } from '../src/core/store';
 import { SurahData } from '../src/types';
 
@@ -113,5 +113,32 @@ describe('Store Mode Switching & State Transitions', () => {
     store.selectBridgeOption(2);
     expect(store.bridgeState?.isCorrect).toBe(true);
     expect(store.bridgeState?.streak).toBe(1);
+  });
+
+  it('automatically advances to the next ayah after 1 second delay when puzzle is finished', () => {
+    vi.useFakeTimers();
+    store.setGameMode('puzzle');
+    expect(store.currentAyahIndex).toBe(0);
+
+    // Solve puzzle sequentially in level 1
+    for (let i = 0; i < 4; i++) {
+      const piece = store.availablePieces.find((p) => p.targetIndex === i);
+      if (piece) {
+        store.selectPieceFromTray(piece.id);
+      }
+    }
+
+    expect(store.status).toBe('solved');
+    expect(store.currentAyahIndex).toBe(0);
+
+    // 500ms: still on ayah 0
+    vi.advanceTimersByTime(500);
+    expect(store.currentAyahIndex).toBe(0);
+
+    // 1000ms: automatically goes to ayah 1
+    vi.advanceTimersByTime(500);
+    expect(store.currentAyahIndex).toBe(1);
+
+    vi.useRealTimers();
   });
 });
